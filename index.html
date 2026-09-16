@@ -1,884 +1,618 @@
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>LaunchSite — Build Your Website Faster</title>
-
-    <meta name="description"
-          content="LaunchSite helps businesses create modern, professional websites in minutes.">
-
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LaunchSite — Build Your Website Faster</title>
+<meta name="description" content="LaunchSite helps businesses create modern, professional websites in minutes.">
+<link rel="stylesheet" href="style.css">
+<style>
+.language-selector{position:relative;margin-left:15px}
+.language-selector select{border:1px solid #ddd;border-radius:8px;padding:9px 12px;background:#fff;font-size:14px;cursor:pointer}
+[dir="rtl"] .language-selector{margin-left:0;margin-right:15px}
+</style>
 </head>
 
 <body>
 
-    <!-- =========================
-         NAVBAR
-    ========================== -->
-
-    <header class="navbar">
-        <div class="container nav-container">
-
-            <a href="#" class="logo">
-                Launch<span>Site</span>
-            </a>
-
-            <nav class="nav-links">
-                <a href="#features">Features</a>
-                <a href="#how-it-works">How it works</a>
-                <a href="#templates">Templates</a>
-                <a href="#pricing">Pricing</a>
-            </nav>
-
-            <div class="nav-actions">
-                <a href="#" class="login-btn">Log in</a>
-                <a href="#start" class="nav-cta">Get Started</a>
-            </div>
-
-            <button class="menu-btn" id="menuBtn" aria-label="Open menu">
-                ☰
-            </button>
-
-        </div>
-    </header>
-
-
-    <!-- =========================
-         MOBILE MENU
-    ========================== -->
-
-    <div class="mobile-menu" id="mobileMenu">
-
-        <a href="#features">Features</a>
-        <a href="#how-it-works">How it works</a>
-        <a href="#templates">Templates</a>
-        <a href="#pricing">Pricing</a>
-
-        <a href="#start" class="mobile-cta">
-            Get Started
-        </a>
-
-    </div>
-
-
-    <!-- =========================
-         HERO
-    ========================== -->
-
-    <main>
-
-        <section class="hero">
-
-            <div class="container hero-grid">
-
-                <div class="hero-content">
-
-                    <div class="eyebrow">
-                        ✦ The faster way to launch online
-                    </div>
-
-                    <h1>
-                        Your business.
-                        <br>
-                        <span>Online in minutes.</span>
-                    </h1>
-
-                    <p class="hero-text">
-                        Create a professional website for your business
-                        without spending weeks designing, coding, or hiring
-                        an expensive agency.
-                    </p>
-
-                    <div class="hero-buttons">
-
-                        <a href="#start" class="primary-btn">
-                            Build my website
-                            <span>→</span>
-                        </a>
-
-                        <a href="#templates" class="secondary-btn">
-                            Explore templates
-                        </a>
-
-                    </div>
-
-                    <div class="hero-trust">
-
-                        <div class="avatars">
-                            <span>J</span>
-                            <span>M</span>
-                            <span>A</span>
-                            <span>+</span>
-                        </div>
-
-                        <div>
-                            <strong>Built for modern businesses</strong>
-                            <small>No coding required</small>
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Website preview -->
-
-                <div class="hero-preview">
-
-                    <div class="browser">
-
-                        <div class="browser-top">
-
-                            <div class="browser-dots">
-                                <i></i>
-                                <i></i>
-                                <i></i>
-                            </div>
-
-                            <div class="browser-url">
-                                launchsite.com
-                            </div>
-
-                        </div>
-
-                        <div class="website-preview">
-
-                            <div class="preview-nav">
-
-                                <strong>
-                                    NOVA
-                                </strong>
-
-                                <div>
-                                    Home
-                                    Services
-                                    About
-                                </div>
-
-                                <button>
-                                    Contact
-                                </button>
-
-                            </div>
-
-                            <div class="preview-content">
-
-                                <small>
-                                    DIGITAL STUDIO
-                                </small>
-
-                                <h2>
-                                    We build ideas
-                                    <br>
-                                    into reality.
-                                </h2>
-
-                                <p>
-                                    A modern digital experience
-                                    designed for growing businesses.
-                                </p>
-
-                                <button>
-                                    Start a project →
-                                </button>
-
-                            </div>
-
-                            <div class="preview-card">
-
-                                <span>
-                                    01
-                                </span>
-
-                                <strong>
-                                    Creative
-                                </strong>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             LOGOS
-        ========================== -->
-
-        <section class="trusted">
-
-            <div class="container">
-
-                <p>
-                    POWERING THE NEXT GENERATION OF BUSINESSES
-                </p>
-
-                <div class="logo-row">
-
-                    <span>VERTEX</span>
-                    <span>NOVA</span>
-                    <span>MONO</span>
-                    <span>ARC</span>
-                    <span>ORBIT</span>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             FEATURES
-        ========================== -->
-
-        <section class="section" id="features">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <div class="eyebrow">
-                        ✦ Everything you need
-                    </div>
-
-                    <h2>
-                        Launch your business
-                        <br>
-                        without the complexity.
-                    </h2>
-
-                    <p>
-                        Everything you need to create and manage
-                        a professional online presence.
-                    </p>
-
-                </div>
-
-
-                <div class="features-grid">
-
-                    <article class="feature-card">
-
-                        <div class="feature-icon">
-                            ✦
-                        </div>
-
-                        <h3>
-                            Fast Website Creation
-                        </h3>
-
-                        <p>
-                            Start with a professional template and
-                            customize your website in minutes.
-                        </p>
-
-                        <a href="#start">
-                            Learn more →
-                        </a>
-
-                    </article>
-
-
-                    <article class="feature-card">
-
-                        <div class="feature-icon">
-                            ◇
-                        </div>
-
-                        <h3>
-                            Modern Design
-                        </h3>
-
-                        <p>
-                            Beautiful layouts designed to make your
-                            business look professional from day one.
-                        </p>
-
-                        <a href="#templates">
-                            View templates →
-                        </a>
-
-                    </article>
-
-
-                    <article class="feature-card">
-
-                        <div class="feature-icon">
-                            ⚡
-                        </div>
-
-                        <h3>
-                            Built for Speed
-                        </h3>
-
-                        <p>
-                            Lightweight websites optimized for
-                            mobile devices and fast loading.
-                        </p>
-
-                        <a href="#start">
-                            Get started →
-                        </a>
-
-                    </article>
-
-
-                    <article class="feature-card">
-
-                        <div class="feature-icon">
-                            ◎
-                        </div>
-
-                        <h3>
-                            Everything in One Place
-                        </h3>
-
-                        <p>
-                            Manage your website, content and business
-                            presence from one simple dashboard.
-                        </p>
-
-                        <a href="#start">
-                            Explore platform →
-                        </a>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             HOW IT WORKS
-        ========================== -->
-
-        <section class="section dark-section" id="how-it-works">
-
-            <div class="container">
-
-                <div class="section-heading light">
-
-                    <div class="eyebrow">
-                        ✦ Simple process
-                    </div>
-
-                    <h2>
-                        From idea to website
-                        <br>
-                        in three steps.
-                    </h2>
-
-                </div>
-
-
-                <div class="steps">
-
-                    <div class="step">
-
-                        <span class="step-number">
-                            01
-                        </span>
-
-                        <h3>
-                            Tell us about your business
-                        </h3>
-
-                        <p>
-                            Enter your business name, industry,
-                            services and preferred style.
-                        </p>
-
-                    </div>
-
-
-                    <div class="step">
-
-                        <span class="step-number">
-                            02
-                        </span>
-
-                        <h3>
-                            Choose your design
-                        </h3>
-
-                        <p>
-                            Pick a template that matches the identity
-                            of your business.
-                        </p>
-
-                    </div>
-
-
-                    <div class="step">
-
-                        <span class="step-number">
-                            03
-                        </span>
-
-                        <h3>
-                            Launch
-                        </h3>
-
-                        <p>
-                            Customize your website and publish it
-                            when you're ready.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             TEMPLATES
-        ========================== -->
-
-        <section class="section" id="templates">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <div class="eyebrow">
-                        ✦ Start with a template
-                    </div>
-
-                    <h2>
-                        Designed for your business.
-                    </h2>
-
-                    <p>
-                        Choose a starting point and make it yours.
-                    </p>
-
-                </div>
-
-
-                <div class="templates-grid">
-
-                    <article class="template-card">
-
-                        <div class="template-image restaurant">
-
-                            <div class="template-demo">
-
-                                <small>
-                                    RESTAURANT
-                                </small>
-
-                                <h3>
-                                    SAVOR
-                                </h3>
-
-                                <p>
-                                    Modern dining.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                        <div class="template-info">
-
-                            <h3>
-                                Restaurant
-                            </h3>
-
-                            <span>
-                                Hospitality
-                            </span>
-
-                        </div>
-
-                    </article>
-
-
-                    <article class="template-card">
-
-                        <div class="template-image agency">
-
-                            <div class="template-demo">
-
-                                <small>
-                                    CREATIVE AGENCY
-                                </small>
-
-                                <h3>
-                                    MONO
-                                </h3>
-
-                                <p>
-                                    Ideas that move.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                        <div class="template-info">
-
-                            <h3>
-                                Creative Agency
-                            </h3>
-
-                            <span>
-                                Services
-                            </span>
-
-                        </div>
-
-                    </article>
-
-
-                    <article class="template-card">
-
-                        <div class="template-image fitness">
-
-                            <div class="template-demo">
-
-                                <small>
-                                    FITNESS
-                                </small>
-
-                                <h3>
-                                    FORCE
-                                </h3>
-
-                                <p>
-                                    Train harder.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                        <div class="template-info">
-
-                            <h3>
-                                Fitness Studio
-                            </h3>
-
-                            <span>
-                                Health & Fitness
-                            </span>
-
-                        </div>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             CTA
-        ========================== -->
-
-        <section class="cta-section" id="start">
-
-            <div class="container cta-box">
-
-                <div>
-
-                    <div class="eyebrow">
-                        ✦ Ready to launch?
-                    </div>
-
-                    <h2>
-                        Your next customer
-                        <br>
-                        is already online.
-                    </h2>
-
-                    <p>
-                        Give your business the website it deserves.
-                    </p>
-
-                </div>
-
-                <a href="#" class="primary-btn large">
-                    Create my website
-                    <span>→</span>
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             PRICING
-        ========================== -->
-
-        <section class="section" id="pricing">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <div class="eyebrow">
-                        ✦ Simple pricing
-                    </div>
-
-                    <h2>
-                        Start small.
-                        <br>
-                        Grow when you need.
-                    </h2>
-
-                </div>
-
-
-                <div class="pricing-grid">
-
-                    <article class="price-card">
-
-                        <span class="plan-name">
-                            Starter
-                        </span>
-
-                        <h3>
-                            $9
-                            <small>/month</small>
-                        </h3>
-
-                        <p>
-                            For individuals and small businesses.
-                        </p>
-
-                        <ul>
-                            <li>✓ 1 website</li>
-                            <li>✓ Professional templates</li>
-                            <li>✓ Mobile responsive</li>
-                            <li>✓ Basic analytics</li>
-                        </ul>
-
-                        <a href="#start" class="price-btn">
-                            Start Starter
-                        </a>
-
-                    </article>
-
-
-                    <article class="price-card featured">
-
-                        <div class="popular">
-                            MOST POPULAR
-                        </div>
-
-                        <span class="plan-name">
-                            Pro
-                        </span>
-
-                        <h3>
-                            $29
-                            <small>/month</small>
-                        </h3>
-
-                        <p>
-                            For growing businesses.
-                        </p>
-
-                        <ul>
-                            <li>✓ Unlimited pages</li>
-                            <li>✓ Premium templates</li>
-                            <li>✓ Custom domain</li>
-                            <li>✓ Advanced analytics</li>
-                            <li>✓ AI tools</li>
-                        </ul>
-
-                        <a href="#start" class="price-btn">
-                            Start Pro
-                        </a>
-
-                    </article>
-
-
-                    <article class="price-card">
-
-                        <span class="plan-name">
-                            Business
-                        </span>
-
-                        <h3>
-                            $79
-                            <small>/month</small>
-                        </h3>
-
-                        <p>
-                            For teams and agencies.
-                        </p>
-
-                        <ul>
-                            <li>✓ Multiple websites</li>
-                            <li>✓ Team members</li>
-                            <li>✓ Client management</li>
-                            <li>✓ Advanced AI tools</li>
-                        </ul>
-
-                        <a href="#start" class="price-btn">
-                            Contact us
-                        </a>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             FINAL CTA
-        ========================== -->
-
-        <section class="final-section">
-
-            <div class="container">
-
-                <h2>
-                    Build something people remember.
-                </h2>
-
-                <p>
-                    Start your online presence today.
-                </p>
-
-                <a href="#start" class="primary-btn">
-                    Get started
-                    <span>→</span>
-                </a>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
-    <footer class="footer">
-
-        <div class="container footer-grid">
-
-            <div class="footer-brand">
-
-                <a href="#" class="logo">
-                    Launch<span>Site</span>
-                </a>
-
-                <p>
-                    The simpler way to build
-                    and launch your business online.
-                </p>
-
-            </div>
-
-
-            <div class="footer-column">
-
-                <h4>
-                    Product
-                </h4>
-
-                <a href="#features">
-                    Features
-                </a>
-
-                <a href="#templates">
-                    Templates
-                </a>
-
-                <a href="#pricing">
-                    Pricing
-                </a>
-
-            </div>
-
-
-            <div class="footer-column">
-
-                <h4>
-                    Company
-                </h4>
-
-                <a href="#">
-                    About
-                </a>
-
-                <a href="#">
-                    Contact
-                </a>
-
-                <a href="#">
-                    Careers
-                </a>
-
-            </div>
-
-
-            <div class="footer-column">
-
-                <h4>
-                    Legal
-                </h4>
-
-                <a href="#">
-                    Privacy
-                </a>
-
-                <a href="#">
-                    Terms
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <div class="container footer-bottom">
-
-            <span>
-                © 2026 LaunchSite. All rights reserved.
-            </span>
-
-            <span>
-                Built for modern businesses.
-            </span>
-
-        </div>
-
-    </footer>
-
-
-    <!-- =========================
-         JAVASCRIPT
-    ========================== -->
-
-    <script src="script.js"></script>
+<header class="navbar">
+<div class="container nav-container">
+
+<a href="#" class="logo">Launch<span>Site</span></a>
+
+<nav class="nav-links">
+<a href="#features" data-i18n="features">Features</a>
+<a href="#how-it-works" data-i18n="how">How it works</a>
+<a href="#templates" data-i18n="templates">Templates</a>
+<a href="#pricing" data-i18n="pricing">Pricing</a>
+</nav>
+
+<div class="nav-actions">
+<a href="#" class="login-btn" data-i18n="login">Log in</a>
+<a href="#start" class="nav-cta" data-i18n="getStarted">Get Started</a>
+
+<div class="language-selector">
+<select id="language">
+<option value="en">🇬🇧 English</option>
+<option value="fr">🇫🇷 Français</option>
+<option value="ar">🇩🇿 العربية</option>
+<option value="de">🇩🇪 Deutsch</option>
+<option value="es">🇪🇸 Español</option>
+</select>
+</div>
+</div>
+
+<button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+</div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+<a href="#features" data-i18n="features">Features</a>
+<a href="#how-it-works" data-i18n="how">How it works</a>
+<a href="#templates" data-i18n="templates">Templates</a>
+<a href="#pricing" data-i18n="pricing">Pricing</a>
+<a href="#start" class="mobile-cta" data-i18n="getStarted">Get Started</a>
+</div>
+
+<main>
+
+<section class="hero">
+<div class="container hero-grid">
+
+<div class="hero-content">
+
+<div class="eyebrow" data-i18n="eyebrow">✦ The faster way to launch online</div>
+
+<h1>
+<span data-i18n="hero1">Your business.</span><br>
+<span data-i18n="hero2">Online in minutes.</span>
+</h1>
+
+<p class="hero-text" data-i18n="heroText">
+Create a professional website for your business without spending weeks designing, coding, or hiring an expensive agency.
+</p>
+
+<div class="hero-buttons">
+<a href="#start" class="primary-btn">
+<span data-i18n="build">Build my website</span> <span>→</span>
+</a>
+<a href="#templates" class="secondary-btn" data-i18n="explore">Explore templates</a>
+</div>
+
+<div class="hero-trust">
+<div class="avatars">
+<span>J</span><span>M</span><span>A</span><span>+</span>
+</div>
+<div>
+<strong data-i18n="trust">Built for modern businesses</strong>
+<small data-i18n="coding">No coding required</small>
+</div>
+</div>
+
+</div>
+
+<div class="hero-preview">
+<div class="browser">
+
+<div class="browser-top">
+<div class="browser-dots"><i></i><i></i><i></i></div>
+<div class="browser-url">launchsite.com</div>
+</div>
+
+<div class="website-preview">
+
+<div class="preview-nav">
+<strong>NOVA</strong>
+<div>
+<span data-i18n="home">Home</span>
+<span data-i18n="services">Services</span>
+<span data-i18n="about">About</span>
+</div>
+<button data-i18n="contact">Contact</button>
+</div>
+
+<div class="preview-content">
+<small>DIGITAL STUDIO</small>
+<h2>
+<span data-i18n="ideas1">We build ideas</span><br>
+<span data-i18n="ideas2">into reality.</span>
+</h2>
+<p data-i18n="previewText">A modern digital experience designed for growing businesses.</p>
+<button data-i18n="project">Start a project →</button>
+</div>
+
+<div class="preview-card">
+<span>01</span>
+<strong data-i18n="creative">Creative</strong>
+</div>
+
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="trusted">
+<div class="container">
+<p data-i18n="powering">POWERING THE NEXT GENERATION OF BUSINESSES</p>
+<div class="logo-row">
+<span>VERTEX</span><span>NOVA</span><span>MONO</span><span>ARC</span><span>ORBIT</span>
+</div>
+</div>
+</section>
+
+<section class="section" id="features">
+<div class="container">
+
+<div class="section-heading">
+<div class="eyebrow" data-i18n="everything">✦ Everything you need</div>
+<h2>
+<span data-i18n="launch1">Launch your business</span><br>
+<span data-i18n="launch2">without the complexity.</span>
+</h2>
+<p data-i18n="launchText">Everything you need to create and manage a professional online presence.</p>
+</div>
+
+<div class="features-grid">
+
+<article class="feature-card">
+<div class="feature-icon">✦</div>
+<h3 data-i18n="fast">Fast Website Creation</h3>
+<p data-i18n="fastText">Start with a professional template and customize your website in minutes.</p>
+<a href="#start" data-i18n="learn">Learn more →</a>
+</article>
+
+<article class="feature-card">
+<div class="feature-icon">◇</div>
+<h3 data-i18n="modern">Modern Design</h3>
+<p data-i18n="modernText">Beautiful layouts designed to make your business look professional from day one.</p>
+<a href="#templates" data-i18n="view">View templates →</a>
+</article>
+
+<article class="feature-card">
+<div class="feature-icon">⚡</div>
+<h3 data-i18n="speed">Built for Speed</h3>
+<p data-i18n="speedText">Lightweight websites optimized for mobile devices and fast loading.</p>
+<a href="#start" data-i18n="start">Get started →</a>
+</article>
+
+<article class="feature-card">
+<div class="feature-icon">◎</div>
+<h3 data-i18n="onePlace">Everything in One Place</h3>
+<p data-i18n="onePlaceText">Manage your website, content and business presence from one simple dashboard.</p>
+<a href="#start" data-i18n="platform">Explore platform →</a>
+</article>
+
+</div>
+</div>
+</section>
+
+<section class="section dark-section" id="how-it-works">
+<div class="container">
+
+<div class="section-heading light">
+<div class="eyebrow" data-i18n="simple">✦ Simple process</div>
+<h2>
+<span data-i18n="idea1">From idea to website</span><br>
+<span data-i18n="idea2">in three steps.</span>
+</h2>
+</div>
+
+<div class="steps">
+
+<div class="step">
+<span class="step-number">01</span>
+<h3 data-i18n="step1">Tell us about your business</h3>
+<p data-i18n="step1Text">Enter your business name, industry, services and preferred style.</p>
+</div>
+
+<div class="step">
+<span class="step-number">02</span>
+<h3 data-i18n="step2">Choose your design</h3>
+<p data-i18n="step2Text">Pick a template that matches the identity of your business.</p>
+</div>
+
+<div class="step">
+<span class="step-number">03</span>
+<h3 data-i18n="step3">Launch</h3>
+<p data-i18n="step3Text">Customize your website and publish it when you're ready.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="section" id="templates">
+<div class="container">
+
+<div class="section-heading">
+<div class="eyebrow" data-i18n="templateEyebrow">✦ Start with a template</div>
+<h2 data-i18n="designed">Designed for your business.</h2>
+<p data-i18n="choose">Choose a starting point and make it yours.</p>
+</div>
+
+<div class="templates-grid">
+
+<article class="template-card">
+<div class="template-image restaurant">
+<div class="template-demo">
+<small>RESTAURANT</small>
+<h3>SAVOR</h3>
+<p data-i18n="dining">Modern dining.</p>
+</div>
+</div>
+<div class="template-info">
+<h3 data-i18n="restaurant">Restaurant</h3>
+<span data-i18n="hospitality">Hospitality</span>
+</div>
+</article>
+
+<article class="template-card">
+<div class="template-image agency">
+<div class="template-demo">
+<small>CREATIVE AGENCY</small>
+<h3>MONO</h3>
+<p data-i18n="ideasMove">Ideas that move.</p>
+</div>
+</div>
+<div class="template-info">
+<h3 data-i18n="agency">Creative Agency</h3>
+<span data-i18n="servicesType">Services</span>
+</div>
+</article>
+
+<article class="template-card">
+<div class="template-image fitness">
+<div class="template-demo">
+<small>FITNESS</small>
+<h3>FORCE</h3>
+<p data-i18n="train">Train harder.</p>
+</div>
+</div>
+<div class="template-info">
+<h3 data-i18n="fitness">Fitness Studio</h3>
+<span data-i18n="health">Health & Fitness</span>
+</div>
+</article>
+
+</div>
+</div>
+</section>
+
+<section class="cta-section" id="start">
+<div class="container cta-box">
+<div>
+<div class="eyebrow" data-i18n="ready">✦ Ready to launch?</div>
+<h2>
+<span data-i18n="customer1">Your next customer</span><br>
+<span data-i18n="customer2">is already online.</span>
+</h2>
+<p data-i18n="deserves">Give your business the website it deserves.</p>
+</div>
+<a href="#" class="primary-btn large">
+<span data-i18n="create">Create my website</span> <span>→</span>
+</a>
+</div>
+</section>
+
+<section class="section" id="pricing">
+<div class="container">
+
+<div class="section-heading">
+<div class="eyebrow" data-i18n="simplePricing">✦ Simple pricing</div>
+<h2>
+<span data-i18n="small">Start small.</span><br>
+<span data-i18n="grow">Grow when you need.</span>
+</h2>
+</div>
+
+<div class="pricing-grid">
+
+<article class="price-card">
+<span class="plan-name" data-i18n="starter">Starter</span>
+<h3>$9 <small>/month</small></h3>
+<p data-i18n="starterText">For individuals and small businesses.</p>
+<ul>
+<li data-i18n="oneWebsite">✓ 1 website</li>
+<li data-i18n="professional">✓ Professional templates</li>
+<li data-i18n="responsive">✓ Mobile responsive</li>
+<li data-i18n="analytics">✓ Basic analytics</li>
+</ul>
+<a href="#start" class="price-btn" data-i18n="startStarter">Start Starter</a>
+</article>
+
+<article class="price-card featured">
+<div class="popular" data-i18n="popular">MOST POPULAR</div>
+<span class="plan-name">Pro</span>
+<h3>$29 <small>/month</small></h3>
+<p data-i18n="proText">For growing businesses.</p>
+<ul>
+<li data-i18n="unlimited">✓ Unlimited pages</li>
+<li data-i18n="premium">✓ Premium templates</li>
+<li data-i18n="domain">✓ Custom domain</li>
+<li data-i18n="advanced">✓ Advanced analytics</li>
+<li data-i18n="ai">✓ AI tools</li>
+</ul>
+<a href="#start" class="price-btn" data-i18n="startPro">Start Pro</a>
+</article>
+
+<article class="price-card">
+<span class="plan-name" data-i18n="business">Business</span>
+<h3>$79 <small>/month</small></h3>
+<p data-i18n="businessText">For teams and agencies.</p>
+<ul>
+<li data-i18n="multiple">✓ Multiple websites</li>
+<li data-i18n="members">✓ Team members</li>
+<li data-i18n="clients">✓ Client management</li>
+<li data-i18n="advancedAI">✓ Advanced AI tools</li>
+</ul>
+<a href="#start" class="price-btn" data-i18n="contactUs">Contact us</a>
+</article>
+
+</div>
+</div>
+</section>
+
+<section class="final-section">
+<div class="container">
+<h2 data-i18n="remember">Build something people remember.</h2>
+<p data-i18n="today">Start your online presence today.</p>
+<a href="#start" class="primary-btn">
+<span data-i18n="getStarted">Get started</span> <span>→</span>
+</a>
+</div>
+</section>
+
+</main>
+
+<footer class="footer">
+<div class="container footer-grid">
+
+<div class="footer-brand">
+<a href="#" class="logo">Launch<span>Site</span></a>
+<p data-i18n="footerText">The simpler way to build and launch your business online.</p>
+</div>
+
+<div class="footer-column">
+<h4 data-i18n="product">Product</h4>
+<a href="#features" data-i18n="features">Features</a>
+<a href="#templates" data-i18n="templates">Templates</a>
+<a href="#pricing" data-i18n="pricing">Pricing</a>
+</div>
+
+<div class="footer-column">
+<h4 data-i18n="company">Company</h4>
+<a href="#" data-i18n="about">About</a>
+<a href="#" data-i18n="contact">Contact</a>
+<a href="#" data-i18n="careers">Careers</a>
+</div>
+
+<div class="footer-column">
+<h4 data-i18n="legal">Legal</h4>
+<a href="#" data-i18n="privacy">Privacy</a>
+<a href="#" data-i18n="terms">Terms</a>
+</div>
+
+</div>
+
+<div class="container footer-bottom">
+<span>© 2026 LaunchSite. All rights reserved.</span>
+<span data-i18n="modernBusinesses">Built for modern businesses.</span>
+</div>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+const translations = {
+
+en:{
+features:"Features",how:"How it works",templates:"Templates",pricing:"Pricing",
+login:"Log in",getStarted:"Get Started",
+eyebrow:"✦ The faster way to launch online",
+hero1:"Your business.",hero2:"Online in minutes.",
+heroText:"Create a professional website for your business without spending weeks designing, coding, or hiring an expensive agency.",
+build:"Build my website",explore:"Explore templates",
+trust:"Built for modern businesses",coding:"No coding required",
+home:"Home",services:"Services",about:"About",contact:"Contact",
+ideas1:"We build ideas",ideas2:"into reality.",previewText:"A modern digital experience designed for growing businesses.",
+project:"Start a project →",creative:"Creative",
+powering:"POWERING THE NEXT GENERATION OF BUSINESSES",
+everything:"✦ Everything you need",launch1:"Launch your business",launch2:"without the complexity.",
+launchText:"Everything you need to create and manage a professional online presence.",
+fast:"Fast Website Creation",fastText:"Start with a professional template and customize your website in minutes.",
+learn:"Learn more →",modern:"Modern Design",modernText:"Beautiful layouts designed to make your business look professional from day one.",
+view:"View templates →",speed:"Built for Speed",speedText:"Lightweight websites optimized for mobile devices and fast loading.",
+start:"Get started →",onePlace:"Everything in One Place",onePlaceText:"Manage your website, content and business presence from one simple dashboard.",
+platform:"Explore platform →",
+simple:"✦ Simple process",idea1:"From idea to website",idea2:"in three steps.",
+step1:"Tell us about your business",step1Text:"Enter your business name, industry, services and preferred style.",
+step2:"Choose your design",step2Text:"Pick a template that matches the identity of your business.",
+step3:"Launch",step3Text:"Customize your website and publish it when you're ready.",
+templateEyebrow:"✦ Start with a template",designed:"Designed for your business.",choose:"Choose a starting point and make it yours.",
+dining:"Modern dining.",restaurant:"Restaurant",hospitality:"Hospitality",ideasMove:"Ideas that move.",agency:"Creative Agency",servicesType:"Services",train:"Train harder.",fitness:"Fitness Studio",health:"Health & Fitness",
+ready:"✦ Ready to launch?",customer1:"Your next customer",customer2:"is already online.",deserves:"Give your business the website it deserves.",create:"Create my website",
+simplePricing:"✦ Simple pricing",small:"Start small.",grow:"Grow when you need.",starter:"Starter",starterText:"For individuals and small businesses.",
+oneWebsite:"✓ 1 website",professional:"✓ Professional templates",responsive:"✓ Mobile responsive",analytics:"✓ Basic analytics",startStarter:"Start Starter",
+popular:"MOST POPULAR",proText:"For growing businesses.",unlimited:"✓ Unlimited pages",premium:"✓ Premium templates",domain:"✓ Custom domain",advanced:"✓ Advanced analytics",ai:"✓ AI tools",startPro:"Start Pro",
+business:"Business",businessText:"For teams and agencies.",multiple:"✓ Multiple websites",members:"✓ Team members",clients:"✓ Client management",advancedAI:"✓ Advanced AI tools",contactUs:"Contact us",
+remember:"Build something people remember.",today:"Start your online presence today.",footerText:"The simpler way to build and launch your business online.",
+product:"Product",company:"Company",careers:"Careers",legal:"Legal",privacy:"Privacy",terms:"Terms",modernBusinesses:"Built for modern businesses."
+},
+
+fr:{
+features:"Fonctionnalités",how:"Comment ça marche",templates:"Modèles",pricing:"Tarifs",
+login:"Se connecter",getStarted:"Commencer",
+eyebrow:"✦ La façon la plus rapide de se lancer en ligne",
+hero1:"Votre entreprise.",hero2:"En ligne en quelques minutes.",
+heroText:"Créez un site professionnel pour votre entreprise sans passer des semaines à concevoir, coder ou engager une agence coûteuse.",
+build:"Créer mon site",explore:"Explorer les modèles",
+trust:"Conçu pour les entreprises modernes",coding:"Aucun code requis",
+home:"Accueil",services:"Services",about:"À propos",contact:"Contact",
+ideas1:"Nous transformons les idées",ideas2:"en réalité.",previewText:"Une expérience numérique moderne conçue pour les entreprises en croissance.",
+project:"Démarrer un projet →",creative:"Créatif",
+powering:"POUR LA NOUVELLE GÉNÉRATION D'ENTREPRISES",
+everything:"✦ Tout ce dont vous avez besoin",launch1:"Lancez votre entreprise",launch2:"sans complexité.",
+launchText:"Tout ce dont vous avez besoin pour créer et gérer votre présence en ligne.",
+fast:"Création rapide de sites",fastText:"Commencez avec un modèle professionnel et personnalisez votre site en quelques minutes.",
+learn:"En savoir plus →",modern:"Design moderne",modernText:"De belles mises en page pour donner une image professionnelle à votre entreprise dès le premier jour.",
+view:"Voir les modèles →",speed:"Conçu pour la vitesse",speedText:"Des sites légers optimisés pour les mobiles et un chargement rapide.",
+start:"Commencer →",onePlace:"Tout au même endroit",onePlaceText:"Gérez votre site, votre contenu et votre présence en ligne depuis un tableau de bord simple.",
+platform:"Découvrir la plateforme →",
+simple:"✦ Processus simple",idea1:"De l'idée au site",idea2:"en trois étapes.",
+step1:"Parlez-nous de votre entreprise",step1Text:"Indiquez le nom, le secteur, les services et le style souhaité.",
+step2:"Choisissez votre design",step2Text:"Choisissez un modèle correspondant à l'identité de votre entreprise.",
+step3:"Lancez",step3Text:"Personnalisez votre site et publiez-le quand vous êtes prêt.",
+templateEyebrow:"✦ Commencez avec un modèle",designed:"Conçu pour votre entreprise.",choose:"Choisissez un point de départ et personnalisez-le.",
+dining:"Cuisine moderne.",restaurant:"Restaurant",hospitality:"Hôtellerie",ideasMove:"Des idées qui avancent.",agency:"Agence créative",servicesType:"Services",train:"Entraînez-vous plus fort.",fitness:"Studio de fitness",health:"Sport & Fitness",
+ready:"✦ Prêt à vous lancer ?",customer1:"Votre prochain client",customer2:"est déjà en ligne.",deserves:"Offrez à votre entreprise le site qu'elle mérite.",create:"Créer mon site",
+simplePricing:"✦ Tarification simple",small:"Commencez petit.",grow:"Grandissez quand vous en avez besoin.",starter:"Starter",starterText:"Pour les particuliers et petites entreprises.",
+oneWebsite:"✓ 1 site",professional:"✓ Modèles professionnels",responsive:"✓ Adapté aux mobiles",analytics:"✓ Analyses de base",startStarter:"Démarrer Starter",
+popular:"LE PLUS POPULAIRE",proText:"Pour les entreprises en croissance.",unlimited:"✓ Pages illimitées",premium:"✓ Modèles premium",domain:"✓ Domaine personnalisé",advanced:"✓ Analyses avancées",ai:"✓ Outils IA",startPro:"Démarrer Pro",
+business:"Business",businessText:"Pour les équipes et agences.",multiple:"✓ Plusieurs sites",members:"✓ Membres d'équipe",clients:"✓ Gestion des clients",advancedAI:"✓ Outils IA avancés",contactUs:"Nous contacter",
+remember:"Créez quelque chose dont on se souvient.",today:"Commencez votre présence en ligne aujourd'hui.",footerText:"La manière la plus simple de créer et lancer votre entreprise en ligne.",
+product:"Produit",company:"Entreprise",careers:"Carrières",legal:"Juridique",privacy:"Confidentialité",terms:"Conditions",modernBusinesses:"Conçu pour les entreprises modernes."
+},
+
+ar:{
+features:"المميزات",how:"كيف يعمل",templates:"القوالب",pricing:"الأسعار",
+login:"تسجيل الدخول",getStarted:"ابدأ الآن",
+eyebrow:"✦ أسرع طريقة لإطلاق نشاطك على الإنترنت",
+hero1:"مشروعك.",hero2:"على الإنترنت خلال دقائق.",
+heroText:"أنشئ موقعًا احترافيًا لنشاطك التجاري دون قضاء أسابيع في التصميم أو البرمجة أو دفع تكاليف وكالة باهظة.",
+build:"أنشئ موقعي",explore:"استكشف القوالب",
+trust:"مصمم للشركات الحديثة",coding:"لا تحتاج إلى برمجة",
+home:"الرئيسية",services:"الخدمات",about:"من نحن",contact:"اتصل بنا",
+ideas1:"نحوّل الأفكار",ideas2:"إلى واقع.",previewText:"تجربة رقمية عصرية مصممة للشركات التي تنمو.",
+project:"ابدأ مشروعًا →",creative:"إبداعي",
+powering:"ندعم الجيل القادم من الشركات",
+everything:"✦ كل ما تحتاجه",launch1:"أطلق مشروعك",launch2:"بدون تعقيد.",
+launchText:"كل ما تحتاجه لإنشاء وإدارة حضور احترافي على الإنترنت.",
+fast:"إنشاء المواقع بسرعة",fastText:"ابدأ بقالب احترافي وخصص موقعك خلال دقائق.",
+learn:"اعرف المزيد →",modern:"تصميم عصري",modernText:"تصاميم جميلة تجعل نشاطك يبدو احترافيًا منذ اليوم الأول.",
+view:"شاهد القوالب →",speed:"مصمم للسرعة",speedText:"مواقع خفيفة ومحسنة للهواتف وسريعة التحميل.",
+start:"ابدأ الآن →",onePlace:"كل شيء في مكان واحد",onePlaceText:"أدر موقعك ومحتواك وحضورك التجاري من لوحة تحكم بسيطة.",
+platform:"استكشف المنصة →",
+simple:"✦ عملية بسيطة",idea1:"من الفكرة إلى الموقع",idea2:"في ثلاث خطوات.",
+step1:"أخبرنا عن نشاطك",step1Text:"أدخل اسم نشاطك ومجاله وخدماته والأسلوب الذي تفضله.",
+step2:"اختر التصميم",step2Text:"اختر قالبًا يناسب هوية نشاطك.",
+step3:"أطلق موقعك",step3Text:"خصص موقعك وانشره عندما تكون جاهزًا.",
+templateEyebrow:"✦ ابدأ بقالب",designed:"مصمم لنشاطك التجاري.",choose:"اختر نقطة البداية واجعلها خاصة بك.",
+dining:"مطعم عصري.",restaurant:"مطعم",hospitality:"ضيافة",ideasMove:"أفكار تتحرك.",agency:"وكالة إبداعية",servicesType:"خدمات",train:"تدرب بقوة أكبر.",fitness:"استوديو لياقة",health:"الصحة واللياقة",
+ready:"✦ جاهز للانطلاق؟",customer1:"عميلك القادم",customer2:"موجود بالفعل على الإنترنت.",deserves:"امنح مشروعك الموقع الذي يستحقه.",create:"أنشئ موقعي",
+simplePricing:"✦ أسعار بسيطة",small:"ابدأ بخطة صغيرة.",grow:"توسع عندما تحتاج.",starter:"المبتدئ",starterText:"للأفراد والمشاريع الصغيرة.",
+oneWebsite:"✓ موقع واحد",professional:"✓ قوالب احترافية",responsive:"✓ متوافق مع الهاتف",analytics:"✓ تحليلات أساسية",startStarter:"ابدأ Starter",
+popular:"الأكثر شعبية",proText:"للشركات التي تنمو.",unlimited:"✓ صفحات غير محدودة",premium:"✓ قوالب مميزة",domain:"✓ نطاق مخصص",advanced:"✓ تحليلات متقدمة",ai:"✓ أدوات الذكاء الاصطناعي",startPro:"ابدأ Pro",
+business:"Business",businessText:"للفرق والوكالات.",multiple:"✓ عدة مواقع",members:"✓ أعضاء الفريق",clients:"✓ إدارة العملاء",advancedAI:"✓ أدوات ذكاء اصطناعي متقدمة",contactUs:"اتصل بنا",
+remember:"أنشئ شيئًا يتذكره الناس.",today:"ابدأ حضورك على الإنترنت اليوم.",footerText:"الطريقة الأبسط لبناء وإطلاق نشاطك التجاري على الإنترنت.",
+product:"المنتج",company:"الشركة",careers:"الوظائف",legal:"القانونية",privacy:"الخصوصية",terms:"الشروط",modernBusinesses:"مصمم للشركات الحديثة."
+},
+
+de:{
+features:"Funktionen",how:"So funktioniert es",templates:"Vorlagen",pricing:"Preise",
+login:"Anmelden",getStarted:"Jetzt starten",
+eyebrow:"✦ Der schnellere Weg online zu starten",
+hero1:"Ihr Unternehmen.",hero2:"In wenigen Minuten online.",
+heroText:"Erstellen Sie eine professionelle Website für Ihr Unternehmen, ohne wochenlang zu designen, zu programmieren oder eine teure Agentur zu beauftragen.",
+build:"Meine Website erstellen",explore:"Vorlagen entdecken",
+trust:"Für moderne Unternehmen",coding:"Keine Programmierung erforderlich",
+home:"Startseite",services:"Dienstleistungen",about:"Über uns",contact:"Kontakt",
+ideas1:"Wir verwandeln Ideen",ideas2:"in Realität.",previewText:"Eine moderne digitale Erfahrung für wachsende Unternehmen.",
+project:"Projekt starten →",creative:"Kreativ",
+powering:"FÜR DIE NÄCHSTE GENERATION VON UNTERNEHMEN",
+everything:"✦ Alles, was Sie brauchen",launch1:"Starten Sie Ihr Unternehmen",launch2:"ohne Komplexität.",
+launchText:"Alles, was Sie für eine professionelle Online-Präsenz benötigen.",
+fast:"Schnelle Website-Erstellung",fastText:"Starten Sie mit einer professionellen Vorlage und passen Sie Ihre Website in wenigen Minuten an.",
+learn:"Mehr erfahren →",modern:"Modernes Design",modernText:"Schöne Layouts, die Ihr Unternehmen vom ersten Tag an professionell aussehen lassen.",
+view:"Vorlagen ansehen →",speed:"Für Geschwindigkeit entwickelt",speedText:"Leichte Websites, optimiert für Mobilgeräte und schnelles Laden.",
+start:"Jetzt starten →",onePlace:"Alles an einem Ort",onePlaceText:"Verwalten Sie Website, Inhalte und Online-Präsenz über ein einfaches Dashboard.",
+platform:"Plattform entdecken →",
+simple:"✦ Einfacher Prozess",idea1:"Von der Idee zur Website",idea2:"in drei Schritten.",
+step1:"Erzählen Sie uns von Ihrem Unternehmen",step1Text:"Geben Sie Name, Branche, Dienstleistungen und gewünschten Stil ein.",
+step2:"Wählen Sie Ihr Design",step2Text:"Wählen Sie eine Vorlage, die zur Identität Ihres Unternehmens passt.",
+step3:"Starten",step3Text:"Passen Sie Ihre Website an und veröffentlichen Sie sie, sobald Sie bereit sind.",
+templateEyebrow:"✦ Mit einer Vorlage starten",designed:"Für Ihr Unternehmen entwickelt.",choose:"Wählen Sie einen Ausgangspunkt und machen Sie ihn zu Ihrem.",
+dining:"Modernes Essen.",restaurant:"Restaurant",hospitality:"Gastronomie",ideasMove:"Ideen, die bewegen.",agency:"Kreativagentur",servicesType:"Dienstleistungen",train:"Trainiere härter.",fitness:"Fitnessstudio",health:"Gesundheit & Fitness",
+ready:"✦ Bereit zum Start?",customer1:"Ihr nächster Kunde",customer2:"ist bereits online.",deserves:"Geben Sie Ihrem Unternehmen die Website, die es verdient.",create:"Meine Website erstellen",
+simplePricing:"✦ Einfache Preise",small:"Klein anfangen.",grow:"Wachsen, wenn Sie es brauchen.",starter:"Starter",starterText:"Für Einzelpersonen und kleine Unternehmen.",
+oneWebsite:"✓ 1 Website",professional:"✓ Professionelle Vorlagen",responsive:"✓ Mobil optimiert",analytics:"✓ Basis-Analysen",startStarter:"Starter starten",
+popular:"AM BELIEBTESTEN",proText:"Für wachsende Unternehmen.",unlimited:"✓ Unbegrenzte Seiten",premium:"✓ Premium-Vorlagen",domain:"✓ Eigene Domain",advanced:"✓ Erweiterte Analysen",ai:"✓ KI-Tools",startPro:"Pro starten",
+business:"Business",businessText:"Für Teams und Agenturen.",multiple:"✓ Mehrere Websites",members:"✓ Teammitglieder",clients:"✓ Kundenverwaltung",advancedAI:"✓ Erweiterte KI-Tools",contactUs:"Kontaktieren",
+remember:"Erstellen Sie etwas, das Menschen in Erinnerung bleibt.",today:"Starten Sie Ihre Online-Präsenz heute.",footerText:"Der einfachere Weg, Ihr Unternehmen online aufzubauen und zu starten.",
+product:"Produkt",company:"Unternehmen",careers:"Karriere",legal:"Rechtliches",privacy:"Datenschutz",terms:"Bedingungen",modernBusinesses:"Für moderne Unternehmen entwickelt."
+},
+
+es:{
+features:"Funciones",how:"Cómo funciona",templates:"Plantillas",pricing:"Precios",
+login:"Iniciar sesión",getStarted:"Empezar",
+eyebrow:"✦ La forma más rápida de lanzar tu negocio online",
+hero1:"Tu negocio.",hero2:"Online en minutos.",
+heroText:"Crea un sitio web profesional para tu negocio sin pasar semanas diseñando, programando o contratando una agencia costosa.",
+build:"Crear mi sitio web",explore:"Explorar plantillas",
+trust:"Creado para negocios modernos",coding:"Sin necesidad de programar",
+home:"Inicio",services:"Servicios",about:"Nosotros",contact:"Contacto",
+ideas1:"Convertimos ideas",ideas2:"en realidad.",previewText:"Una experiencia digital moderna diseñada para negocios en crecimiento.",
+project:"Iniciar un proyecto →",creative:"Creativo",
+powering:"IMPULSANDO LA NUEVA GENERACIÓN DE NEGOCIOS",
+everything:"✦ Todo lo que necesitas",launch1:"Lanza tu negocio",launch2:"sin complicaciones.",
+launchText:"Todo lo que necesitas para crear y gestionar una presencia profesional online.",
+fast:"Creación rápida de sitios",fastText:"Empieza con una plantilla profesional y personaliza tu sitio en minutos.",
+learn:"Saber más →",modern:"Diseño moderno",modernText:"Diseños atractivos para que tu negocio tenga una imagen profesional desde el primer día.",
+view:"Ver plantillas →",speed:"Diseñado para la velocidad",speedText:"Sitios ligeros optimizados para móviles y cargas rápidas.",
+start:"Empezar →",onePlace:"Todo en un solo lugar",onePlaceText:"Gestiona tu sitio, contenido y presencia empresarial desde un panel sencillo.",
+platform:"Explorar plataforma →",
+simple:"✦ Proceso sencillo",idea1:"De la idea al sitio web",idea2:"en tres pasos.",
+step1:"Cuéntanos sobre tu negocio",step1Text:"Introduce el nombre, sector, servicios y estilo que prefieres.",
+step2:"Elige tu diseño",step2Text:"Elige una plantilla que coincida con la identidad de tu negocio.",
+step3:"Lanzar",step3Text:"Personaliza tu sitio y publícalo cuando estés listo.",
+templateEyebrow:"✦ Empieza con una plantilla",designed:"Diseñado para tu negocio.",choose:"Elige un punto de partida y hazlo tuyo.",
+dining:"Comida moderna.",restaurant:"Restaurante",hospitality:"Hostelería",ideasMove:"Ideas que avanzan.",agency:"Agencia creativa",servicesType:"Servicios",train:"Entrena más fuerte.",fitness:"Estudio fitness",health:"Salud y fitness",
+ready:"✦ ¿Listo para lanzar?",customer1:"Tu próximo cliente",customer2:"ya está online.",deserves:"Dale a tu negocio el sitio web que merece.",create:"Crear mi sitio",
+simplePricing:"✦ Precios sencillos",small:"Empieza pequeño.",grow:"Crece cuando lo necesites.",starter:"Starter",starterText:"Para particulares y pequeñas empresas.",
+oneWebsite:"✓ 1 sitio web",professional:"✓ Plantillas profesionales",responsive:"✓ Adaptado a móviles",analytics:"✓ Analíticas básicas",startStarter:"Empezar Starter",
+popular:"MÁS POPULAR",proText:"Para negocios en crecimiento.",unlimited:"✓ Páginas ilimitadas",premium:"✓ Plantillas premium",domain:"✓ Dominio personalizado",advanced:"✓ Analíticas avanzadas",ai:"✓ Herramientas de IA",startPro:"Empezar Pro",
+business:"Business",businessText:"Para equipos y agencias.",multiple:"✓ Varios sitios web",members:"✓ Miembros del equipo",clients:"✓ Gestión de clientes",advancedAI:"✓ Herramientas de IA avanzadas",contactUs:"Contactar",
+remember:"Crea algo que la gente recuerde.",today:"Empieza tu presencia online hoy.",footerText:"La forma más sencilla de crear y lanzar tu negocio online.",
+product:"Producto",company:"Empresa",careers:"Empleo",legal:"Legal",privacy:"Privacidad",terms:"Términos",modernBusinesses:"Creado para negocios modernos."
+}
+
+};
+
+function setLanguage(lang){
+const t=translations[lang];
+document.documentElement.lang=lang;
+document.documentElement.dir=lang==="ar"?"rtl":"ltr";
+
+document.querySelectorAll("[data-i18n]").forEach(el=>{
+if(t[el.dataset.i18n]) el.textContent=t[el.dataset.i18n];
+});
+
+localStorage.setItem("launchsite-language",lang);
+}
+
+const language=document.getElementById("language");
+const savedLanguage=localStorage.getItem("launchsite-language")||"en";
+
+language.value=savedLanguage;
+setLanguage(savedLanguage);
+
+language.addEventListener("change",function(){
+setLanguage(this.value);
+});
+
+const menuBtn=document.getElementById("menuBtn");
+const mobileMenu=document.getElementById("mobileMenu");
+
+if(menuBtn && mobileMenu){
+menuBtn.addEventListener("click",()=>{
+mobileMenu.classList.toggle("active");
+});
+}
+</script>
 
 </body>
 </html>
+```
