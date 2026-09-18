@@ -3,615 +3,2250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LaunchSite — Build Your Website Faster</title>
-<meta name="description" content="LaunchSite helps businesses create modern, professional websites in minutes.">
-<link rel="stylesheet" href="style.css">
-<style>
-.language-selector{position:relative;margin-left:15px}
-.language-selector select{border:1px solid #ddd;border-radius:8px;padding:9px 12px;background:#fff;font-size:14px;cursor:pointer}
-[dir="rtl"] .language-selector{margin-left:0;margin-right:15px}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LaunchSite — Build Your Business Online</title>
+
+    <meta
+        name="description"
+        content="LaunchSite helps businesses launch professional websites, create marketing ideas and grow online with AI."
+    >
+
+    <style>
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7f7f5;
+            color: #111;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button,
+        input,
+        textarea,
+        select {
+            font: inherit;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        /* =========================================================
+           GLOBAL
+        ========================================================= */
+
+        .container {
+            width: min(1180px, 92%);
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            max-width: 700px;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            display: inline-block;
+            margin-bottom: 12px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #666;
+        }
+
+        .section-title h2 {
+            font-size: clamp(34px, 5vw, 58px);
+            line-height: 1.05;
+            letter-spacing: -2px;
+            margin-bottom: 18px;
+        }
+
+        .section-title p {
+            color: #666;
+            font-size: 17px;
+            max-width: 620px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 22px;
+            border-radius: 12px;
+            border: 1px solid #111;
+            font-weight: 700;
+            transition: .2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-dark {
+            background: #111;
+            color: #fff;
+        }
+
+        .btn-light {
+            background: #fff;
+            color: #111;
+        }
+
+        /* =========================================================
+           NAVBAR
+        ========================================================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(247, 247, 245, .92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #e5e5e2;
+        }
+
+        .nav {
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+            color: #444;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            color: #000;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .language-select {
+            border: 1px solid #ddd;
+            background: #fff;
+            border-radius: 10px;
+            padding: 9px 10px;
+            outline: none;
+        }
+
+        .mobile-menu {
+            display: none;
+            border: 0;
+            background: transparent;
+            font-size: 26px;
+        }
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+            padding: 95px 0 70px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            background: #fff;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 22px;
+        }
+
+        .badge-dot {
+            width: 7px;
+            height: 7px;
+            background: #111;
+            border-radius: 50%;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 7vw, 86px);
+            line-height: .94;
+            letter-spacing: -5px;
+            max-width: 800px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 em {
+            font-style: normal;
+            color: #666;
+        }
+
+        .hero-text {
+            max-width: 650px;
+            color: #666;
+            font-size: 19px;
+            margin-bottom: 30px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .hero-card {
+            background: #111;
+            color: #fff;
+            border-radius: 28px;
+            padding: 34px;
+            min-height: 430px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 25px 60px rgba(0,0,0,.12);
+        }
+
+        .hero-card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #aaa;
+            font-size: 13px;
+        }
+
+        .hero-card h3 {
+            font-size: 42px;
+            line-height: 1;
+            letter-spacing: -2px;
+            max-width: 400px;
+        }
+
+        .hero-card-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 20px;
+        }
+
+        .mini-stat strong {
+            display: block;
+            font-size: 30px;
+        }
+
+        .mini-stat span {
+            color: #999;
+            font-size: 12px;
+        }
+
+        /* =========================================================
+           AI SECTION
+        ========================================================= */
+
+        .ai-section {
+            padding: 70px 0 110px;
+        }
+
+        .ai-shell {
+            background: #111;
+            color: #fff;
+            border-radius: 32px;
+            padding: 45px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0,0,0,.16);
+        }
+
+        .ai-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 40px;
+            margin-bottom: 35px;
+        }
+
+        .ai-heading-left {
+            max-width: 700px;
+        }
+
+        .ai-label {
+            display: inline-block;
+            color: #aaa;
+            font-size: 12px;
+            letter-spacing: 2px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .ai-heading h2 {
+            font-size: clamp(38px, 5vw, 64px);
+            line-height: 1;
+            letter-spacing: -3px;
+            margin-bottom: 15px;
+        }
+
+        .ai-heading p {
+            color: #aaa;
+            font-size: 16px;
+        }
+
+        .ai-status {
+            border: 1px solid #333;
+            border-radius: 999px;
+            padding: 10px 14px;
+            color: #bbb;
+            font-size: 12px;
+            white-space: nowrap;
+        }
+
+        .ai-tools {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .ai-tool {
+            border: 1px solid #333;
+            background: #181818;
+            color: #fff;
+            border-radius: 16px;
+            padding: 18px;
+            text-align: left;
+            min-height: 120px;
+            transition: .2s ease;
+        }
+
+        .ai-tool:hover,
+        .ai-tool.active {
+            background: #fff;
+            color: #111;
+            transform: translateY(-2px);
+        }
+
+        .ai-tool-icon {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .ai-tool strong {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .ai-tool small {
+            opacity: .6;
+            font-size: 11px;
+        }
+
+        .ai-workspace {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .ai-panel {
+            background: #181818;
+            border: 1px solid #292929;
+            border-radius: 22px;
+            padding: 25px;
+        }
+
+        .ai-panel h3 {
+            font-size: 19px;
+            margin-bottom: 8px;
+        }
+
+        .ai-panel p {
+            color: #999;
+            font-size: 13px;
+            margin-bottom: 18px;
+        }
+
+        .ai-input,
+        .ai-textarea,
+        .ai-url {
+            width: 100%;
+            border: 1px solid #333;
+            background: #101010;
+            color: #fff;
+            border-radius: 12px;
+            outline: none;
+            padding: 13px 14px;
+            margin-bottom: 12px;
+        }
+
+        .ai-textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .ai-input:focus,
+        .ai-textarea:focus,
+        .ai-url:focus {
+            border-color: #777;
+        }
+
+        .ai-generate {
+            width: 100%;
+            border: 0;
+            border-radius: 12px;
+            padding: 14px;
+            background: #fff;
+            color: #111;
+            font-weight: 800;
+            transition: .2s ease;
+        }
+
+        .ai-generate:hover {
+            transform: translateY(-2px);
+        }
+
+        .ai-result {
+            min-height: 280px;
+            border: 1px dashed #3a3a3a;
+            border-radius: 16px;
+            padding: 20px;
+            color: #aaa;
+            white-space: pre-wrap;
+            overflow-wrap: anywhere;
+        }
+
+        .ai-result.has-result {
+            color: #fff;
+            border-style: solid;
+            border-color: #444;
+        }
+
+        .loading {
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            50% {
+                opacity: .4;
+            }
+        }
+
+        /* =========================================================
+           FEATURES
+        ========================================================= */
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .feature-card {
+            background: #fff;
+            border: 1px solid #e5e5e2;
+            border-radius: 22px;
+            padding: 30px;
+            min-height: 220px;
+        }
+
+        .feature-number {
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 45px;
+        }
+
+        .feature-card h3 {
+            font-size: 23px;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* =========================================================
+           HOW IT WORKS
+        ========================================================= */
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .step {
+            border-top: 1px solid #111;
+            padding-top: 20px;
+        }
+
+        .step span {
+            font-size: 12px;
+            color: #777;
+        }
+
+        .step h3 {
+            font-size: 28px;
+            margin: 35px 0 10px;
+        }
+
+        .step p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* =========================================================
+           TEMPLATES
+        ========================================================= */
+
+        .templates-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .template {
+            background: #fff;
+            border: 1px solid #e5e5e2;
+            border-radius: 22px;
+            overflow: hidden;
+        }
+
+        .template-preview {
+            height: 220px;
+            background: #e9e9e6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: 900;
+            letter-spacing: -2px;
+        }
+
+        .template-info {
+            padding: 20px;
+        }
+
+        .template-info h3 {
+            margin-bottom: 5px;
+        }
+
+        .template-info p {
+            color: #777;
+            font-size: 13px;
+        }
+
+        /* =========================================================
+           PRICING
+        ========================================================= */
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .price-card {
+            background: #fff;
+            border: 1px solid #e5e5e2;
+            border-radius: 22px;
+            padding: 30px;
+        }
+
+        .price-card.featured {
+            background: #111;
+            color: #fff;
+            border-color: #111;
+        }
+
+        .price-card h3 {
+            margin-bottom: 12px;
+        }
+
+        .price {
+            font-size: 44px;
+            font-weight: 900;
+            letter-spacing: -2px;
+            margin-bottom: 15px;
+        }
+
+        .price small {
+            font-size: 13px;
+            font-weight: 400;
+            color: #777;
+        }
+
+        .featured .price small {
+            color: #999;
+        }
+
+        .price-list {
+            list-style: none;
+            margin: 25px 0;
+        }
+
+        .price-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 14px;
+        }
+
+        .featured .price-list li {
+            border-color: #333;
+        }
+
+        /* =========================================================
+           CTA
+        ========================================================= */
+
+        .cta {
+            padding: 30px 0 100px;
+        }
+
+        .cta-box {
+            background: #111;
+            color: #fff;
+            border-radius: 30px;
+            padding: 65px 45px;
+            text-align: center;
+        }
+
+        .cta-box h2 {
+            font-size: clamp(40px, 6vw, 70px);
+            letter-spacing: -4px;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .cta-box p {
+            color: #aaa;
+            max-width: 600px;
+            margin: 0 auto 28px;
+        }
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            border-top: 1px solid #ddd;
+            padding: 35px 0;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            color: #777;
+            font-size: 13px;
+        }
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 1000px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ai-tools {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .features-grid,
+            .steps,
+            .templates-grid,
+            .pricing-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .section {
+                padding: 75px 0;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .nav-right .btn {
+                display: none;
+            }
+
+            .hero {
+                padding-top: 65px;
+            }
+
+            .hero h1 {
+                letter-spacing: -3px;
+            }
+
+            .hero-card {
+                min-height: 350px;
+            }
+
+            .ai-shell {
+                padding: 25px;
+                border-radius: 24px;
+            }
+
+            .ai-heading {
+                display: block;
+            }
+
+            .ai-status {
+                display: inline-block;
+                margin-top: 20px;
+            }
+
+            .ai-tools,
+            .ai-workspace,
+            .features-grid,
+            .steps,
+            .templates-grid,
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header class="navbar">
-<div class="container nav-container">
-
-<a href="#" class="logo">Launch<span>Site</span></a>
-
-<nav class="nav-links">
-<a href="#features" data-i18n="features">Features</a>
-<a href="#how-it-works" data-i18n="how">How it works</a>
-<a href="#templates" data-i18n="templates">Templates</a>
-<a href="#pricing" data-i18n="pricing">Pricing</a>
-</nav>
-
-<div class="nav-actions">
-<a href="#" class="login-btn" data-i18n="login">Log in</a>
-<a href="#start" class="nav-cta" data-i18n="getStarted">Get Started</a>
-
-<div class="language-selector">
-<select id="language">
-<option value="en">🇬🇧 English</option>
-<option value="fr">🇫🇷 Français</option>
-<option value="ar">🇩🇿 العربية</option>
-<option value="de">🇩🇪 Deutsch</option>
-<option value="es">🇪🇸 Español</option>
-</select>
-</div>
-</div>
-
-<button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
-</div>
-</header>
-
-<div class="mobile-menu" id="mobileMenu">
-<a href="#features" data-i18n="features">Features</a>
-<a href="#how-it-works" data-i18n="how">How it works</a>
-<a href="#templates" data-i18n="templates">Templates</a>
-<a href="#pricing" data-i18n="pricing">Pricing</a>
-<a href="#start" class="mobile-cta" data-i18n="getStarted">Get Started</a>
-</div>
-
-<main>
-
-<section class="hero">
-<div class="container hero-grid">
-
-<div class="hero-content">
-
-<div class="eyebrow" data-i18n="eyebrow">✦ The faster way to launch online</div>
-
-<h1>
-<span data-i18n="hero1">Your business.</span><br>
-<span data-i18n="hero2">Online in minutes.</span>
-</h1>
-
-<p class="hero-text" data-i18n="heroText">
-Create a professional website for your business without spending weeks designing, coding, or hiring an expensive agency.
-</p>
-
-<div class="hero-buttons">
-<a href="#start" class="primary-btn">
-<span data-i18n="build">Build my website</span> <span>→</span>
-</a>
-<a href="#templates" class="secondary-btn" data-i18n="explore">Explore templates</a>
-</div>
-
-<div class="hero-trust">
-<div class="avatars">
-<span>J</span><span>M</span><span>A</span><span>+</span>
-</div>
-<div>
-<strong data-i18n="trust">Built for modern businesses</strong>
-<small data-i18n="coding">No coding required</small>
-</div>
-</div>
-
-</div>
-
-<div class="hero-preview">
-<div class="browser">
-
-<div class="browser-top">
-<div class="browser-dots"><i></i><i></i><i></i></div>
-<div class="browser-url">launchsite.com</div>
-</div>
-
-<div class="website-preview">
-
-<div class="preview-nav">
-<strong>NOVA</strong>
-<div>
-<span data-i18n="home">Home</span>
-<span data-i18n="services">Services</span>
-<span data-i18n="about">About</span>
-</div>
-<button data-i18n="contact">Contact</button>
-</div>
-
-<div class="preview-content">
-<small>DIGITAL STUDIO</small>
-<h2>
-<span data-i18n="ideas1">We build ideas</span><br>
-<span data-i18n="ideas2">into reality.</span>
-</h2>
-<p data-i18n="previewText">A modern digital experience designed for growing businesses.</p>
-<button data-i18n="project">Start a project →</button>
-</div>
-
-<div class="preview-card">
-<span>01</span>
-<strong data-i18n="creative">Creative</strong>
-</div>
-
-</div>
-</div>
-</div>
-
-</div>
-</section>
-
-<section class="trusted">
-<div class="container">
-<p data-i18n="powering">POWERING THE NEXT GENERATION OF BUSINESSES</p>
-<div class="logo-row">
-<span>VERTEX</span><span>NOVA</span><span>MONO</span><span>ARC</span><span>ORBIT</span>
-</div>
-</div>
-</section>
-
-<section class="section" id="features">
-<div class="container">
-
-<div class="section-heading">
-<div class="eyebrow" data-i18n="everything">✦ Everything you need</div>
-<h2>
-<span data-i18n="launch1">Launch your business</span><br>
-<span data-i18n="launch2">without the complexity.</span>
-</h2>
-<p data-i18n="launchText">Everything you need to create and manage a professional online presence.</p>
-</div>
-
-<div class="features-grid">
-
-<article class="feature-card">
-<div class="feature-icon">✦</div>
-<h3 data-i18n="fast">Fast Website Creation</h3>
-<p data-i18n="fastText">Start with a professional template and customize your website in minutes.</p>
-<a href="#start" data-i18n="learn">Learn more →</a>
-</article>
-
-<article class="feature-card">
-<div class="feature-icon">◇</div>
-<h3 data-i18n="modern">Modern Design</h3>
-<p data-i18n="modernText">Beautiful layouts designed to make your business look professional from day one.</p>
-<a href="#templates" data-i18n="view">View templates →</a>
-</article>
-
-<article class="feature-card">
-<div class="feature-icon">⚡</div>
-<h3 data-i18n="speed">Built for Speed</h3>
-<p data-i18n="speedText">Lightweight websites optimized for mobile devices and fast loading.</p>
-<a href="#start" data-i18n="start">Get started →</a>
-</article>
-
-<article class="feature-card">
-<div class="feature-icon">◎</div>
-<h3 data-i18n="onePlace">Everything in One Place</h3>
-<p data-i18n="onePlaceText">Manage your website, content and business presence from one simple dashboard.</p>
-<a href="#start" data-i18n="platform">Explore platform →</a>
-</article>
-
-</div>
-</div>
-</section>
-
-<section class="section dark-section" id="how-it-works">
-<div class="container">
-
-<div class="section-heading light">
-<div class="eyebrow" data-i18n="simple">✦ Simple process</div>
-<h2>
-<span data-i18n="idea1">From idea to website</span><br>
-<span data-i18n="idea2">in three steps.</span>
-</h2>
-</div>
-
-<div class="steps">
-
-<div class="step">
-<span class="step-number">01</span>
-<h3 data-i18n="step1">Tell us about your business</h3>
-<p data-i18n="step1Text">Enter your business name, industry, services and preferred style.</p>
-</div>
-
-<div class="step">
-<span class="step-number">02</span>
-<h3 data-i18n="step2">Choose your design</h3>
-<p data-i18n="step2Text">Pick a template that matches the identity of your business.</p>
-</div>
-
-<div class="step">
-<span class="step-number">03</span>
-<h3 data-i18n="step3">Launch</h3>
-<p data-i18n="step3Text">Customize your website and publish it when you're ready.</p>
-</div>
-
-</div>
-</div>
-</section>
-
-<section class="section" id="templates">
-<div class="container">
-
-<div class="section-heading">
-<div class="eyebrow" data-i18n="templateEyebrow">✦ Start with a template</div>
-<h2 data-i18n="designed">Designed for your business.</h2>
-<p data-i18n="choose">Choose a starting point and make it yours.</p>
-</div>
-
-<div class="templates-grid">
-
-<article class="template-card">
-<div class="template-image restaurant">
-<div class="template-demo">
-<small>RESTAURANT</small>
-<h3>SAVOR</h3>
-<p data-i18n="dining">Modern dining.</p>
-</div>
-</div>
-<div class="template-info">
-<h3 data-i18n="restaurant">Restaurant</h3>
-<span data-i18n="hospitality">Hospitality</span>
-</div>
-</article>
-
-<article class="template-card">
-<div class="template-image agency">
-<div class="template-demo">
-<small>CREATIVE AGENCY</small>
-<h3>MONO</h3>
-<p data-i18n="ideasMove">Ideas that move.</p>
-</div>
-</div>
-<div class="template-info">
-<h3 data-i18n="agency">Creative Agency</h3>
-<span data-i18n="servicesType">Services</span>
-</div>
-</article>
-
-<article class="template-card">
-<div class="template-image fitness">
-<div class="template-demo">
-<small>FITNESS</small>
-<h3>FORCE</h3>
-<p data-i18n="train">Train harder.</p>
-</div>
-</div>
-<div class="template-info">
-<h3 data-i18n="fitness">Fitness Studio</h3>
-<span data-i18n="health">Health & Fitness</span>
-</div>
-</article>
-
-</div>
-</div>
-</section>
-
-<section class="cta-section" id="start">
-<div class="container cta-box">
-<div>
-<div class="eyebrow" data-i18n="ready">✦ Ready to launch?</div>
-<h2>
-<span data-i18n="customer1">Your next customer</span><br>
-<span data-i18n="customer2">is already online.</span>
-</h2>
-<p data-i18n="deserves">Give your business the website it deserves.</p>
-</div>
-<a href="#" class="primary-btn large">
-<span data-i18n="create">Create my website</span> <span>→</span>
-</a>
-</div>
-</section>
-
-<section class="section" id="pricing">
-<div class="container">
-
-<div class="section-heading">
-<div class="eyebrow" data-i18n="simplePricing">✦ Simple pricing</div>
-<h2>
-<span data-i18n="small">Start small.</span><br>
-<span data-i18n="grow">Grow when you need.</span>
-</h2>
-</div>
-
-<div class="pricing-grid">
-
-<article class="price-card">
-<span class="plan-name" data-i18n="starter">Starter</span>
-<h3>$9 <small>/month</small></h3>
-<p data-i18n="starterText">For individuals and small businesses.</p>
-<ul>
-<li data-i18n="oneWebsite">✓ 1 website</li>
-<li data-i18n="professional">✓ Professional templates</li>
-<li data-i18n="responsive">✓ Mobile responsive</li>
-<li data-i18n="analytics">✓ Basic analytics</li>
-</ul>
-<a href="#start" class="price-btn" data-i18n="startStarter">Start Starter</a>
-</article>
-
-<article class="price-card featured">
-<div class="popular" data-i18n="popular">MOST POPULAR</div>
-<span class="plan-name">Pro</span>
-<h3>$29 <small>/month</small></h3>
-<p data-i18n="proText">For growing businesses.</p>
-<ul>
-<li data-i18n="unlimited">✓ Unlimited pages</li>
-<li data-i18n="premium">✓ Premium templates</li>
-<li data-i18n="domain">✓ Custom domain</li>
-<li data-i18n="advanced">✓ Advanced analytics</li>
-<li data-i18n="ai">✓ AI tools</li>
-</ul>
-<a href="#start" class="price-btn" data-i18n="startPro">Start Pro</a>
-</article>
-
-<article class="price-card">
-<span class="plan-name" data-i18n="business">Business</span>
-<h3>$79 <small>/month</small></h3>
-<p data-i18n="businessText">For teams and agencies.</p>
-<ul>
-<li data-i18n="multiple">✓ Multiple websites</li>
-<li data-i18n="members">✓ Team members</li>
-<li data-i18n="clients">✓ Client management</li>
-<li data-i18n="advancedAI">✓ Advanced AI tools</li>
-</ul>
-<a href="#start" class="price-btn" data-i18n="contactUs">Contact us</a>
-</article>
-
-</div>
-</div>
-</section>
-
-<section class="final-section">
-<div class="container">
-<h2 data-i18n="remember">Build something people remember.</h2>
-<p data-i18n="today">Start your online presence today.</p>
-<a href="#start" class="primary-btn">
-<span data-i18n="getStarted">Get started</span> <span>→</span>
-</a>
-</div>
-</section>
-
-</main>
-
-<footer class="footer">
-<div class="container footer-grid">
-
-<div class="footer-brand">
-<a href="#" class="logo">Launch<span>Site</span></a>
-<p data-i18n="footerText">The simpler way to build and launch your business online.</p>
-</div>
-
-<div class="footer-column">
-<h4 data-i18n="product">Product</h4>
-<a href="#features" data-i18n="features">Features</a>
-<a href="#templates" data-i18n="templates">Templates</a>
-<a href="#pricing" data-i18n="pricing">Pricing</a>
-</div>
-
-<div class="footer-column">
-<h4 data-i18n="company">Company</h4>
-<a href="#" data-i18n="about">About</a>
-<a href="#" data-i18n="contact">Contact</a>
-<a href="#" data-i18n="careers">Careers</a>
-</div>
-
-<div class="footer-column">
-<h4 data-i18n="legal">Legal</h4>
-<a href="#" data-i18n="privacy">Privacy</a>
-<a href="#" data-i18n="terms">Terms</a>
-</div>
-
-</div>
-
-<div class="container footer-bottom">
-<span>© 2026 LaunchSite. All rights reserved.</span>
-<span data-i18n="modernBusinesses">Built for modern businesses.</span>
-</div>
-</footer>
-
-<script src="script.js"></script>
-
-<script>
-const translations = {
-
-en:{
-features:"Features",how:"How it works",templates:"Templates",pricing:"Pricing",
-login:"Log in",getStarted:"Get Started",
-eyebrow:"✦ The faster way to launch online",
-hero1:"Your business.",hero2:"Online in minutes.",
-heroText:"Create a professional website for your business without spending weeks designing, coding, or hiring an expensive agency.",
-build:"Build my website",explore:"Explore templates",
-trust:"Built for modern businesses",coding:"No coding required",
-home:"Home",services:"Services",about:"About",contact:"Contact",
-ideas1:"We build ideas",ideas2:"into reality.",previewText:"A modern digital experience designed for growing businesses.",
-project:"Start a project →",creative:"Creative",
-powering:"POWERING THE NEXT GENERATION OF BUSINESSES",
-everything:"✦ Everything you need",launch1:"Launch your business",launch2:"without the complexity.",
-launchText:"Everything you need to create and manage a professional online presence.",
-fast:"Fast Website Creation",fastText:"Start with a professional template and customize your website in minutes.",
-learn:"Learn more →",modern:"Modern Design",modernText:"Beautiful layouts designed to make your business look professional from day one.",
-view:"View templates →",speed:"Built for Speed",speedText:"Lightweight websites optimized for mobile devices and fast loading.",
-start:"Get started →",onePlace:"Everything in One Place",onePlaceText:"Manage your website, content and business presence from one simple dashboard.",
-platform:"Explore platform →",
-simple:"✦ Simple process",idea1:"From idea to website",idea2:"in three steps.",
-step1:"Tell us about your business",step1Text:"Enter your business name, industry, services and preferred style.",
-step2:"Choose your design",step2Text:"Pick a template that matches the identity of your business.",
-step3:"Launch",step3Text:"Customize your website and publish it when you're ready.",
-templateEyebrow:"✦ Start with a template",designed:"Designed for your business.",choose:"Choose a starting point and make it yours.",
-dining:"Modern dining.",restaurant:"Restaurant",hospitality:"Hospitality",ideasMove:"Ideas that move.",agency:"Creative Agency",servicesType:"Services",train:"Train harder.",fitness:"Fitness Studio",health:"Health & Fitness",
-ready:"✦ Ready to launch?",customer1:"Your next customer",customer2:"is already online.",deserves:"Give your business the website it deserves.",create:"Create my website",
-simplePricing:"✦ Simple pricing",small:"Start small.",grow:"Grow when you need.",starter:"Starter",starterText:"For individuals and small businesses.",
-oneWebsite:"✓ 1 website",professional:"✓ Professional templates",responsive:"✓ Mobile responsive",analytics:"✓ Basic analytics",startStarter:"Start Starter",
-popular:"MOST POPULAR",proText:"For growing businesses.",unlimited:"✓ Unlimited pages",premium:"✓ Premium templates",domain:"✓ Custom domain",advanced:"✓ Advanced analytics",ai:"✓ AI tools",startPro:"Start Pro",
-business:"Business",businessText:"For teams and agencies.",multiple:"✓ Multiple websites",members:"✓ Team members",clients:"✓ Client management",advancedAI:"✓ Advanced AI tools",contactUs:"Contact us",
-remember:"Build something people remember.",today:"Start your online presence today.",footerText:"The simpler way to build and launch your business online.",
-product:"Product",company:"Company",careers:"Careers",legal:"Legal",privacy:"Privacy",terms:"Terms",modernBusinesses:"Built for modern businesses."
-},
-
-fr:{
-features:"Fonctionnalités",how:"Comment ça marche",templates:"Modèles",pricing:"Tarifs",
-login:"Se connecter",getStarted:"Commencer",
-eyebrow:"✦ La façon la plus rapide de se lancer en ligne",
-hero1:"Votre entreprise.",hero2:"En ligne en quelques minutes.",
-heroText:"Créez un site professionnel pour votre entreprise sans passer des semaines à concevoir, coder ou engager une agence coûteuse.",
-build:"Créer mon site",explore:"Explorer les modèles",
-trust:"Conçu pour les entreprises modernes",coding:"Aucun code requis",
-home:"Accueil",services:"Services",about:"À propos",contact:"Contact",
-ideas1:"Nous transformons les idées",ideas2:"en réalité.",previewText:"Une expérience numérique moderne conçue pour les entreprises en croissance.",
-project:"Démarrer un projet →",creative:"Créatif",
-powering:"POUR LA NOUVELLE GÉNÉRATION D'ENTREPRISES",
-everything:"✦ Tout ce dont vous avez besoin",launch1:"Lancez votre entreprise",launch2:"sans complexité.",
-launchText:"Tout ce dont vous avez besoin pour créer et gérer votre présence en ligne.",
-fast:"Création rapide de sites",fastText:"Commencez avec un modèle professionnel et personnalisez votre site en quelques minutes.",
-learn:"En savoir plus →",modern:"Design moderne",modernText:"De belles mises en page pour donner une image professionnelle à votre entreprise dès le premier jour.",
-view:"Voir les modèles →",speed:"Conçu pour la vitesse",speedText:"Des sites légers optimisés pour les mobiles et un chargement rapide.",
-start:"Commencer →",onePlace:"Tout au même endroit",onePlaceText:"Gérez votre site, votre contenu et votre présence en ligne depuis un tableau de bord simple.",
-platform:"Découvrir la plateforme →",
-simple:"✦ Processus simple",idea1:"De l'idée au site",idea2:"en trois étapes.",
-step1:"Parlez-nous de votre entreprise",step1Text:"Indiquez le nom, le secteur, les services et le style souhaité.",
-step2:"Choisissez votre design",step2Text:"Choisissez un modèle correspondant à l'identité de votre entreprise.",
-step3:"Lancez",step3Text:"Personnalisez votre site et publiez-le quand vous êtes prêt.",
-templateEyebrow:"✦ Commencez avec un modèle",designed:"Conçu pour votre entreprise.",choose:"Choisissez un point de départ et personnalisez-le.",
-dining:"Cuisine moderne.",restaurant:"Restaurant",hospitality:"Hôtellerie",ideasMove:"Des idées qui avancent.",agency:"Agence créative",servicesType:"Services",train:"Entraînez-vous plus fort.",fitness:"Studio de fitness",health:"Sport & Fitness",
-ready:"✦ Prêt à vous lancer ?",customer1:"Votre prochain client",customer2:"est déjà en ligne.",deserves:"Offrez à votre entreprise le site qu'elle mérite.",create:"Créer mon site",
-simplePricing:"✦ Tarification simple",small:"Commencez petit.",grow:"Grandissez quand vous en avez besoin.",starter:"Starter",starterText:"Pour les particuliers et petites entreprises.",
-oneWebsite:"✓ 1 site",professional:"✓ Modèles professionnels",responsive:"✓ Adapté aux mobiles",analytics:"✓ Analyses de base",startStarter:"Démarrer Starter",
-popular:"LE PLUS POPULAIRE",proText:"Pour les entreprises en croissance.",unlimited:"✓ Pages illimitées",premium:"✓ Modèles premium",domain:"✓ Domaine personnalisé",advanced:"✓ Analyses avancées",ai:"✓ Outils IA",startPro:"Démarrer Pro",
-business:"Business",businessText:"Pour les équipes et agences.",multiple:"✓ Plusieurs sites",members:"✓ Membres d'équipe",clients:"✓ Gestion des clients",advancedAI:"✓ Outils IA avancés",contactUs:"Nous contacter",
-remember:"Créez quelque chose dont on se souvient.",today:"Commencez votre présence en ligne aujourd'hui.",footerText:"La manière la plus simple de créer et lancer votre entreprise en ligne.",
-product:"Produit",company:"Entreprise",careers:"Carrières",legal:"Juridique",privacy:"Confidentialité",terms:"Conditions",modernBusinesses:"Conçu pour les entreprises modernes."
-},
-
-ar:{
-features:"المميزات",how:"كيف يعمل",templates:"القوالب",pricing:"الأسعار",
-login:"تسجيل الدخول",getStarted:"ابدأ الآن",
-eyebrow:"✦ أسرع طريقة لإطلاق نشاطك على الإنترنت",
-hero1:"مشروعك.",hero2:"على الإنترنت خلال دقائق.",
-heroText:"أنشئ موقعًا احترافيًا لنشاطك التجاري دون قضاء أسابيع في التصميم أو البرمجة أو دفع تكاليف وكالة باهظة.",
-build:"أنشئ موقعي",explore:"استكشف القوالب",
-trust:"مصمم للشركات الحديثة",coding:"لا تحتاج إلى برمجة",
-home:"الرئيسية",services:"الخدمات",about:"من نحن",contact:"اتصل بنا",
-ideas1:"نحوّل الأفكار",ideas2:"إلى واقع.",previewText:"تجربة رقمية عصرية مصممة للشركات التي تنمو.",
-project:"ابدأ مشروعًا →",creative:"إبداعي",
-powering:"ندعم الجيل القادم من الشركات",
-everything:"✦ كل ما تحتاجه",launch1:"أطلق مشروعك",launch2:"بدون تعقيد.",
-launchText:"كل ما تحتاجه لإنشاء وإدارة حضور احترافي على الإنترنت.",
-fast:"إنشاء المواقع بسرعة",fastText:"ابدأ بقالب احترافي وخصص موقعك خلال دقائق.",
-learn:"اعرف المزيد →",modern:"تصميم عصري",modernText:"تصاميم جميلة تجعل نشاطك يبدو احترافيًا منذ اليوم الأول.",
-view:"شاهد القوالب →",speed:"مصمم للسرعة",speedText:"مواقع خفيفة ومحسنة للهواتف وسريعة التحميل.",
-start:"ابدأ الآن →",onePlace:"كل شيء في مكان واحد",onePlaceText:"أدر موقعك ومحتواك وحضورك التجاري من لوحة تحكم بسيطة.",
-platform:"استكشف المنصة →",
-simple:"✦ عملية بسيطة",idea1:"من الفكرة إلى الموقع",idea2:"في ثلاث خطوات.",
-step1:"أخبرنا عن نشاطك",step1Text:"أدخل اسم نشاطك ومجاله وخدماته والأسلوب الذي تفضله.",
-step2:"اختر التصميم",step2Text:"اختر قالبًا يناسب هوية نشاطك.",
-step3:"أطلق موقعك",step3Text:"خصص موقعك وانشره عندما تكون جاهزًا.",
-templateEyebrow:"✦ ابدأ بقالب",designed:"مصمم لنشاطك التجاري.",choose:"اختر نقطة البداية واجعلها خاصة بك.",
-dining:"مطعم عصري.",restaurant:"مطعم",hospitality:"ضيافة",ideasMove:"أفكار تتحرك.",agency:"وكالة إبداعية",servicesType:"خدمات",train:"تدرب بقوة أكبر.",fitness:"استوديو لياقة",health:"الصحة واللياقة",
-ready:"✦ جاهز للانطلاق؟",customer1:"عميلك القادم",customer2:"موجود بالفعل على الإنترنت.",deserves:"امنح مشروعك الموقع الذي يستحقه.",create:"أنشئ موقعي",
-simplePricing:"✦ أسعار بسيطة",small:"ابدأ بخطة صغيرة.",grow:"توسع عندما تحتاج.",starter:"المبتدئ",starterText:"للأفراد والمشاريع الصغيرة.",
-oneWebsite:"✓ موقع واحد",professional:"✓ قوالب احترافية",responsive:"✓ متوافق مع الهاتف",analytics:"✓ تحليلات أساسية",startStarter:"ابدأ Starter",
-popular:"الأكثر شعبية",proText:"للشركات التي تنمو.",unlimited:"✓ صفحات غير محدودة",premium:"✓ قوالب مميزة",domain:"✓ نطاق مخصص",advanced:"✓ تحليلات متقدمة",ai:"✓ أدوات الذكاء الاصطناعي",startPro:"ابدأ Pro",
-business:"Business",businessText:"للفرق والوكالات.",multiple:"✓ عدة مواقع",members:"✓ أعضاء الفريق",clients:"✓ إدارة العملاء",advancedAI:"✓ أدوات ذكاء اصطناعي متقدمة",contactUs:"اتصل بنا",
-remember:"أنشئ شيئًا يتذكره الناس.",today:"ابدأ حضورك على الإنترنت اليوم.",footerText:"الطريقة الأبسط لبناء وإطلاق نشاطك التجاري على الإنترنت.",
-product:"المنتج",company:"الشركة",careers:"الوظائف",legal:"القانونية",privacy:"الخصوصية",terms:"الشروط",modernBusinesses:"مصمم للشركات الحديثة."
-},
-
-de:{
-features:"Funktionen",how:"So funktioniert es",templates:"Vorlagen",pricing:"Preise",
-login:"Anmelden",getStarted:"Jetzt starten",
-eyebrow:"✦ Der schnellere Weg online zu starten",
-hero1:"Ihr Unternehmen.",hero2:"In wenigen Minuten online.",
-heroText:"Erstellen Sie eine professionelle Website für Ihr Unternehmen, ohne wochenlang zu designen, zu programmieren oder eine teure Agentur zu beauftragen.",
-build:"Meine Website erstellen",explore:"Vorlagen entdecken",
-trust:"Für moderne Unternehmen",coding:"Keine Programmierung erforderlich",
-home:"Startseite",services:"Dienstleistungen",about:"Über uns",contact:"Kontakt",
-ideas1:"Wir verwandeln Ideen",ideas2:"in Realität.",previewText:"Eine moderne digitale Erfahrung für wachsende Unternehmen.",
-project:"Projekt starten →",creative:"Kreativ",
-powering:"FÜR DIE NÄCHSTE GENERATION VON UNTERNEHMEN",
-everything:"✦ Alles, was Sie brauchen",launch1:"Starten Sie Ihr Unternehmen",launch2:"ohne Komplexität.",
-launchText:"Alles, was Sie für eine professionelle Online-Präsenz benötigen.",
-fast:"Schnelle Website-Erstellung",fastText:"Starten Sie mit einer professionellen Vorlage und passen Sie Ihre Website in wenigen Minuten an.",
-learn:"Mehr erfahren →",modern:"Modernes Design",modernText:"Schöne Layouts, die Ihr Unternehmen vom ersten Tag an professionell aussehen lassen.",
-view:"Vorlagen ansehen →",speed:"Für Geschwindigkeit entwickelt",speedText:"Leichte Websites, optimiert für Mobilgeräte und schnelles Laden.",
-start:"Jetzt starten →",onePlace:"Alles an einem Ort",onePlaceText:"Verwalten Sie Website, Inhalte und Online-Präsenz über ein einfaches Dashboard.",
-platform:"Plattform entdecken →",
-simple:"✦ Einfacher Prozess",idea1:"Von der Idee zur Website",idea2:"in drei Schritten.",
-step1:"Erzählen Sie uns von Ihrem Unternehmen",step1Text:"Geben Sie Name, Branche, Dienstleistungen und gewünschten Stil ein.",
-step2:"Wählen Sie Ihr Design",step2Text:"Wählen Sie eine Vorlage, die zur Identität Ihres Unternehmens passt.",
-step3:"Starten",step3Text:"Passen Sie Ihre Website an und veröffentlichen Sie sie, sobald Sie bereit sind.",
-templateEyebrow:"✦ Mit einer Vorlage starten",designed:"Für Ihr Unternehmen entwickelt.",choose:"Wählen Sie einen Ausgangspunkt und machen Sie ihn zu Ihrem.",
-dining:"Modernes Essen.",restaurant:"Restaurant",hospitality:"Gastronomie",ideasMove:"Ideen, die bewegen.",agency:"Kreativagentur",servicesType:"Dienstleistungen",train:"Trainiere härter.",fitness:"Fitnessstudio",health:"Gesundheit & Fitness",
-ready:"✦ Bereit zum Start?",customer1:"Ihr nächster Kunde",customer2:"ist bereits online.",deserves:"Geben Sie Ihrem Unternehmen die Website, die es verdient.",create:"Meine Website erstellen",
-simplePricing:"✦ Einfache Preise",small:"Klein anfangen.",grow:"Wachsen, wenn Sie es brauchen.",starter:"Starter",starterText:"Für Einzelpersonen und kleine Unternehmen.",
-oneWebsite:"✓ 1 Website",professional:"✓ Professionelle Vorlagen",responsive:"✓ Mobil optimiert",analytics:"✓ Basis-Analysen",startStarter:"Starter starten",
-popular:"AM BELIEBTESTEN",proText:"Für wachsende Unternehmen.",unlimited:"✓ Unbegrenzte Seiten",premium:"✓ Premium-Vorlagen",domain:"✓ Eigene Domain",advanced:"✓ Erweiterte Analysen",ai:"✓ KI-Tools",startPro:"Pro starten",
-business:"Business",businessText:"Für Teams und Agenturen.",multiple:"✓ Mehrere Websites",members:"✓ Teammitglieder",clients:"✓ Kundenverwaltung",advancedAI:"✓ Erweiterte KI-Tools",contactUs:"Kontaktieren",
-remember:"Erstellen Sie etwas, das Menschen in Erinnerung bleibt.",today:"Starten Sie Ihre Online-Präsenz heute.",footerText:"Der einfachere Weg, Ihr Unternehmen online aufzubauen und zu starten.",
-product:"Produkt",company:"Unternehmen",careers:"Karriere",legal:"Rechtliches",privacy:"Datenschutz",terms:"Bedingungen",modernBusinesses:"Für moderne Unternehmen entwickelt."
-},
-
-es:{
-features:"Funciones",how:"Cómo funciona",templates:"Plantillas",pricing:"Precios",
-login:"Iniciar sesión",getStarted:"Empezar",
-eyebrow:"✦ La forma más rápida de lanzar tu negocio online",
-hero1:"Tu negocio.",hero2:"Online en minutos.",
-heroText:"Crea un sitio web profesional para tu negocio sin pasar semanas diseñando, programando o contratando una agencia costosa.",
-build:"Crear mi sitio web",explore:"Explorar plantillas",
-trust:"Creado para negocios modernos",coding:"Sin necesidad de programar",
-home:"Inicio",services:"Servicios",about:"Nosotros",contact:"Contacto",
-ideas1:"Convertimos ideas",ideas2:"en realidad.",previewText:"Una experiencia digital moderna diseñada para negocios en crecimiento.",
-project:"Iniciar un proyecto →",creative:"Creativo",
-powering:"IMPULSANDO LA NUEVA GENERACIÓN DE NEGOCIOS",
-everything:"✦ Todo lo que necesitas",launch1:"Lanza tu negocio",launch2:"sin complicaciones.",
-launchText:"Todo lo que necesitas para crear y gestionar una presencia profesional online.",
-fast:"Creación rápida de sitios",fastText:"Empieza con una plantilla profesional y personaliza tu sitio en minutos.",
-learn:"Saber más →",modern:"Diseño moderno",modernText:"Diseños atractivos para que tu negocio tenga una imagen profesional desde el primer día.",
-view:"Ver plantillas →",speed:"Diseñado para la velocidad",speedText:"Sitios ligeros optimizados para móviles y cargas rápidas.",
-start:"Empezar →",onePlace:"Todo en un solo lugar",onePlaceText:"Gestiona tu sitio, contenido y presencia empresarial desde un panel sencillo.",
-platform:"Explorar plataforma →",
-simple:"✦ Proceso sencillo",idea1:"De la idea al sitio web",idea2:"en tres pasos.",
-step1:"Cuéntanos sobre tu negocio",step1Text:"Introduce el nombre, sector, servicios y estilo que prefieres.",
-step2:"Elige tu diseño",step2Text:"Elige una plantilla que coincida con la identidad de tu negocio.",
-step3:"Lanzar",step3Text:"Personaliza tu sitio y publícalo cuando estés listo.",
-templateEyebrow:"✦ Empieza con una plantilla",designed:"Diseñado para tu negocio.",choose:"Elige un punto de partida y hazlo tuyo.",
-dining:"Comida moderna.",restaurant:"Restaurante",hospitality:"Hostelería",ideasMove:"Ideas que avanzan.",agency:"Agencia creativa",servicesType:"Servicios",train:"Entrena más fuerte.",fitness:"Estudio fitness",health:"Salud y fitness",
-ready:"✦ ¿Listo para lanzar?",customer1:"Tu próximo cliente",customer2:"ya está online.",deserves:"Dale a tu negocio el sitio web que merece.",create:"Crear mi sitio",
-simplePricing:"✦ Precios sencillos",small:"Empieza pequeño.",grow:"Crece cuando lo necesites.",starter:"Starter",starterText:"Para particulares y pequeñas empresas.",
-oneWebsite:"✓ 1 sitio web",professional:"✓ Plantillas profesionales",responsive:"✓ Adaptado a móviles",analytics:"✓ Analíticas básicas",startStarter:"Empezar Starter",
-popular:"MÁS POPULAR",proText:"Para negocios en crecimiento.",unlimited:"✓ Páginas ilimitadas",premium:"✓ Plantillas premium",domain:"✓ Dominio personalizado",advanced:"✓ Analíticas avanzadas",ai:"✓ Herramientas de IA",startPro:"Empezar Pro",
-business:"Business",businessText:"Para equipos y agencias.",multiple:"✓ Varios sitios web",members:"✓ Miembros del equipo",clients:"✓ Gestión de clientes",advancedAI:"✓ Herramientas de IA avanzadas",contactUs:"Contactar",
-remember:"Crea algo que la gente recuerde.",today:"Empieza tu presencia online hoy.",footerText:"La forma más sencilla de crear y lanzar tu negocio online.",
-product:"Producto",company:"Empresa",careers:"Empleo",legal:"Legal",privacy:"Privacidad",terms:"Términos",modernBusinesses:"Creado para negocios modernos."
-}
-
-};
-
-function setLanguage(lang){
-const t=translations[lang];
-document.documentElement.lang=lang;
-document.documentElement.dir=lang==="ar"?"rtl":"ltr";
-
-document.querySelectorAll("[data-i18n]").forEach(el=>{
-if(t[el.dataset.i18n]) el.textContent=t[el.dataset.i18n];
-});
-
-localStorage.setItem("launchsite-language",lang);
-}
-
-const language=document.getElementById("language");
-const savedLanguage=localStorage.getItem("launchsite-language")||"en";
-
-language.value=savedLanguage;
-setLanguage(savedLanguage);
-
-language.addEventListener("change",function(){
-setLanguage(this.value);
-});
-
-const menuBtn=document.getElementById("menuBtn");
-const mobileMenu=document.getElementById("mobileMenu");
-
-if(menuBtn && mobileMenu){
-menuBtn.addEventListener("click",()=>{
-mobileMenu.classList.toggle("active");
-});
-}
-</script>
+    <!-- =========================================================
+         NAVBAR
+    ========================================================= -->
+
+    <header>
+        <div class="container nav">
+
+            <a href="#home" class="logo">
+                LaunchSite
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#features" data-i18n="navFeatures">Features</a></li>
+                <li><a href="#ai" data-i18n="navAI">AI</a></li>
+                <li><a href="#how" data-i18n="navHow">How it works</a></li>
+                <li><a href="#templates" data-i18n="navTemplates">Templates</a></li>
+                <li><a href="#pricing" data-i18n="navPricing">Pricing</a></li>
+            </ul>
+
+            <div class="nav-right">
+
+                <select id="languageSelect" class="language-select" aria-label="Language">
+                    <option value="en">EN</option>
+                    <option value="fr">FR</option>
+                    <option value="ar">AR</option>
+                    <option value="de">DE</option>
+                    <option value="es">ES</option>
+                </select>
+
+                <a href="#ai" class="btn btn-dark" data-i18n="navStart">
+                    Get Started
+                </a>
+
+                <button class="mobile-menu" aria-label="Menu">
+                    ☰
+                </button>
+
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
+
+        <section class="hero" id="home">
+
+            <div class="container hero-grid">
+
+                <div>
+
+                    <div class="badge">
+                        <span class="badge-dot"></span>
+                        <span data-i18n="badge">AI-powered business launch platform</span>
+                    </div>
+
+                    <h1 data-i18n="heroTitle">
+                        The faster way to launch online.
+                    </h1>
+
+                    <p class="hero-text" data-i18n="heroText">
+                        Build your online presence, create marketing ideas and turn your business concept into something people can see, understand and buy.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#ai" class="btn btn-dark" data-i18n="heroButton">
+                            Start with AI →
+                        </a>
+
+                        <a href="#templates" class="btn btn-light" data-i18n="heroSecondary">
+                            Explore templates
+                        </a>
+                    </div>
+
+                </div>
+
+
+                <div class="hero-card">
+
+                    <div class="hero-card-top">
+                        <span>LAUNCHSITE AI</span>
+                        <span>● ONLINE</span>
+                    </div>
+
+                    <h3 data-i18n="heroCardTitle">
+                        Your business.<br>
+                        Built for the internet.
+                    </h3>
+
+                    <div class="hero-card-bottom">
+
+                        <div class="mini-stat">
+                            <strong>5</strong>
+                            <span>AI tools</span>
+                        </div>
+
+                        <div class="mini-stat">
+                            <strong>∞</strong>
+                            <span>ideas</span>
+                        </div>
+
+                        <div class="mini-stat">
+                            <strong>24/7</strong>
+                            <span>workflow</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             AI
+        ====================================================== -->
+
+        <section class="ai-section" id="ai">
+
+            <div class="container">
+
+                <div class="ai-shell">
+
+                    <div class="ai-heading">
+
+                        <div class="ai-heading-left">
+
+                            <span class="ai-label">
+                                LaunchSite AI
+                            </span>
+
+                            <h2 data-i18n="aiTitle">
+                                Your business assistant.
+                            </h2>
+
+                            <p data-i18n="aiDescription">
+                                Generate marketing ideas, write ad scripts, create video concepts and study competitors from one workspace.
+                            </p>
+
+                        </div>
+
+                        <div class="ai-status">
+                            ● AI WORKSPACE
+                        </div>
+
+                    </div>
+
+
+                    <!-- AI TOOLS -->
+
+                    <div class="ai-tools">
+
+                        <button class="ai-tool active" data-tool="ideas">
+
+                            <div class="ai-tool-icon">💡</div>
+
+                            <strong data-i18n="toolIdeas">
+                                Ad Ideas
+                            </strong>
+
+                            <small data-i18n="toolIdeasSmall">
+                                Generate campaign ideas
+                            </small>
+
+                        </button>
+
+
+                        <button class="ai-tool" data-tool="script">
+
+                            <div class="ai-tool-icon">✍️</div>
+
+                            <strong data-i18n="toolScript">
+                                Ad Script
+                            </strong>
+
+                            <small data-i18n="toolScriptSmall">
+                                Write a complete script
+                            </small>
+
+                        </button>
+
+
+                        <button class="ai-tool" data-tool="video">
+
+                            <div class="ai-tool-icon">🎬</div>
+
+                            <strong data-i18n="toolVideo">
+                                Video Concept
+                            </strong>
+
+                            <small data-i18n="toolVideoSmall">
+                                Build strong video concepts
+                            </small>
+
+                        </button>
+
+
+                        <button class="ai-tool" data-tool="website">
+
+                            <div class="ai-tool-icon">🔎</div>
+
+                            <strong data-i18n="toolWebsite">
+                                Website Analysis
+                            </strong>
+
+                            <small data-i18n="toolWebsiteSmall">
+                                Analyze a competitor website
+                            </small>
+
+                        </button>
+
+
+                        <button class="ai-tool" data-tool="competitor">
+
+                            <div class="ai-tool-icon">🎥</div>
+
+                            <strong data-i18n="toolCompetitor">
+                                Video Analysis
+                            </strong>
+
+                            <small data-i18n="toolCompetitorSmall">
+                                Study competitor videos
+                            </small>
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- AI WORKSPACE -->
+
+                    <div class="ai-workspace">
+
+                        <div class="ai-panel">
+
+                            <h3 id="aiFormTitle">
+                                Generate advertising ideas
+                            </h3>
+
+                            <p id="aiFormDescription">
+                                Tell LaunchSite about your business and target audience.
+                            </p>
+
+                            <input
+                                type="text"
+                                id="businessInput"
+                                class="ai-input"
+                                placeholder="Business / brand name"
+                            >
+
+                            <input
+                                type="text"
+                                id="audienceInput"
+                                class="ai-input"
+                                placeholder="Target audience"
+                            >
+
+                            <textarea
+                                id="detailsInput"
+                                class="ai-textarea"
+                                placeholder="Describe your product, service or business..."
+                            ></textarea>
+
+                            <input
+                                type="url"
+                                id="urlInput"
+                                class="ai-url"
+                                placeholder="Competitor URL (for website analysis)"
+                                style="display:none;"
+                            >
+
+                            <button
+                                class="ai-generate"
+                                id="generateBtn"
+                            >
+                                Generate with AI →
+                            </button>
+
+                        </div>
+
+
+                        <div class="ai-panel">
+
+                            <h3 data-i18n="resultTitle">
+                                AI Result
+                            </h3>
+
+                            <p data-i18n="resultDescription">
+                                Your generated result will appear here.
+                            </p>
+
+                            <div
+                                id="aiResult"
+                                class="ai-result"
+                            >
+                                Your AI-generated content will appear here.
+
+                                Choose a tool, describe your business and click "Generate with AI".
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             FEATURES
+        ====================================================== -->
+
+        <section class="section" id="features">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <span data-i18n="featuresLabel">
+                        Everything you need
+                    </span>
+
+                    <h2 data-i18n="featuresTitle">
+                        From idea to online presence.
+                    </h2>
+
+                    <p data-i18n="featuresText">
+                        LaunchSite combines website creation and marketing workflows into one simple experience.
+                    </p>
+
+                </div>
+
+
+                <div class="features-grid">
+
+                    <div class="feature-card">
+                        <div class="feature-number">01</div>
+                        <h3 data-i18n="feature1Title">Professional websites</h3>
+                        <p data-i18n="feature1Text">
+                            Create clean and responsive websites for businesses, brands and projects.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-number">02</div>
+                        <h3 data-i18n="feature2Title">AI marketing</h3>
+                        <p data-i18n="feature2Text">
+                            Generate ideas, scripts and concepts for your next campaign.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-number">03</div>
+                        <h3 data-i18n="feature3Title">Competitor research</h3>
+                        <p data-i18n="feature3Text">
+                            Turn competitor websites and videos into useful research insights.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             HOW IT WORKS
+        ====================================================== -->
+
+        <section class="section" id="how">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <span data-i18n="howLabel">
+                        How it works
+                    </span>
+
+                    <h2 data-i18n="howTitle">
+                        Simple. Fast. Focused.
+                    </h2>
+
+                    <p data-i18n="howText">
+                        Start with your business idea and use the tools you need.
+                    </p>
+
+                </div>
+
+
+                <div class="steps">
+
+                    <div class="step">
+                        <span>01</span>
+                        <h3 data-i18n="step1Title">Describe</h3>
+                        <p data-i18n="step1Text">
+                            Tell LaunchSite what you sell and who you want to reach.
+                        </p>
+                    </div>
+
+                    <div class="step">
+                        <span>02</span>
+                        <h3 data-i18n="step2Title">Generate</h3>
+                        <p data-i18n="step2Text">
+                            Choose an AI tool and generate your marketing material.
+                        </p>
+                    </div>
+
+                    <div class="step">
+                        <span>03</span>
+                        <h3 data-i18n="step3Title">Launch</h3>
+                        <p data-i18n="step3Text">
+                            Turn your ideas into a professional online presence.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             TEMPLATES
+        ====================================================== -->
+
+        <section class="section" id="templates">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <span data-i18n="templatesLabel">
+                        Templates
+                    </span>
+
+                    <h2 data-i18n="templatesTitle">
+                        Start with a strong foundation.
+                    </h2>
+
+                    <p data-i18n="templatesText">
+                        Professional layouts for different types of businesses.
+                    </p>
+
+                </div>
+
+
+                <div class="templates-grid">
+
+                    <div class="template">
+
+                        <div class="template-preview">
+                            BRAND
+                        </div>
+
+                        <div class="template-info">
+                            <h3>Brand</h3>
+                            <p>For clothing and lifestyle brands.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="template">
+
+                        <div class="template-preview">
+                            STUDIO
+                        </div>
+
+                        <div class="template-info">
+                            <h3>Studio</h3>
+                            <p>For agencies, creators and professionals.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="template">
+
+                        <div class="template-preview">
+                            STORE
+                        </div>
+
+                        <div class="template-info">
+                            <h3>Store</h3>
+                            <p>For products and online businesses.</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PRICING
+        ====================================================== -->
+
+        <section class="section" id="pricing">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <span data-i18n="pricingLabel">
+                        Pricing
+                    </span>
+
+                    <h2 data-i18n="pricingTitle">
+                        Choose your starting point.
+                    </h2>
+
+                    <p data-i18n="pricingText">
+                        Simple plans designed to grow with your business.
+                    </p>
+
+                </div>
+
+
+                <div class="pricing-grid">
+
+                    <div class="price-card">
+
+                        <h3>Starter</h3>
+
+                        <div class="price">
+                            $0
+                            <small>/mo</small>
+                        </div>
+
+                        <ul class="price-list">
+                            <li>✓ Basic website</li>
+                            <li>✓ Templates</li>
+                            <li>✓ Basic AI tools</li>
+                        </ul>
+
+                        <a href="#ai" class="btn btn-light">
+                            Start
+                        </a>
+
+                    </div>
+
+
+                    <div class="price-card featured">
+
+                        <h3>Pro</h3>
+
+                        <div class="price">
+                            $19
+                            <small>/mo</small>
+                        </div>
+
+                        <ul class="price-list">
+                            <li>✓ Professional websites</li>
+                            <li>✓ Advanced AI workflows</li>
+                            <li>✓ Marketing tools</li>
+                            <li>✓ Competitor analysis</li>
+                        </ul>
+
+                        <a href="#ai" class="btn btn-light">
+                            Get started
+                        </a>
+
+                    </div>
+
+
+                    <div class="price-card">
+
+                        <h3>Business</h3>
+
+                        <div class="price">
+                            $49
+                            <small>/mo</small>
+                        </div>
+
+                        <ul class="price-list">
+                            <li>✓ Everything in Pro</li>
+                            <li>✓ Multiple projects</li>
+                            <li>✓ Advanced workflows</li>
+                            <li>✓ Business support</li>
+                        </ul>
+
+                        <a href="#ai" class="btn btn-light">
+                            Contact
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CTA
+        ====================================================== -->
+
+        <section class="cta">
+
+            <div class="container">
+
+                <div class="cta-box">
+
+                    <h2 data-i18n="ctaTitle">
+                        Ready to launch?
+                    </h2>
+
+                    <p data-i18n="ctaText">
+                        Start with an idea. Let LaunchSite help you turn it into an online business.
+                    </p>
+
+                    <a href="#ai" class="btn btn-light" data-i18n="ctaButton">
+                        Start with LaunchSite AI →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer>
+
+        <div class="container footer-inner">
+
+            <div>
+                © 2026 LaunchSite
+            </div>
+
+            <div>
+                Build faster. Launch smarter.
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script>
+
+        /* =========================================================
+           TRANSLATIONS
+        ========================================================= */
+
+        const translations = {
+
+            en: {
+
+                navFeatures: "Features",
+                navAI: "AI",
+                navHow: "How it works",
+                navTemplates: "Templates",
+                navPricing: "Pricing",
+                navStart: "Get Started",
+
+                badge: "AI-powered business launch platform",
+
+                heroTitle: "The faster way to launch online.",
+                heroText: "Build your online presence, create marketing ideas and turn your business concept into something people can see, understand and buy.",
+                heroButton: "Start with AI →",
+                heroSecondary: "Explore templates",
+
+                heroCardTitle: "Your business.<br>Built for the internet.",
+
+                aiTitle: "Your business assistant.",
+                aiDescription: "Generate marketing ideas, write ad scripts, create video concepts and study competitors from one workspace.",
+
+                toolIdeas: "Ad Ideas",
+                toolIdeasSmall: "Generate campaign ideas",
+
+                toolScript: "Ad Script",
+                toolScriptSmall: "Write a complete script",
+
+                toolVideo: "Video Concept",
+                toolVideoSmall: "Build strong video concepts",
+
+                toolWebsite: "Website Analysis",
+                toolWebsiteSmall: "Analyze a competitor website",
+
+                toolCompetitor: "Video Analysis",
+                toolCompetitorSmall: "Study competitor videos",
+
+                resultTitle: "AI Result",
+                resultDescription: "Your generated result will appear here.",
+
+                featuresLabel: "Everything you need",
+                featuresTitle: "From idea to online presence.",
+                featuresText: "LaunchSite combines website creation and marketing workflows into one simple experience.",
+
+                feature1Title: "Professional websites",
+                feature1Text: "Create clean and responsive websites for businesses, brands and projects.",
+
+                feature2Title: "AI marketing",
+                feature2Text: "Generate ideas, scripts and concepts for your next campaign.",
+
+                feature3Title: "Competitor research",
+                feature3Text: "Turn competitor websites and videos into useful research insights.",
+
+                howLabel: "How it works",
+                howTitle: "Simple. Fast. Focused.",
+                howText: "Start with your business idea and use the tools you need.",
+
+                step1Title: "Describe",
+                step1Text: "Tell LaunchSite what you sell and who you want to reach.",
+
+                step2Title: "Generate",
+                step2Text: "Choose an AI tool and generate your marketing material.",
+
+                step3Title: "Launch",
+                step3Text: "Turn your ideas into a professional online presence.",
+
+                templatesLabel: "Templates",
+                templatesTitle: "Start with a strong foundation.",
+                templatesText: "Professional layouts for different types of businesses.",
+
+                pricingLabel: "Pricing",
+                pricingTitle: "Choose your starting point.",
+                pricingText: "Simple plans designed to grow with your business.",
+
+                ctaTitle: "Ready to launch?",
+                ctaText: "Start with an idea. Let LaunchSite help you turn it into an online business.",
+                ctaButton: "Start with LaunchSite AI →"
+            },
+
+
+            fr: {
+
+                navFeatures: "Fonctionnalités",
+                navAI: "IA",
+                navHow: "Comment ça marche",
+                navTemplates: "Modèles",
+                navPricing: "Tarifs",
+                navStart: "Commencer",
+
+                badge: "Plateforme de lancement business avec IA",
+
+                heroTitle: "Le moyen le plus rapide de se lancer en ligne.",
+                heroText: "Créez votre présence en ligne, générez des idées marketing et transformez votre concept en véritable projet digital.",
+                heroButton: "Commencer avec l'IA →",
+                heroSecondary: "Voir les modèles",
+
+                heroCardTitle: "Votre business.<br>Prêt pour Internet.",
+
+                aiTitle: "Votre assistant business.",
+                aiDescription: "Générez des idées publicitaires, écrivez des scripts et analysez vos concurrents.",
+
+                toolIdeas: "Idées pub",
+                toolIdeasSmall: "Générer des idées",
+
+                toolScript: "Script pub",
+                toolScriptSmall: "Écrire un script",
+
+                toolVideo: "Concept vidéo",
+                toolVideoSmall: "Créer un concept",
+
+                toolWebsite: "Analyse site",
+                toolWebsiteSmall: "Analyser un concurrent",
+
+                toolCompetitor: "Analyse vidéo",
+                toolCompetitorSmall: "Analyser une vidéo",
+
+                resultTitle: "Résultat IA",
+                resultDescription: "Votre résultat apparaîtra ici.",
+
+                featuresLabel: "Tout ce qu'il faut",
+                featuresTitle: "De l'idée à la présence en ligne.",
+                featuresText: "LaunchSite réunit création de site et marketing dans une seule expérience.",
+
+                feature1Title: "Sites professionnels",
+                feature1Text: "Créez des sites modernes et responsives pour vos projets.",
+
+                feature2Title: "Marketing IA",
+                feature2Text: "Générez des idées, scripts et concepts publicitaires.",
+
+                feature3Title: "Analyse concurrentielle",
+                feature3Text: "Analysez les sites et vidéos de vos concurrents.",
+
+                howLabel: "Comment ça marche",
+                howTitle: "Simple. Rapide. Efficace.",
+                howText: "Commencez avec votre idée et utilisez les outils nécessaires.",
+
+                step1Title: "Décrivez",
+                step1Text: "Expliquez votre activité et votre audience.",
+
+                step2Title: "Générez",
+                step2Text: "Choisissez un outil IA et créez votre contenu.",
+
+                step3Title: "Lancez",
+                step3Text: "Transformez vos idées en présence professionnelle.",
+
+                templatesLabel: "Modèles",
+                templatesTitle: "Commencez sur une bonne base.",
+                templatesText: "Des modèles professionnels pour différents business.",
+
+                pricingLabel: "Tarifs",
+                pricingTitle: "Choisissez votre point de départ.",
+                pricingText: "Des plans simples pour accompagner votre croissance.",
+
+                ctaTitle: "Prêt à vous lancer ?",
+                ctaText: "Commencez avec une idée et transformez-la en projet en ligne.",
+                ctaButton: "Commencer avec LaunchSite AI →"
+            },
+
+
+            ar: {
+
+                navFeatures: "المميزات",
+                navAI: "الذكاء الاصطناعي",
+                navHow: "كيف يعمل",
+                navTemplates: "القوالب",
+                navPricing: "الأسعار",
+                navStart: "ابدأ الآن",
+
+                badge: "منصة إطلاق الأعمال بالذكاء الاصطناعي",
+
+                heroTitle: "الطريقة الأسرع لإطلاق مشروعك على الإنترنت.",
+                heroText: "أنشئ حضورك الرقمي، احصل على أفكار تسويقية وحوّل فكرة مشروعك إلى شيء احترافي.",
+                heroButton: "ابدأ بالذكاء الاصطناعي →",
+                heroSecondary: "استكشف القوالب",
+
+                heroCardTitle: "مشروعك.<br>جاهز للإنترنت.",
+
+                aiTitle: "مساعدك الذكي للأعمال.",
+                aiDescription: "أنشئ أفكار إعلانية، اكتب نصوص الإعلانات، ابتكر أفكار فيديوهات وحلل المنافسين.",
+
+                toolIdeas: "أفكار إعلانات",
+                toolIdeasSmall: "إنشاء أفكار للحملات",
+
+                toolScript: "نص إعلان",
+                toolScriptSmall: "كتابة نص كامل",
+
+                toolVideo: "فكرة فيديو",
+                toolVideoSmall: "إنشاء مفهوم قوي",
+
+                toolWebsite: "تحليل موقع",
+                toolWebsiteSmall: "تحليل موقع منافس",
+
+                toolCompetitor: "تحليل فيديو",
+                toolCompetitorSmall: "تحليل فيديو منافس",
+
+                resultTitle: "نتيجة الذكاء الاصطناعي",
+                resultDescription: "ستظهر النتيجة هنا.",
+
+                featuresLabel: "كل ما تحتاجه",
+                featuresTitle: "من الفكرة إلى الوجود على الإنترنت.",
+                featuresText: "LaunchSite يجمع إنشاء المواقع والتسويق في تجربة واحدة.",
+
+                feature1Title: "مواقع احترافية",
+                feature1Text: "أنشئ مواقع حديثة ومتجاوبة للشركات والعلامات التجارية.",
+
+                feature2Title: "تسويق بالذكاء الاصطناعي",
+                feature2Text: "أنشئ أفكاراً ونصوصاً ومفاهيم للإعلانات.",
+
+                feature3Title: "تحليل المنافسين",
+                feature3Text: "حلل مواقع وفيديوهات المنافسين للحصول على معلومات مفيدة.",
+
+                howLabel: "كيف يعمل",
+                howTitle: "بسيط. سريع. واضح.",
+                howText: "ابدأ بفكرة مشروعك واستعمل الأدوات التي تحتاجها.",
+
+                step1Title: "اشرح",
+                step1Text: "أخبر LaunchSite عن مشروعك والجمهور المستهدف.",
+
+                step2Title: "أنشئ",
+                step2Text: "اختر أداة AI وأنشئ المحتوى التسويقي.",
+
+                step3Title: "أطلق",
+                step3Text: "حوّل أفكارك إلى حضور احترافي على الإنترنت.",
+
+                templatesLabel: "القوالب",
+                templatesTitle: "ابدأ من قاعدة قوية.",
+                templatesText: "تصاميم احترافية لأنواع مختلفة من المشاريع.",
+
+                pricingLabel: "الأسعار",
+                pricingTitle: "اختر نقطة البداية.",
+                pricingText: "خطط بسيطة تساعد مشروعك على النمو.",
+
+                ctaTitle: "جاهز للانطلاق؟",
+                ctaText: "ابدأ بفكرة ودع LaunchSite يساعدك على تحويلها إلى مشروع رقمي.",
+                ctaButton: "ابدأ مع LaunchSite AI →"
+            },
+
+
+            de: {
+
+                navFeatures: "Funktionen",
+                navAI: "KI",
+                navHow: "So funktioniert es",
+                navTemplates: "Vorlagen",
+                navPricing: "Preise",
+                navStart: "Starten",
+
+                badge: "KI-Plattform für den Business-Start",
+
+                heroTitle: "Der schnellere Weg, online zu starten.",
+                heroText: "Erstelle deine Online-Präsenz, entwickle Marketingideen und verwandle dein Geschäftskonzept in ein digitales Projekt.",
+                heroButton: "Mit KI starten →",
+                heroSecondary: "Vorlagen entdecken",
+
+                heroCardTitle: "Dein Business.<br>Bereit fürs Internet.",
+
+                aiTitle: "Dein Business-Assistent.",
+                aiDescription: "Erstelle Werbeideen, Scripts, Videokonzepte und analysiere Wettbewerber.",
+
+                toolIdeas: "Werbeideen",
+                toolIdeasSmall: "Kampagnenideen erstellen",
+
+                toolScript: "Werbescript",
+                toolScriptSmall: "Script schreiben",
+
+                toolVideo: "Videokonzept",
+                toolVideoSmall: "Starke Konzepte erstellen",
+
+                toolWebsite: "Website-Analyse",
+                toolWebsiteSmall: "Wettbewerber analysieren",
+
+                toolCompetitor: "Videoanalyse",
+                toolCompetitorSmall: "Wettbewerber-Videos analysieren",
+
+                resultTitle: "KI-Ergebnis",
+                resultDescription: "Dein Ergebnis erscheint hier.",
+
+                featuresLabel: "Alles was du brauchst",
+                featuresTitle: "Von der Idee zur Online-Präsenz.",
+                featuresText: "LaunchSite verbindet Website-Erstellung und Marketing in einer einfachen Plattform.",
+
+                feature1Title: "Professionelle Websites",
+                feature1Text: "Erstelle moderne und responsive Websites für dein Business.",
+
+                feature2Title: "KI-Marketing",
+                feature2Text: "Erstelle Ideen, Scripts und Konzepte für deine Kampagnen.",
+
+                feature3Title: "Wettbewerbsanalyse",
+                feature3Text: "Analysiere Websites und Videos deiner Wettbewerber.",
+
+                howLabel: "So funktioniert es",
+                howTitle: "Einfach. Schnell. Klar.",
+                howText: "Starte mit deiner Geschäftsidee und nutze die passenden Tools.",
+
+                step1Title: "Beschreiben",
+                step1Text: "Beschreibe dein Angebot und deine Zielgruppe.",
+
+                step2Title: "Generieren",
+                step2Text: "Wähle ein KI-Tool und erstelle Marketingmaterial.",
+
+                step3Title: "Starten",
+                step3Text: "Verwandle deine Ideen in eine professionelle Online-Präsenz.",
+
+                templatesLabel: "Vorlagen",
+                templatesTitle: "Starte mit einer starken Basis.",
+                templatesText: "Professionelle Layouts für verschiedene Unternehmen.",
+
+                pricingLabel: "Preise",
+                pricingTitle: "Wähle deinen Startpunkt.",
+                pricingText: "Einfache Pläne für dein Wachstum.",
+
+                ctaTitle: "Bereit zu starten?",
+                ctaText: "Beginne mit einer Idee und verwandle sie in ein Online-Projekt.",
+                ctaButton: "Mit LaunchSite AI starten →"
+            },
+
+
+            es: {
+
+                navFeatures: "Funciones",
+                navAI: "IA",
+                navHow: "Cómo funciona",
+                navTemplates: "Plantillas",
+                navPricing: "Precios",
+                navStart: "Empezar",
+
+                badge: "Plataforma de lanzamiento empresarial con IA",
+
+                heroTitle: "La forma más rápida de lanzar online.",
+                heroText: "Crea tu presencia online, genera ideas de marketing y convierte tu concepto de negocio en un proyecto digital.",
+                heroButton: "Empezar con IA →",
+                heroSecondary: "Explorar plantillas",
+
+                heroCardTitle: "Tu negocio.<br>Listo para Internet.",
+
+                aiTitle: "Tu asistente de negocio.",
+                aiDescription: "Genera ideas publicitarias, escribe guiones, crea conceptos de vídeo y analiza competidores.",
+
+                toolIdeas: "Ideas de anuncios",
+                toolIdeasSmall: "Generar ideas",
+
+                toolScript: "Guion publicitario",
+                toolScriptSmall: "Escribir un guion",
+
+                toolVideo: "Concepto de vídeo",
+                toolVideoSmall: "Crear conceptos",
+
+                toolWebsite: "Análisis web",
+                toolWebsiteSmall: "Analizar un competidor",
+
+                toolCompetitor: "Análisis de vídeo",
+                toolCompetitorSmall: "Analizar vídeos",
+
+                resultTitle: "Resultado IA",
+                resultDescription: "Tu resultado aparecerá aquí.",
+
+                featuresLabel: "Todo lo que necesitas",
+                featuresTitle: "De la idea a la presencia online.",
+                featuresText: "LaunchSite combina creación web y marketing en una sola experiencia.",
+
+                feature1Title: "Webs profesionales",
+                feature1Text: "Crea sitios modernos y adaptables para negocios y marcas.",
+
+                feature2Title: "Marketing con IA",
+                feature2Text: "Genera ideas, guiones y conceptos para tus campañas.",
+
+                feature3Title: "Investigación competitiva",
+                feature3Text: "Analiza webs y vídeos de tus competidores.",
+
+                howLabel: "Cómo funciona",
+                howTitle: "Simple. Rápido. Enfocado.",
+                howText: "Empieza con tu idea de negocio y utiliza las herramientas que necesitas.",
+
+                step1Title: "Describe",
+                step1Text: "Cuéntanos qué vendes y a quién quieres llegar.",
+
+                step2Title: "Genera",
+                step2Text: "Elige una herramienta de IA y crea tu contenido.",
+
+                step3Title: "Lanza",
+                step3Text: "Convierte tus ideas en una presencia profesional.",
+
+                templatesLabel: "Plantillas",
+                templatesTitle: "Empieza con una base sólida.",
+                templatesText: "Diseños profesionales para diferentes negocios.",
+
+                pricingLabel: "Precios",
+                pricingTitle: "Elige tu punto de partida.",
+                pricingText: "Planes simples para acompañar tu crecimiento.",
+
+                ctaTitle: "¿Listo para lanzar?",
+                ctaText: "Empieza con una idea y conviértela en un proyecto online.",
+                ctaButton: "Empezar con LaunchSite AI →"
+            }
+
+        };
+
+
+        /* =========================================================
+           LANGUAGE SYSTEM
+        ========================================================= */
+
+        const languageSelect = document.getElementById("languageSelect");
+
+        function changeLanguage(language) {
+
+            const data = translations[language];
+
+            if (!data) return;
+
+            document.documentElement.lang = language;
+
+            if (language === "ar") {
+                document.documentElement.dir = "rtl";
+            } else {
+                document.documentElement.dir = "ltr";
+            }
+
+            document.querySelectorAll("[data-i18n]").forEach(element => {
+
+                const key = element.getAttribute("data-i18n");
+
+                if (data[key]) {
+                    element.innerHTML = data[key];
+                }
+
+            });
+
+            localStorage.setItem("launchsiteLanguage", language);
+        }
+
+
+        languageSelect.addEventListener("change", function () {
+            changeLanguage(this.value);
+        });
+
+
+        const savedLanguage =
+            localStorage.getItem("launchsiteLanguage") || "en";
+
+        languageSelect.value = savedLanguage;
+
+        changeLanguage(savedLanguage);
+
+
+        /* =========================================================
+           AI TOOL SYSTEM
+        ========================================================= */
+
+        const tools = document.querySelectorAll(".ai-tool");
+
+        const formTitle = document.getElementById("aiFormTitle");
+        const formDescription = document.getElementById("aiFormDescription");
+
+        const businessInput = document.getElementById("businessInput");
+        const audienceInput = document.getElementById("audienceInput");
+        const detailsInput = document.getElementById("detailsInput");
+        const urlInput = document.getElementById("urlInput");
+
+        const generateBtn = document.getElementById("generateBtn");
+        const aiResult = document.getElementById("aiResult");
+
+        let currentTool = "ideas";
+
+
+        const toolContent = {
+
+            ideas: {
+                title: "Generate advertising ideas",
+                description: "Tell LaunchSite about your business and target audience.",
+                placeholder: "Describe your product, service or offer..."
+            },
+
+            script: {
+                title: "Write an advertising script",
+                description: "Give the AI your product details and desired style.",
+                placeholder: "Example: 30-second TikTok ad for a streetwear brand..."
+            },
+
+            video: {
+                title: "Create a strong video concept",
+                description: "Describe the product and the type of video you want.",
+                placeholder: "Example: cinematic product video with a strong hook..."
+            },
+
+            website: {
+                title: "Analyze a competitor website",
+                description: "Enter the competitor website URL.",
+                placeholder: "Describe what you want to learn from this website..."
+            },
+
+            competitor: {
+                title: "Analyze a competitor video",
+                description: "Add information about the competitor video.",
+                placeholder: "Paste the video URL or describe the video..."
+            }
+
+        };
+
+
+        function selectTool(toolName) {
+
+            currentTool = toolName;
+
+            tools.forEach(tool => {
+                tool.classList.remove("active");
+
+                if (tool.dataset.tool === toolName) {
+                    tool.classList.add("active");
+                }
+            });
+
+
+            const selected = toolContent[toolName];
+
+            formTitle.textContent = selected.title;
+            formDescription.textContent = selected.description;
+            detailsInput.placeholder = selected.placeholder;
+
+
+            if (toolName === "website") {
+                urlInput.style.display = "block";
+            } else {
+                urlInput.style.display = "none";
+            }
+
+
+            aiResult.classList.remove("has-result");
+
+            aiResult.textContent =
+                "Your AI-generated content will appear here.";
+        }
+
+
+        tools.forEach(tool => {
+
+            tool.addEventListener("click", function () {
+
+                selectTool(this.dataset.tool);
+
+            });
+
+        });
+
+
+        /* =========================================================
+           DEMO AI RESPONSE
+           ========================================================= */
+
+        function createDemoResponse() {
+
+            const business =
+                businessInput.value.trim() || "Your business";
+
+            const audience =
+                audienceInput.value.trim() || "your target audience";
+
+            const details =
+                detailsInput.value.trim() || "your product or service";
+
+
+            if (currentTool === "ideas") {
+
+                return `
+AD CAMPAIGN IDEAS FOR ${business.toUpperCase()}
+
+Target audience:
+${audience}
+
+1. The Problem → Solution Hook
+Start with the biggest problem your customer has, then reveal your product as the solution.
+
+2. Before / After
+Show the customer's situation before discovering ${business}, then show the improved result.
+
+3. Identity Campaign
+Focus on who the customer wants to become rather than only what the product does.
+
+4. Fast Product Showcase
+Use short cinematic shots showing:
+• Product
+• Detail
+• Use
+• Result
+• Call to action
+
+5. Social Proof
+Build a short campaign around customer reactions, testimonials and real-world results.
+
+PRODUCT / BUSINESS:
+${details}
+                `.trim();
+
+            }
+
+
+            if (currentTool === "script") {
+
+                return `
+30-SECOND AD SCRIPT
+
+Brand:
+${business}
+
+Audience:
+${audience}
+
+HOOK — 0-3s
+"You're not looking for another product.
+You're looking for a better result."
+
+PROBLEM — 3-8s
+Show the customer's current problem.
+
+SOLUTION — 8-18s
+Introduce ${business} and show the product/service in action.
+
+PROOF — 18-25s
+Show the strongest benefit or customer result.
+
+CTA — 25-30s
+"Discover ${business} today."
+
+DETAILS:
+${details}
+                `.trim();
+
+            }
+
+
+            if (currentTool === "video") {
+
+                return `
+VIDEO CONCEPT
+
+Brand:
+${business}
+
+Concept:
+"THE TRANSFORMATION"
+
+OPENING:
+Start with a visually strong shot that creates curiosity.
+
+SCENE 1:
+Show the problem or old situation.
+
+SCENE 2:
+Introduce the product/service.
+
+SCENE 3:
+Use cinematic close-ups and movement to show the details.
+
+SCENE 4:
+Show the transformation/result.
+
+ENDING:
+Display the brand name and a short memorable CTA.
+
+TARGET:
+${audience}
+
+PRODUCT DETAILS:
+${details}
+                `.trim();
+
+            }
+
+
+            if (currentTool === "website") {
+
+                const url =
+                    urlInput.value.trim() || "Competitor website";
+
+                return `
+COMPETITOR WEBSITE ANALYSIS
+
+Website:
+${url}
+
+Analysis framework:
+
+1. First impression
+Evaluate the visual identity, headline and main call-to-action.
+
+2. User experience
+Look at navigation, mobile experience and page structure.
+
+3. Offer
+Identify what the business is selling and how clearly it communicates value.
+
+4. Conversion
+Identify visible CTAs, trust signals, testimonials and forms.
+
+5. Content
+Study the language, messaging and type of content used.
+
+6. Opportunities
+Look for areas where your own website could communicate more clearly or differently.
+
+IMPORTANT:
+A real website analysis requires connecting LaunchSite AI to a backend capable of fetching and processing the target website.
+                `.trim();
+
+            }
+
+
+            if (currentTool === "competitor") {
+
+                return `
+COMPETITOR VIDEO ANALYSIS
+
+Competitor:
+${business}
+
+Audience:
+${audience}
+
+Analysis framework:
+
+HOOK
+What happens during the first 3 seconds?
+
+MESSAGE
+What is the main promise?
+
+VISUALS
+What type of shots, transitions and visuals are used?
+
+EMOTION
+What emotion is the video trying to create?
+
+OFFER
+What product or service is being promoted?
+
+CTA
+What action does the viewer receive?
+
+OPPORTUNITY
+Create a different creative direction instead of simply copying the competitor.
+
+VIDEO INFORMATION:
+${details}
+                `.trim();
+
+            }
+
+        }
+
+
+        generateBtn.addEventListener("click", async function () {
+
+            aiResult.classList.add("loading");
+            aiResult.classList.remove("has-result");
+
+            aiResult.textContent =
+                "LaunchSite AI is preparing your result...";
+
+
+            await new Promise(resolve =>
+                setTimeout(resolve, 900)
+            );
+
+
+            aiResult.classList.remove("loading");
+            aiResult.classList.add("has-result");
+
+            aiResult.textContent =
+                createDemoResponse();
+
+        });
+
+
+        /* =========================================================
+           SMOOTH NAVIGATION
+        ========================================================= */
+
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+            link.addEventListener("click", function (event) {
+
+                const targetId =
+                    this.getAttribute("href");
+
+                if (!targetId || targetId === "#") return;
+
+                const target =
+                    document.querySelector(targetId);
+
+                if (!target) return;
+
+                event.preventDefault();
+
+                target.scrollIntoView({
+                    behavior: "smooth"
+                });
+
+            });
+
+        });
+
+
+        /* =========================================================
+           INITIAL AI TOOL
+        ========================================================= */
+
+        selectTool("ideas");
+
+    </script>
 
 </body>
 </html>
