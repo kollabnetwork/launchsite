@@ -1,40 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LaunchSite — AI-powered business launch platform</title>
+    <title>LaunchSite — منصة إطلاق المشاريع بالذكاء الاصطناعي</title>
     <style>
         :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
             --primary: #2563eb;
-            --primary-hover: #1d4ed8;
-            --bg-dark: #0f172a;
-            --bg-card: #1e293b;
-            --text-main: #f8fafc;
+            --text-color: #f8fafc;
             --text-muted: #94a3b8;
-            --accent-dz: #d97706;
+            --accent-gold: #d97706;
         }
 
         body {
             margin: 0;
             font-family: system-ui, -apple-system, sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-main);
+            background-color: var(--bg-color);
+            color: var(--text-color);
             line-height: 1.6;
         }
 
         header {
-            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 1.5rem 2rem;
             border-bottom: 1px solid #334155;
         }
 
         .logo {
             font-weight: bold;
-            font-size: 1.25rem;
-            color: var(--text-main);
+            font-size: 1.5rem;
+            color: #fff;
             text-decoration: none;
         }
 
@@ -42,11 +41,6 @@
             color: var(--text-muted);
             text-decoration: none;
             margin: 0 1rem;
-            transition: color 0.2s;
-        }
-
-        nav a:hover {
-            color: var(--text-main);
         }
 
         .btn {
@@ -55,90 +49,81 @@
             padding: 0.6rem 1.2rem;
             border-radius: 6px;
             text-decoration: none;
-            font-weight: 500;
-            display: inline-block;
-            transition: background-color 0.2s;
             border: none;
             cursor: pointer;
-        }
-
-        .btn:hover {
-            background-color: var(--primary-hover);
+            font-weight: bold;
         }
 
         .hero {
-            padding: 4rem 2rem;
             text-align: center;
+            padding: 4rem 1rem;
             max-width: 800px;
             margin: 0 auto;
         }
 
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+        /* قسم الذكاء الاصطناعي */
+        .ai-workspace {
+            max-width: 800px;
+            margin: 2rem auto;
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #334155;
         }
 
-        .hero p {
-            color: var(--text-muted);
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
+        textarea {
+            width: 95%;
+            height: 100px;
+            background-color: #0f172a;
+            color: white;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 1rem;
+            font-family: inherit;
+        }
+
+        .ai-result {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background-color: #0f172a;
+            border-radius: 8px;
+            border-right: 4px solid var(--primary);
+            min-height: 50px;
+            text-align: right;
+        }
+
+        /* قسم الأسعار */
+        .pricing-section {
+            padding: 4rem 1rem;
+            text-align: center;
         }
 
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             max-width: 1000px;
-            margin: 0 auto;
-            padding: 2rem;
+            margin: 2rem auto 0 auto;
         }
 
-        .card {
-            background-color: var(--bg-card);
-            border: 1px solid #334155;
+        .price-card {
+            background-color: var(--card-bg);
+            padding: 2rem;
             border-radius: 12px;
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .card h3 {
-            margin-top: 0;
-        }
-
-        .price {
-            font-size: 2rem;
-            font-weight: bold;
-            margin: 1rem 0;
-        }
-
-        .payment-methods {
-            margin-top: 1.5rem;
-            padding-top: 1rem;
-            border-top: 1px solid #334155;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
-        .payment-badges {
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-top: 0.5rem;
-            flex-wrap: wrap;
+            border: 1px solid #334155;
         }
 
         .badge {
-            background-color: #334155;
-            padding: 0.2rem 0.6rem;
+            display: inline-block;
+            padding: 2px 8px;
             border-radius: 4px;
             font-size: 0.75rem;
-            color: #e2e8f0;
+            margin: 2px;
         }
 
-        .badge-dz {
-            background-color: var(--accent-dz);
-            color: #fff;
-        }
+        .badge-dz { background-color: var(--accent-gold); color: white; }
+        .badge-global { background-color: #0d9488; color: white; }
 
         footer {
             text-align: center;
@@ -151,78 +136,58 @@
 <body>
 
     <header>
-        <a href="#" class="logo">LaunchSite</a>
+        <a href="#" class="logo">LaunchSite AI</a>
         <nav>
-            <a href="#features">Features</a>
-            <a href="#ai">AI Workspace</a>
-            <a href="#pricing">Pricing</a>
+            <a href="#ai">أداة الذكاء الاصطناعي</a>
+            <a href="#pricing">الأسعار وطرق الدفع</a>
         </nav>
-        <div>
-            <select aria-label="Language" style="background: #1e293b; color: white; padding: 0.4rem; border-radius: 4px; border: 1px solid #334155;">
-                <option value="en">EN</option>
-                <option value="ar">AR</option>
-                <option value="fr">FR</option>
-            </select>
-            <a href="#pricing" class="btn">Get Started</a>
-        </div>
+        <a href="#ai" class="btn">جرب الآن</a>
     </header>
 
     <main>
         <section class="hero">
-            <h1>The faster way to launch online.</h1>
-            <p>Build your online presence, create marketing ideas and turn your business concept into something people can see, understand and buy.</p>
-            <a href="#pricing" class="btn">Start with AI →</a>
+            <h1>أسرع طريقة لإطلاق مشروعك الرقمي</h1>
+            <p>اكتب فكرة مشروعك وسيقوم الذكاء الاصطناعي باقتراح خطة تسويقية وأفكار إعلانية فوراً.</p>
         </section>
 
-        <section id="pricing">
-            <h2 style="text-align: center;">Choose your plan</h2>
+        <!-- قسم الذكاء الاصطناعي الشغال -->
+        <section id="ai" class="ai-workspace">
+            <h2>مساعد الذكاء الاصطناعي (AI Generator)</h2>
+            <p>صف مشروعك أو فكرتك بالتفصيل:</p>
+            <textarea id="userInput" placeholder="مثال: أريد فتح تطبيق لتوصيل الوجبات السريعة في الجزائر..."></textarea>
+            <br>
+            <button class="btn" onclick="generateAIContent()">توليد الأفكار بالذكاء الاصطناعي ✨</button>
+
+            <div class="ai-result">
+                <strong>النتيجة:</strong>
+                <div id="output">أدخل فكرتك واضغط على الزر أعلاه لتوليد المقترحات...</div>
+            </div>
+        </section>
+
+        <!-- قسم الأسعار وطرق الدفع -->
+        <section id="pricing" class="pricing-section">
+            <h2>خطط الاشتراك وطرق الدفع</h2>
             <div class="pricing-grid">
                 
-                <!-- Starter Plan -->
-                <div class="card">
-                    <h3>Starter</h3>
-                    <div class="price">Free</div>
-                    <p>Basic features for individuals getting started.</p>
-                    <button class="btn" style="width: 100%;">Get Started</button>
+                <div class="price-card">
+                    <h3>المبتدئ (Starter)</h3>
+                    <h2>مجاناً</h2>
+                    <p>أفكار محدودة وتجربة سريعة.</p>
+                    <button class="btn" style="width: 100%;">بدء الاستخدام</button>
                 </div>
 
-                <!-- Pro Plan (Local & Global) -->
-                <div class="card" style="border-color: var(--primary);">
-                    <h3>Pro</h3>
-                    <div class="price">$19 <span style="font-size: 1rem; color: var(--text-muted);">/ mo</span></div>
-                    <p style="font-size: 0.9rem; color: #f59e0b;">~ 4,000 DZD / month</p>
-                    <p>Advanced AI workflows and marketing tools.</p>
+                <div class="price-card" style="border-color: var(--primary);">
+                    <h3>المحترف (Pro)</h3>
+                    <h2>$19 <small>/ شهرياً</small></h2>
+                    <p style="color: var(--accent-gold);">~ 4,000 د.ج / شهرياً</p>
+                    <p>توليد غير محدود للأفكار والخطط.</p>
+                    <button class="btn" style="width: 100%;">اشترك الآن</button>
                     
-                    <button class="btn" style="width: 100%;">Subscribe Now</button>
-
-                    <div class="payment-methods">
-                        <div>Accepted Payments:</div>
-                        <div class="payment-badges">
-                            <span class="badge badge-dz">Edahabia (Chargui/CCP)</span>
-                            <span class="badge badge-dz">CIB</span>
-                            <span class="badge">Visa</span>
-                            <span class="badge">Mastercard</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Business Plan -->
-                <div class="card">
-                    <h3>Business</h3>
-                    <div class="price">$49 <span style="font-size: 1rem; color: var(--text-muted);">/ mo</span></div>
-                    <p style="font-size: 0.9rem; color: #f59e0b;">~ 10,000 DZD / month</p>
-                    <p>Full support and team workspace.</p>
-                    
-                    <button class="btn" style="width: 100%;">Contact Sales</button>
-
-                    <div class="payment-methods">
-                        <div>Accepted Payments:</div>
-                        <div class="payment-badges">
-                            <span class="badge badge-dz">Edahabia</span>
-                            <span class="badge badge-dz">CIB</span>
-                            <span class="badge">Visa / Mastercard</span>
-                            <span class="badge">Wire Transfer</span>
-                        </div>
+                    <div style="margin-top: 1rem; border-top: 1px solid #334155; padding-top: 0.5rem;">
+                        <small>طرق الدفع المقبولة:</small><br>
+                        <span class="badge badge-dz">الذهبية Edahabia</span>
+                        <span class="badge badge-dz">CIB</span>
+                        <span class="badge badge-global">Visa / Mastercard</span>
                     </div>
                 </div>
 
@@ -231,8 +196,34 @@
     </main>
 
     <footer>
-        <p>© 2026 LaunchSite — Build faster. Launch smarter.</p>
+        <p>© 2026 LaunchSite — جميع الحقوق محفوظة</p>
     </footer>
 
+    <!-- البرمجة التفاعلية (JavaScript) لتوليد الأفكار -->
+    <script>
+        function generateAIContent() {
+            const input = document.getElementById('userInput').value;
+            const output = document.getElementById('output');
+
+            if (!input.trim()) {
+                output.innerHTML = "<span style='color: #ef4444;'>يرجى كتابة وصف للمشروع أولاً!</span>";
+                return;
+            }
+
+            output.innerHTML = "جاري تحليلك وفكرتك وتوليد الأفكار... ⏳";
+
+            // محاكاة استجابة الذكاء الاصطناعي
+            setTimeout(() => {
+                output.innerHTML = `
+                    <p><strong>💡 خطة نموذجية لمشروعك ("${input}"):</strong></p>
+                    <ul>
+                        <li><strong>الشعار الاقتراحي:</strong> الحل الأسرع والأسهل لتلبية احتياجاتك.</li>
+                        <li><strong>الجمهور المستهدف:</strong> الشباب والمهنيين المهتمين بالخدمات الرقمية.</li>
+                        <li><strong>فكرة إعلان:</strong> فيديو قصير يوضح المشكلة اليومية وكيف يحلها تطبيقك في 30 ثانية.</li>
+                    </ul>
+                `;
+            }, 1200);
+        }
+    </script>
 </body>
 </html>
