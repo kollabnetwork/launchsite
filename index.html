@@ -1,9 +1,859 @@
-=qdin   ckftu
-m cknzlltgirghfdbjnru39
-w
-\Q
-5
-4
-DF'GLKJBFMD,W
-"E3\]50I96THJB M,V,A
-Qw\]er[yu6tv /.c.fmvkbggjgihjit6950-96uy9
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090b0a">
+<meta name="description" content="Hookora helps brands create stronger advertising hooks, video concepts and ad scripts.">
+<title>Hookora — Ad Creative Studio</title>
+
+<style>
+:root {
+  --bg:#090b0a;
+  --panel:#111512;
+  --panel2:#151a16;
+  --line:#29332b;
+  --text:#f4f7f3;
+  --muted:#9ca79d;
+  --green:#c5ff70;
+  --green-dark:#a5e94f;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:Inter,system-ui,-apple-system,sans-serif;
+  line-height:1.6
+}
+button,input,textarea,select{font:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer}
+.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+header{
+  position:sticky;top:0;z-index:20;
+  background:rgba(9,11,10,.94);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line)
+}
+.nav{
+  min-height:76px;display:flex;align-items:center;
+  justify-content:space-between;gap:22px
+}
+.logo{font-size:25px;font-weight:850;letter-spacing:-1.3px}
+.logo span{color:var(--green)}
+nav{display:flex;align-items:center;gap:25px}
+nav a{font-size:13px;color:var(--muted)}
+nav a:hover{color:var(--green)}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:12px 19px;border:1px solid transparent;border-radius:8px;
+  background:var(--green);color:#10150b;font-weight:800;font-size:13px;
+  transition:.2s
+}
+.btn:hover{background:var(--green-dark);transform:translateY(-1px)}
+.btn.secondary{background:transparent;color:var(--text);border-color:var(--line)}
+.btn.secondary:hover{border-color:var(--green);color:var(--green)}
+.btn.small{padding:9px 13px}
+.hero{padding:100px 0 65px;text-align:center}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  border:1px solid #394532;background:#121911;color:var(--green);
+  padding:7px 13px;border-radius:30px;font-size:11px;font-weight:750;
+  letter-spacing:1px;text-transform:uppercase
+}
+.dot{width:7px;height:7px;background:var(--green);border-radius:50%}
+h1{font-size:clamp(42px,7vw,79px);line-height:1.04;letter-spacing:-4px;
+  margin:25px auto 20px;max-width:900px}
+h1 span{color:var(--green)}
+.hero p{max-width:620px;margin:0 auto 27px;color:var(--muted);font-size:17px}
+.hero-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.proof{margin-top:34px;color:var(--muted);font-size:12px}
+.proof b{color:#e9f0e6}
+.section{padding:72px 0}
+.section-head{margin-bottom:28px}
+.kicker{color:var(--green);font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase}
+h2{font-size:clamp(29px,4vw,43px);line-height:1.15;letter-spacing:-1.5px;margin:10px 0}
+.section-head p{color:var(--muted);max-width:630px;margin:10px 0}
+.tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.tool-card{
+  padding:23px;border:1px solid var(--line);border-radius:13px;
+  background:linear-gradient(145deg,#141914,#0d100e)
+}
+.tool-icon{
+  display:grid;place-items:center;width:43px;height:43px;
+  border:1px solid #3a4935;background:#1a2416;border-radius:10px;
+  font-size:20px;margin-bottom:17px
+}
+.tool-card h3{font-size:17px;margin:0 0 7px}
+.tool-card p{font-size:13px;color:var(--muted);margin:0}
+.workspace{
+  border:1px solid #354334;border-radius:16px;overflow:hidden;
+  background:var(--panel)
+}
+.workspace-top{
+  padding:19px 23px;border-bottom:1px solid var(--line);
+  display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap
+}
+.workspace-top h3{margin:0;font-size:18px}
+.status{font-size:11px;color:var(--green);border:1px solid #3c5032;padding:5px 9px;border-radius:20px}
+.workspace-body{padding:24px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}
+.field{display:flex;flex-direction:column;gap:7px;min-width:0}
+.field.full{grid-column:1/-1}
+label{font-size:12px;font-weight:750;color:#dce4da}
+input,textarea,select{
+  width:100%;min-width:0;background:#0b0e0c;color:var(--text);
+  border:1px solid #303a32;border-radius:8px;padding:12px 13px;outline:none
+}
+input:focus,textarea:focus,select:focus{border-color:var(--green)}
+textarea{resize:vertical;min-height:94px}
+input::placeholder,textarea::placeholder{color:#677168}
+select{color-scheme:dark}
+.hint{font-size:11px;color:var(--muted)}
+.full-button{width:100%;margin-top:20px;padding:15px}
+.result{
+  display:none;margin-top:23px;padding:21px;
+  border:1px solid #354334;border-radius:12px;background:#0b0e0c
+}
+.result.show{display:block}
+.result-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.result-heading h3{margin:0;font-size:18px}
+.result-content{margin-top:16px}
+.result-item{padding:15px 0;border-bottom:1px solid var(--line)}
+.result-item:last-child{border-bottom:0}
+.result-item h4{color:var(--green);font-size:12px;margin:0 0 7px}
+.result-item p{margin:0;color:#e1e8df;white-space:pre-wrap;overflow-wrap:anywhere}
+.result-item .explain{font-size:12px;color:var(--muted);margin-top:7px}
+.error{color:#ff9a9a;font-size:13px;margin-top:10px}
+.frameworks{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.chip{border:1px solid var(--line);border-radius:20px;padding:7px 11px;font-size:11px;color:var(--muted)}
+.pricing-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;max-width:800px}
+.price-card{border:1px solid var(--line);border-radius:14px;padding:27px;background:var(--panel)}
+.price-card.featured{border-color:#7b9b52}
+.plan{font-size:12px;color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:1px}
+.price{font-size:43px;font-weight:850;letter-spacing:-2px;margin:13px 0 0}
+.price small{font-size:12px;font-weight:500;letter-spacing:0;color:var(--muted)}
+.price-card>p{font-size:13px;color:var(--muted)}
+.price-card ul{list-style:none;padding:0;margin:22px 0}
+.price-card li{font-size:13px;margin:11px 0;color:#d7e0d5}
+.price-card li::before{content:"✓";color:var(--green);margin-right:9px}
+.price-card .btn{width:100%}
+.note{font-size:11px;color:var(--muted);margin-top:15px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.step{border-top:1px solid var(--line);padding-top:19px}
+.step-number{color:var(--green);font-size:12px;font-weight:850}
+.step h3{font-size:16px;margin:8px 0}
+.step p{font-size:13px;color:var(--muted);margin:0}
+.cta{
+  padding:43px;border:1px solid #34452e;border-radius:16px;
+  background:radial-gradient(ellipse at top right,#1a2814,#101411 65%);
+  display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap
+}
+.cta h2{font-size:clamp(25px,4vw,36px);margin:0 0 8px}
+.cta p{color:var(--muted);font-size:13px;margin:0}
+footer{border-top:1px solid var(--line);padding:27px 0;margin-top:70px}
+.footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+footer p{margin:0;font-size:12px;color:var(--muted)}
+footer a{color:var(--muted);font-size:12px}
+[dir="rtl"]{text-align:right}
+[dir="rtl"] .hero,[dir="rtl"] .section-head{text-align:right}
+[dir="rtl"] .hero .hero-actions{justify-content:flex-start}
+[dir="rtl"] .hero .eyebrow{direction:rtl}
+[dir="rtl"] .price-card li::before{margin-right:0;margin-left:9px}
+@media(max-width:760px){
+  .wrap{width:calc(100% - 28px)}
+  .nav{min-height:65px;flex-wrap:wrap;padding:12px 0}
+  nav{order:3;width:100%;justify-content:space-between;gap:10px}
+  nav a{font-size:11px}
+  .nav>.btn{padding:9px 12px;font-size:11px}
+  .hero{padding:70px 0 48px}
+  h1{letter-spacing:-2px}
+  .hero p{font-size:15px}
+  .section{padding:52px 0}
+  .tools-grid{grid-template-columns:1fr 1fr}
+  .tool-card{padding:16px}
+  .tool-card h3{font-size:15px}
+  .workspace-body{padding:16px}
+  .form-grid{grid-template-columns:1fr}
+  .field.full{grid-column:auto}
+  .pricing-grid,.steps{grid-template-columns:1fr}
+  .cta{padding:25px}
+}
+@media(max-width:420px){
+  .tools-grid{grid-template-columns:1fr}
+  .hero-actions .btn{width:100%}
+  .workspace-top{padding:16px}
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="wrap nav">
+    <a href="#home" class="logo">hookora<span>.</span></a>
+    <nav>
+      <a href="#tools" data-i="navTools">Tools</a>
+      <a href="#studio" data-i="navStudio">AI Studio</a>
+      <a href="#how" data-i="navHow">How it works</a>
+      <a href="#pricing" data-i="navPricing">Pricing</a>
+    </nav>
+    <a href="#studio" class="btn small" data-i="navStart">Start creating ↗</a>
+  </div>
+</header>
+
+<main id="home">
+  <section class="hero wrap">
+    <div class="eyebrow"><span class="dot"></span><span data-i="eyebrow">CREATIVE INTELLIGENCE FOR BRANDS</span></div>
+    <h1 data-i="heroTitle">Stop making ads.<br>Start making <span>people stop.</span></h1>
+    <p data-i="heroDesc">Turn ordinary product ideas into scroll-stopping hooks, cinematic ad concepts and persuasive video scripts.</p>
+    <div class="hero-actions">
+      <a href="#studio" class="btn" data-i="heroButton">Create your first ad ↗</a>
+      <a href="#tools" class="btn secondary" data-i="exploreButton">Explore the studio</a>
+    </div>
+    <div class="proof" data-i="proof">BUILT FOR <b>BRANDS · CREATORS · E-COMMERCE</b></div>
+  </section>
+
+  <section id="tools" class="section wrap">
+    <div class="section-head">
+      <div class="kicker" data-i="toolsKicker">THE CREATIVE TOOLKIT</div>
+      <h2 data-i="toolsTitle">Everything starts with a better hook.</h2>
+      <p data-i="toolsDesc">A creative workspace to help you plan the message, the story and the video before you spend on production.</p>
+    </div>
+    <div class="tools-grid">
+      <article class="tool-card">
+        <div class="tool-icon">↗</div>
+        <h3 data-i="tool1Title">Hook Generator</h3>
+        <p data-i="tool1Desc">Create opening lines designed to earn attention in the first seconds.</p>
+      </article>
+      <article class="tool-card">
+        <div class="tool-icon">▤</div>
+        <h3 data-i="tool2Title">Ad Script Writer</h3>
+        <p data-i="tool2Desc">Turn a product benefit into a structured, persuasive video script.</p>
+      </article>
+      <article class="tool-card">
+        <div class="tool-icon">◉</div>
+        <h3 data-i="tool3Title">Cinematic Concepts</h3>
+        <p data-i="tool3Desc">Build scenes, camera directions and visual storytelling ideas.</p>
+      </article>
+      <article class="tool-card">
+        <div class="tool-icon">⇄</div>
+        <h3 data-i="tool4Title">Creative Angles</h3>
+        <p data-i="tool4Desc">Explore problem-solution, before-after and identity-led campaigns.</p>
+      </article>
+      <article class="tool-card">
+        <div class="tool-icon">◎</div>
+        <h3 data-i="tool5Title">Competitor Brief</h3>
+        <p data-i="tool5Desc">Prepare a structured checklist for reviewing competing ads and websites.</p>
+      </article>
+      <article class="tool-card">
+        <div class="tool-icon">⌁</div>
+        <h3 data-i="tool6Title">Audience & Offers</h3>
+        <p data-i="tool6Desc">Adapt your messaging to your audience, platform and campaign goal.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="studio" class="section wrap">
+    <div class="section-head">
+      <div class="kicker" data-i="studioKicker">YOUR CREATIVE WORKSPACE</div>
+      <h2 data-i="studioTitle">Give us the product.<br>Build the story.</h2>
+      <p data-i="studioDesc">Fill in the brief and generate a first creative direction. This demo runs in your browser.</p>
+    </div>
+
+    <div class="workspace">
+      <div class="workspace-top">
+        <h3 data-i="workspaceTitle">Ad Creative Studio</h3>
+        <span class="status" data-i="demoStatus">● LOCAL DEMO</span>
+      </div>
+      <div class="workspace-body">
+        <div class="form-grid">
+          <div class="field full">
+            <label for="product" data-i="productLabel">Product or business</label>
+            <input id="product" placeholder="e.g. Oversized streetwear brand" data-placeholder="productPlaceholder">
+          </div>
+          <div class="field full">
+            <label for="benefit" data-i="benefitLabel">What problem do you solve?</label>
+            <textarea id="benefit" placeholder="What makes your product useful or different?" data-placeholder="benefitPlaceholder"></textarea>
+          </div>
+          <div class="field">
+            <label for="audience" data-i="audienceLabel">Target audience</label>
+            <input id="audience" placeholder="e.g. Young adults, 18–30" data-placeholder="audiencePlaceholder">
+          </div>
+          <div class="field">
+            <label for="platform" data-i="platformLabel">Platform</label>
+            <select id="platform">
+              <option value="TikTok">TikTok</option>
+              <option value="Instagram Reels">Instagram Reels</option>
+              <option value="YouTube Shorts">YouTube Shorts</option>
+              <option value="Facebook Ads">Facebook Ads</option>
+              <option value="Website">Website / landing page</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="style" data-i="styleLabel">Creative angle</label>
+            <select id="style">
+              <option value="problem" data-i="styleProblem">Problem → Solution</option>
+              <option value="before" data-i="styleBefore">Before → After</option>
+              <option value="identity" data-i="styleIdentity">Identity Campaign</option>
+              <option value="showcase" data-i="styleShowcase">Fast Product Showcase</option>
+              <option value="social" data-i="styleSocial">Social Proof</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="duration" data-i="durationLabel">Video duration</label>
+            <select id="duration">
+              <option value="15">15 seconds</option>
+              <option value="30" selected>30 seconds</option>
+              <option value="45">45 seconds</option>
+              <option value="60">60 seconds</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="tone" data-i="toneLabel">Brand tone</label>
+            <select id="tone">
+              <option value="bold">Bold & direct</option>
+              <option value="premium">Premium & minimal</option>
+              <option value="friendly">Friendly & relatable</option>
+              <option value="cinematic">Cinematic & emotional</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="language" data-i="languageLabel">Output language</label>
+            <select id="language">
+              <option value="en">English</option>
+              <option value="fr">Français</option>
+              <option value="ar">العربية</option>
+              <option value="de">Deutsch</option>
+              <option value="es">Español</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn full-button" id="generate" data-i="generateButton">✦ Generate creative concepts</button>
+        <div id="error" class="error" role="alert"></div>
+        <div class="result" id="result" aria-live="polite">
+          <div class="result-heading">
+            <h3 data-i="resultTitle">Your creative brief</h3>
+            <button class="btn secondary small" id="copy" data-i="copyButton">Copy results</button>
+          </div>
+          <div class="result-content" id="resultContent"></div>
+          <div class="frameworks">
+            <span class="chip">HOOK</span>
+            <span class="chip">STORY</span>
+            <span class="chip">CTA</span>
+          </div>
+          <p class="note" data-i="demoNote">Demo output: review all claims and adapt the ideas to your real product.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap" id="how">
+    <div class="section-head">
+      <div class="kicker" data-i="howKicker">A SIMPLE WORKFLOW</div>
+      <h2 data-i="howTitle">From blank page to ad concept.</h2>
+    </div>
+    <div class="steps">
+      <article class="step">
+        <div class="step-number">01 / BRIEF</div>
+        <h3 data-i="step1Title">Describe your product</h3>
+        <p data-i="step1Desc">Explain what you sell, who it helps and what makes it different.</p>
+      </article>
+      <article class="step">
+        <div class="step-number">02 / CREATE</div>
+        <h3 data-i="step2Title">Choose your angle</h3>
+        <p data-i="step2Desc">Pick a creative framework and get hooks, scenes and a call to action.</p>
+      </article>
+      <article class="step">
+        <div class="step-number">03 / REFINE</div>
+        <h3 data-i="step3Title">Make it yours</h3>
+        <p data-i="step3Desc">Edit the brief, verify your claims and develop the strongest concept.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="pricing" class="section wrap">
+    <div class="section-head">
+      <div class="kicker" data-i="pricingKicker">SIMPLE PLANS</div>
+      <h2 data-i="pricingTitle">Start free. Build better ads.</h2>
+      <p data-i="pricingDesc">These are proposed plans for the product, not active subscriptions.</p>
+    </div>
+    <div class="pricing-grid">
+      <article class="price-card">
+        <div class="plan" data-i="starter">Starter</div>
+        <div class="price" data-i="freePrice">Free</div>
+        <p data-i="starterDesc">Explore creative directions at no cost.</p>
+        <ul>
+          <li data-i="feature1">Browser-based creative demo</li>
+          <li data-i="feature2">Five creative frameworks</li>
+          <li data-i="feature3">Copyable results</li>
+        </ul>
+        <a class="btn secondary" href="#studio" data-i="starterButton">Try the studio</a>
+      </article>
+      <article class="price-card featured">
+        <div class="plan" data-i="pro">Pro · Proposed</div>
+        <div class="price">$19 <small data-i="perMonth">/ month</small></div>
+        <p data-i="proDesc">A possible future plan for serious creators.</p>
+        <ul>
+          <li data-i="proFeature1">AI-powered generation when connected</li>
+          <li data-i="proFeature2">Expanded campaign workflows</li>
+          <li data-i="proFeature3">More creative variations</li>
+        </ul>
+        <a class="btn" href="#studio" data-i="proButton">Explore features</a>
+        <p class="note" data-i="paymentNote">Payments and subscriptions are not enabled.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="cta">
+      <div>
+        <h2 data-i="ctaTitle">Your next ad starts with one idea.</h2>
+        <p data-i="ctaDesc">Build a hook, shape the story and find your creative direction.</p>
+      </div>
+      <a href="#studio" class="btn" data-i="ctaButton">Open creative studio ↗</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <a href="#home" class="logo">hookora<span>.</span></a>
+    <p>© 2026 Hookora. <span data-i="footerText">Creative tools for ambitious brands.</span></p>
+    <a href="#home" data-i="backTop">Back to top ↑</a>
+  </div>
+</footer>
+
+<script>
+const translations = {
+en:{
+navTools:"Tools",navStudio:"AI Studio",navHow:"How it works",navPricing:"Pricing",navStart:"Start creating ↗",
+eyebrow:"CREATIVE INTELLIGENCE FOR BRANDS",
+heroTitle:'Stop making ads.<br>Start making <span>people stop.</span>',
+heroDesc:"Turn ordinary product ideas into scroll-stopping hooks, cinematic ad concepts and persuasive video scripts.",
+heroButton:"Create your first ad ↗",exploreButton:"Explore the studio",
+proof:"BUILT FOR <b>BRANDS · CREATORS · E-COMMERCE</b>",
+toolsKicker:"THE CREATIVE TOOLKIT",toolsTitle:"Everything starts with a better hook.",
+toolsDesc:"A creative workspace to help you plan the message, the story and the video before you spend on production.",
+tool1Title:"Hook Generator",tool1Desc:"Create opening lines designed to earn attention in the first seconds.",
+tool2Title:"Ad Script Writer",tool2Desc:"Turn a product benefit into a structured, persuasive video script.",
+tool3Title:"Cinematic Concepts",tool3Desc:"Build scenes, camera directions and visual storytelling ideas.",
+tool4Title:"Creative Angles",tool4Desc:"Explore problem-solution, before-after and identity-led campaigns.",
+tool5Title:"Competitor Brief",tool5Desc:"Prepare a structured checklist for reviewing competing ads and websites.",
+tool6Title:"Audience & Offers",tool6Desc:"Adapt your messaging to your audience, platform and campaign goal.",
+studioKicker:"YOUR CREATIVE WORKSPACE",studioTitle:"Give us the product.<br>Build the story.",
+studioDesc:"Fill in the brief and generate a first creative direction. This demo runs in your browser.",
+workspaceTitle:"Ad Creative Studio",demoStatus:"● LOCAL DEMO",
+productLabel:"Product or business",productPlaceholder:"e.g. Oversized streetwear brand",
+benefitLabel:"What problem do you solve?",benefitPlaceholder:"What makes your product useful or different?",
+audienceLabel:"Target audience",audiencePlaceholder:"e.g. Young adults, 18–30",
+platformLabel:"Platform",styleLabel:"Creative angle",styleProblem:"Problem → Solution",
+styleBefore:"Before → After",styleIdentity:"Identity Campaign",styleShowcase:"Fast Product Showcase",styleSocial:"Social Proof",
+durationLabel:"Video duration",toneLabel:"Brand tone",languageLabel:"Output language",
+generateButton:"✦ Generate creative concepts",resultTitle:"Your creative brief",copyButton:"Copy results",
+demoNote:"Demo output: review all claims and adapt the ideas to your real product.",
+howKicker:"A SIMPLE WORKFLOW",howTitle:"From blank page to ad concept.",
+step1Title:"Describe your product",step1Desc:"Explain what you sell, who it helps and what makes it different.",
+step2Title:"Choose your angle",step2Desc:"Pick a creative framework and get hooks, scenes and a call to action.",
+step3Title:"Make it yours",step3Desc:"Edit the brief, verify your claims and develop the strongest concept.",
+pricingKicker:"SIMPLE PLANS",pricingTitle:"Start free. Build better ads.",
+pricingDesc:"These are proposed plans for the product, not active subscriptions.",
+starter:"Starter",freePrice:"Free",starterDesc:"Explore creative directions at no cost.",
+feature1:"Browser-based creative demo",feature2:"Five creative frameworks",feature3:"Copyable results",starterButton:"Try the studio",
+pro:"Pro · Proposed",perMonth:"/ month",proDesc:"A possible future plan for serious creators.",
+proFeature1:"AI-powered generation when connected",proFeature2:"Expanded campaign workflows",proFeature3:"More creative variations",proButton:"Explore features",
+paymentNote:"Payments and subscriptions are not enabled.",ctaTitle:"Your next ad starts with one idea.",
+ctaDesc:"Build a hook, shape the story and find your creative direction.",ctaButton:"Open creative studio ↗",
+footerText:"Creative tools for ambitious brands.",backTop:"Back to top ↑",
+errorProduct:"Please enter your product or business.",errorBenefit:"Please describe the problem you solve.",
+copySuccess:"Copied!",copyFallback:"Select and copy the results manually.",
+hook:"HOOK OPTIONS",script:"VIDEO SCRIPT",scenes:"CINEMATIC DIRECTION",audience:"AUDIENCE & MESSAGE",
+cta:"CALL TO ACTION",competitor:"COMPETITOR RESEARCH CHECKLIST",angle:"CAMPAIGN ANGLE",
+problem:"Problem → Solution",before:"Before → After",identity:"Identity Campaign",showcase:"Fast Product Showcase",social:"Social Proof",
+toneBold:"Bold & direct",tonePremium:"Premium & minimal",toneFriendly:"Friendly & relatable",toneCinematic:"Cinematic & emotional",
+opening:"Opening shot",middle:"Main sequence",ending:"Closing shot",disclaimer:"Creative suggestions only. Verify product claims before publishing."
+},
+fr:{
+navTools:"Outils",navStudio:"Studio créatif",navHow:"Comment ça marche",navPricing:"Tarifs",navStart:"Créer ↗",
+eyebrow:"INTELLIGENCE CRÉATIVE POUR LES MARQUES",
+heroTitle:'Arrêtez les pubs banales.<br>Faites <span>arrêter le scroll.</span>',
+heroDesc:"Transformez vos idées de produits en hooks percutants, concepts cinématographiques et scripts vidéo.",
+heroButton:"Créer ma première pub ↗",exploreButton:"Explorer le studio",
+proof:"CONÇU POUR <b>MARQUES · CRÉATEURS · E-COMMERCE</b>",
+toolsKicker:"BOÎTE À OUTILS CRÉATIVE",toolsTitle:"Tout commence par un meilleur hook.",
+toolsDesc:"Préparez votre message, votre histoire et votre vidéo avant d'investir dans la production.",
+tool1Title:"Générateur de hooks",tool1Desc:"Créez des accroches qui captent l'attention dès les premières secondes.",
+tool2Title:"Rédacteur de scripts",tool2Desc:"Transformez un avantage produit en scénario vidéo convaincant.",
+tool3Title:"Concepts cinématiques",tool3Desc:"Imaginez des scènes, des mouvements de caméra et des histoires visuelles.",
+tool4Title:"Angles créatifs",tool4Desc:"Explorez les campagnes problème-solution, avant-après et identité.",
+tool5Title:"Brief concurrentiel",tool5Desc:"Préparez une grille pour étudier les publicités et sites concurrents.",
+tool6Title:"Audience et offres",tool6Desc:"Adaptez votre message à votre audience et votre plateforme.",
+studioKicker:"VOTRE ESPACE CRÉATIF",studioTitle:"Présentez le produit.<br>Construisez l'histoire.",
+studioDesc:"Remplissez le brief pour obtenir une première direction créative. Cette démo fonctionne dans votre navigateur.",
+workspaceTitle:"Studio publicitaire",demoStatus:"● DÉMO LOCALE",
+productLabel:"Produit ou entreprise",productPlaceholder:"Ex. : marque streetwear oversize",
+benefitLabel:"Quel problème résolvez-vous ?",benefitPlaceholder:"Qu'est-ce qui rend votre produit utile ou différent ?",
+audienceLabel:"Public cible",audiencePlaceholder:"Ex. : jeunes adultes, 18–30 ans",
+platformLabel:"Plateforme",styleLabel:"Angle créatif",styleProblem:"Problème → Solution",
+styleBefore:"Avant → Après",styleIdentity:"Campagne identité",styleShowcase:"Présentation rapide",styleSocial:"Preuve sociale",
+durationLabel:"Durée de la vidéo",toneLabel:"Ton de la marque",languageLabel:"Langue du résultat",
+generateButton:"✦ Générer des concepts",resultTitle:"Votre brief créatif",copyButton:"Copier les résultats",
+demoNote:"Résultat de démonstration : vérifiez les affirmations et adaptez les idées à votre produit.",
+howKicker:"UN PROCESSUS SIMPLE",howTitle:"De la page blanche au concept publicitaire.",
+step1Title:"Décrivez votre produit",step1Desc:"Expliquez ce que vous vendez, à qui cela sert et ce qui le distingue.",
+step2Title:"Choisissez votre angle",step2Desc:"Obtenez des hooks, des scènes et un appel à l'action.",
+step3Title:"Personnalisez le concept",step3Desc:"Modifiez le brief et vérifiez les informations avant publication.",
+pricingKicker:"OFFRES SIMPLES",pricingTitle:"Commencez gratuitement.",
+pricingDesc:"Ce sont des offres envisagées, pas des abonnements actifs.",
+starter:"Starter",freePrice:"Gratuit",starterDesc:"Explorez les directions créatives sans frais.",
+feature1:"Démo créative dans le navigateur",feature2:"Cinq structures créatives",feature3:"Résultats copiables",starterButton:"Essayer le studio",
+pro:"Pro · Envisagé",perMonth:"/ mois",proDesc:"Une future offre pour les créateurs exigeants.",
+proFeature1:"Génération IA après connexion",proFeature2:"Processus de campagne avancés",proFeature3:"Plus de variantes créatives",proButton:"Explorer les fonctions",
+paymentNote:"Les paiements et abonnements ne sont pas activés.",ctaTitle:"Votre prochaine publicité commence par une idée.",
+ctaDesc:"Créez l'accroche, racontez l'histoire et trouvez votre direction créative.",
+ctaButton:"Ouvrir le studio ↗",footerText:"Des outils créatifs pour les marques ambitieuses.",
+backTop:"Retour en haut ↑",errorProduct:"Veuillez saisir votre produit ou entreprise.",
+errorBenefit:"Veuillez décrire le problème que vous résolvez.",copySuccess:"Copié !",
+copyFallback:"Sélectionnez et copiez les résultats manuellement.",hook:"IDÉES D'ACCROCHES",
+script:"SCRIPT VIDÉO",scenes:"DIRECTION CINÉMATOGRAPHIQUE",audience:"PUBLIC ET MESSAGE",
+cta:"APPEL À L'ACTION",competitor:"LISTE D'ANALYSE DES CONCURRENTS",angle:"ANGLE DE CAMPAGNE",
+problem:"Problème → Solution",before:"Avant → Après",identity:"Campagne identité",showcase:"Présentation rapide",social:"Preuve sociale",
+toneBold:"Direct et audacieux",tonePremium:"Premium et minimaliste",toneFriendly:"Amical et accessible",toneCinematic:"Cinématographique et émotionnel",
+opening:"Plan d'ouverture",middle:"Séquence principale",ending:"Plan final",disclaimer:"Suggestions créatives uniquement. Vérifiez les affirmations avant publication."
+},
+ar:{
+navTools:"الأدوات",navStudio:"استوديو الإعلانات",navHow:"كيف يعمل",navPricing:"الأسعار",navStart:"ابدأ الإبداع ↗",
+eyebrow:"ذكاء إبداعي للعلامات التجارية",
+heroTitle:'توقف عن الإعلانات العادية.<br>اصنع إعلانًا <span>يوقف التمرير.</span>',
+heroDesc:"حوّل فكرة منتجك إلى Hook قوي، ومفهوم إعلان سينمائي، وسيناريو فيديو مقنع.",
+heroButton:"اصنع إعلانك الأول ↗",exploreButton:"اكتشف الاستوديو",
+proof:"مصمم لـ <b>العلامات التجارية · صناع المحتوى · التجارة الإلكترونية</b>",
+toolsKicker:"أدوات الإبداع",toolsTitle:"كل شيء يبدأ بخطاف إعلاني أقوى.",
+toolsDesc:"خطط للرسالة والقصة والفيديو قبل أن تنفق أموالك على الإنتاج.",
+tool1Title:"مولّد Hooks",tool1Desc:"ابتكر افتتاحيات تجذب الانتباه في الثواني الأولى.",
+tool2Title:"كاتب السيناريو",tool2Desc:"حوّل فائدة المنتج إلى سيناريو فيديو إعلاني مقنع.",
+tool3Title:"أفكار سينمائية",tool3Desc:"خطط للمشاهد وزوايا الكاميرا والسرد البصري.",
+tool4Title:"زوايا إعلانية",tool4Desc:"جرّب المشكلة والحل، قبل وبعد، وحملات الهوية.",
+tool5Title:"دراسة المنافسين",tool5Desc:"حضّر قائمة منظمة لمراجعة إعلانات ومواقع المنافسين.",
+tool6Title:"الجمهور والعروض",tool6Desc:"كيّف رسالتك حسب الجمهور والمنصة وهدف الحملة.",
+studioKicker:"مساحتك الإبداعية",studioTitle:"أدخل منتجك.<br>وابنِ قصته.",
+studioDesc:"املأ المعلومات للحصول على اتجاه إعلاني أولي. هذه نسخة تجريبية تعمل داخل المتصفح.",
+workspaceTitle:"استوديو صناعة الإعلانات",demoStatus:"● نسخة تجريبية",
+productLabel:"المنتج أو المشروع",productPlaceholder:"مثال: علامة ملابس ستريت وير واسعة",
+benefitLabel:"ما المشكلة التي يحلها منتجك؟",benefitPlaceholder:"ما فائدة منتجك وما الذي يجعله مختلفًا؟",
+audienceLabel:"الجمهور المستهدف",audiencePlaceholder:"مثال: الشباب من 18 إلى 30 سنة",
+platformLabel:"المنصة",styleLabel:"الزاوية الإعلانية",styleProblem:"المشكلة ← الحل",
+styleBefore:"قبل ← بعد",styleIdentity:"حملة الهوية",styleShowcase:"عرض سريع للمنتج",styleSocial:"الدليل الاجتماعي",
+durationLabel:"مدة الفيديو",toneLabel:"أسلوب العلامة",languageLabel:"لغة النتائج",
+generateButton:"✦ أنشئ أفكارًا إعلانية",resultTitle:"مخططك الإعلاني",copyButton:"انسخ النتائج",
+demoNote:"نتائج تجريبية: تحقق من الادعاءات وعدّل الأفكار لتناسب منتجك الحقيقي.",
+howKicker:"خطوات بسيطة",howTitle:"من صفحة فارغة إلى فكرة إعلان.",
+step1Title:"صف منتجك",step1Desc:"اشرح ما تبيعه، ولمن، وما الذي يجعله مختلفًا.",
+step2Title:"اختر الزاوية",step2Desc:"احصل على Hooks ومشاهد ودعوة لاتخاذ إجراء.",
+step3Title:"طوّر فكرتك",step3Desc:"عدّل المخطط وتحقق من المعلومات قبل النشر.",
+pricingKicker:"خطط بسيطة",pricingTitle:"ابدأ مجانًا واصنع إعلانات أفضل.",
+pricingDesc:"هذه أسعار مقترحة مستقبلية وليست اشتراكات مفعلة.",
+starter:"المبتدئ",freePrice:"مجانًا",starterDesc:"استكشف الأفكار الإعلانية دون تكلفة.",
+feature1:"أدوات تجريبية داخل المتصفح",feature2:"خمسة أطر إعلانية",feature3:"إمكانية نسخ النتائج",starterButton:"جرّب الاستوديو",
+pro:"المحترف · مقترح",perMonth:"/ شهريًا",proDesc:"خطة مستقبلية لصناع الإعلانات الجادين.",
+proFeature1:"توليد بالذكاء الاصطناعي بعد الربط",proFeature2:"خطط حملات متقدمة",proFeature3:"تنويعات إعلانية أكثر",proButton:"اكتشف الميزات",
+paymentNote:"الدفع والاشتراكات غير مفعلة.",ctaTitle:"إعلانك القادم يبدأ بفكرة واحدة.",
+ctaDesc:"اصنع الخطاف، وابنِ القصة، وحدد اتجاهك الإبداعي.",
+ctaButton:"افتح الاستوديو ↗",footerText:"أدوات إبداعية للعلامات الطموحة.",
+backTop:"العودة للأعلى ↑",errorProduct:"اكتب اسم المنتج أو المشروع أولًا.",
+errorBenefit:"اشرح المشكلة التي يحلها منتجك أولًا.",copySuccess:"تم النسخ!",
+copyFallback:"حدد النتائج وانسخها يدويًا.",hook:"اقتراحات الخطاف الإعلاني",
+script:"سيناريو الفيديو",scenes:"التصور السينمائي",audience:"الجمهور والرسالة",
+cta:"دعوة لاتخاذ إجراء",competitor:"قائمة دراسة المنافسين",angle:"الزاوية الإعلانية",
+problem:"المشكلة والحل",before:"قبل وبعد",identity:"حملة الهوية",showcase:"عرض سريع للمنتج",social:"الدليل الاجتماعي",
+toneBold:"جريء ومباشر",tonePremium:"فاخر وبسيط",toneFriendly:"ودود وقريب",toneCinematic:"سينمائي وعاطفي",
+opening:"المشهد الافتتاحي",middle:"المشهد الرئيسي",ending:"المشهد الختامي",disclaimer:"اقتراحات إبداعية فقط. تحقق من صحة المعلومات قبل النشر."
+},
+de:{
+navTools:"Werkzeuge",navStudio:"Kreativstudio",navHow:"So funktioniert's",navPricing:"Preise",navStart:"Jetzt starten ↗",
+eyebrow:"KREATIVE INTELLIGENZ FÜR MARKEN",
+heroTitle:'Mach keine gewöhnlichen Ads.<br>Bring Menschen zum <span>Stoppen.</span>',
+heroDesc:"Verwandle Produktideen in starke Hooks, filmische Werbekonzepte und überzeugende Videoskripte.",
+heroButton:"Erste Anzeige erstellen ↗",exploreButton:"Studio entdecken",
+proof:"FÜR <b>MARKEN · CREATOR · E-COMMERCE</b>",
+toolsKicker:"DAS KREATIVE WERKZEUGSET",toolsTitle:"Alles beginnt mit einem besseren Hook.",
+toolsDesc:"Plane Botschaft, Geschichte und Video, bevor du in die Produktion investierst.",
+tool1Title:"Hook-Generator",tool1Desc:"Entwickle Einstiege, die in den ersten Sekunden Aufmerksamkeit erzeugen.",
+tool2Title:"Skript-Schreiber",tool2Desc:"Verwandle Produktvorteile in überzeugende Videoskripte.",
+tool3Title:"Filmische Konzepte",tool3Desc:"Plane Szenen, Kameraperspektiven und visuelles Storytelling.",
+tool4Title:"Kreative Ansätze",tool4Desc:"Entdecke Problem-Lösung-, Vorher-Nachher- und Identitätskampagnen.",
+tool5Title:"Wettbewerbsanalyse",tool5Desc:"Erstelle eine Checkliste für konkurrierende Anzeigen und Websites.",
+tool6Title:"Zielgruppe und Angebote",tool6Desc:"Passe deine Botschaft an Zielgruppe und Plattform an.",
+studioKicker:"DEIN KREATIVBEREICH",studioTitle:"Zeig dein Produkt.<br>Erzähl seine Geschichte.",
+studioDesc:"Fülle das Briefing aus und erhalte eine erste kreative Richtung. Diese Demo läuft im Browser.",
+workspaceTitle:"Werbe-Kreativstudio",demoStatus:"● LOKALE DEMO",
+productLabel:"Produkt oder Unternehmen",productPlaceholder:"z. B. Oversize-Streetwear-Marke",
+benefitLabel:"Welches Problem löst du?",benefitPlaceholder:"Was macht dein Produkt nützlich oder besonders?",
+audienceLabel:"Zielgruppe",audiencePlaceholder:"z. B. junge Erwachsene, 18–30",
+platformLabel:"Plattform",styleLabel:"Kreativer Ansatz",styleProblem:"Problem → Lösung",
+styleBefore:"Vorher → Nachher",styleIdentity:"Identitätskampagne",styleShowcase:"Schnelle Produktpräsentation",styleSocial:"Sozialer Beweis",
+durationLabel:"Videolänge",toneLabel:"Markenstil",languageLabel:"Ausgabesprache",
+generateButton:"✦ Kreative Konzepte erstellen",resultTitle:"Dein Kreativbriefing",copyButton:"Ergebnisse kopieren",
+demoNote:"Demo-Ergebnisse: Prüfe alle Aussagen und passe die Ideen an dein echtes Produkt an.",
+howKicker:"EINFACHER ABLAUF",howTitle:"Von der leeren Seite zum Werbekonzept.",
+step1Title:"Produkt beschreiben",step1Desc:"Erkläre, was du verkaufst, wem es hilft und was es besonders macht.",
+step2Title:"Ansatz wählen",step2Desc:"Erhalte Hooks, Szenen und einen Handlungsaufruf.",
+step3Title:"Konzept verfeinern",step3Desc:"Bearbeite das Briefing und überprüfe Aussagen vor der Veröffentlichung.",
+pricingKicker:"EINFACHE TARIFE",pricingTitle:"Kostenlos starten. Bessere Werbung machen.",
+pricingDesc:"Dies sind geplante Tarife, keine aktiven Abonnements.",
+starter:"Starter",freePrice:"Kostenlos",starterDesc:"Entdecke kreative Richtungen ohne Kosten.",
+feature1:"Kreativdemo im Browser",feature2:"Fünf kreative Frameworks",feature3:"Kopierbare Ergebnisse",starterButton:"Studio testen",
+pro:"Pro · Geplant",perMonth:"/ Monat",proDesc:"Ein mögliches zukünftiges Angebot für Profis.",
+proFeature1:"KI-Generierung nach Anbindung",proFeature2:"Erweiterte Kampagnenabläufe",proFeature3:"Mehr kreative Varianten",proButton:"Funktionen entdecken",
+paymentNote:"Zahlungen und Abonnements sind nicht aktiviert.",ctaTitle:"Deine nächste Anzeige beginnt mit einer Idee.",
+ctaDesc:"Entwickle einen Hook, erzähle eine Geschichte und finde deine Richtung.",
+ctaButton:"Kreativstudio öffnen ↗",footerText:"Kreative Werkzeuge für ambitionierte Marken.",
+backTop:"Nach oben ↑",errorProduct:"Bitte gib dein Produkt oder Unternehmen ein.",
+errorBenefit:"Bitte beschreibe das Problem, das du löst.",copySuccess:"Kopiert!",
+copyFallback:"Markiere und kopiere die Ergebnisse manuell.",hook:"HOOK-IDEEN",
+script:"VIDEOSKRIPT",scenes:"FILMISCHE RICHTUNG",audience:"ZIELGRUPPE UND BOTSCHAFT",
+cta:"HANDLUNGSAUFRUF",competitor:"CHECKLISTE WETTBEWERBSANALYSE",angle:"KAMPAGNENANSATZ",
+problem:"Problem → Lösung",before:"Vorher → Nachher",identity:"Identitätskampagne",showcase:"Produktpräsentation",social:"Sozialer Beweis",
+toneBold:"Mutig und direkt",tonePremium:"Premium und minimalistisch",toneFriendly:"Freundlich und nahbar",toneCinematic:"Filmisch und emotional",
+opening:"Eröffnungsszene",middle:"Hauptsequenz",ending:"Schlussszene",disclaimer:"Nur kreative Vorschläge. Prüfe Produktangaben vor der Veröffentlichung."
+},
+es:{
+navTools:"Herramientas",navStudio:"Estudio creativo",navHow:"Cómo funciona",navPricing:"Precios",navStart:"Crear ahora ↗",
+eyebrow:"INTELIGENCIA CREATIVA PARA MARCAS",
+heroTitle:'Deja los anuncios comunes.<br>Haz que la gente <span>se detenga.</span>',
+heroDesc:"Convierte ideas de productos en hooks potentes, conceptos cinematográficos y guiones publicitarios.",
+heroButton:"Crea tu primer anuncio ↗",exploreButton:"Explorar el estudio",
+proof:"DISEÑADO PARA <b>MARCAS · CREADORES · E-COMMERCE</b>",
+toolsKicker:"HERRAMIENTAS CREATIVAS",toolsTitle:"Todo empieza con un mejor hook.",
+toolsDesc:"Planifica el mensaje, la historia y el vídeo antes de invertir en producción.",
+tool1Title:"Generador de hooks",tool1Desc:"Crea aperturas que capten la atención en los primeros segundos.",
+tool2Title:"Escritor de guiones",tool2Desc:"Convierte las ventajas de tu producto en un guion convincente.",
+tool3Title:"Conceptos cinematográficos",tool3Desc:"Planifica escenas, cámaras y narrativas visuales.",
+tool4Title:"Ángulos creativos",tool4Desc:"Explora campañas de problema-solución, antes-después e identidad.",
+tool5Title:"Análisis de competidores",tool5Desc:"Prepara una lista para revisar anuncios y webs de la competencia.",
+tool6Title:"Audiencia y ofertas",tool6Desc:"Adapta tu mensaje a tu público y plataforma.",
+studioKicker:"TU ESPACIO CREATIVO",studioTitle:"Presenta tu producto.<br>Construye su historia.",
+studioDesc:"Completa el briefing para obtener una primera dirección creativa. Esta demo funciona en tu navegador.",
+workspaceTitle:"Estudio publicitario",demoStatus:"● DEMO LOCAL",
+productLabel:"Producto o negocio",productPlaceholder:"Ej.: marca de streetwear oversize",
+benefitLabel:"¿Qué problema resuelves?",benefitPlaceholder:"¿Qué hace útil o diferente a tu producto?",
+audienceLabel:"Público objetivo",audiencePlaceholder:"Ej.: jóvenes adultos, 18–30",
+platformLabel:"Plataforma",styleLabel:"Ángulo creativo",styleProblem:"Problema → Solución",
+styleBefore:"Antes → Después",styleIdentity:"Campaña de identidad",styleShowcase:"Presentación rápida",styleSocial:"Prueba social",
+durationLabel:"Duración del vídeo",toneLabel:"Estilo de marca",languageLabel:"Idioma de salida",
+generateButton:"✦ Generar conceptos creativos",resultTitle:"Tu briefing creativo",copyButton:"Copiar resultados",
+demoNote:"Resultado de demostración: verifica las afirmaciones y adapta las ideas a tu producto real.",
+howKicker:"UN PROCESO SENCILLO",howTitle:"De una página en blanco a un anuncio.",
+step1Title:"Describe tu producto",step1Desc:"Explica qué vendes, a quién ayuda y qué lo hace diferente.",
+step2Title:"Elige tu enfoque",step2Desc:"Obtén hooks, escenas y una llamada a la acción.",
+step3Title:"Personaliza la idea",step3Desc:"Edita el briefing y verifica la información antes de publicar.",
+pricingKicker:"PLANES SENCILLOS",pricingTitle:"Empieza gratis. Crea mejores anuncios.",
+pricingDesc:"Estos son planes propuestos, no suscripciones activas.",
+starter:"Inicial",freePrice:"Gratis",starterDesc:"Explora ideas creativas sin coste.",
+feature1:"Demo creativa en el navegador",feature2:"Cinco estructuras creativas",feature3:"Resultados copiables",starterButton:"Probar el estudio",
+pro:"Pro · Propuesto",perMonth:"/ mes",proDesc:"Un posible plan futuro para creadores profesionales.",
+proFeature1:"Generación con IA al conectarla",proFeature2:"Flujos de campaña avanzados",proFeature3:"Más variaciones creativas",proButton:"Explorar funciones",
+paymentNote:"Los pagos y las suscripciones no están activados.",ctaTitle:"Tu próximo anuncio empieza con una idea.",
+ctaDesc:"Crea el hook, cuenta la historia y encuentra tu dirección creativa.",
+ctaButton:"Abrir el estudio creativo ↗",footerText:"Herramientas creativas para marcas ambiciosas.",
+backTop:"Volver arriba ↑",errorProduct:"Introduce tu producto o negocio.",
+errorBenefit:"Describe primero el problema que resuelves.",copySuccess:"¡Copiado!",
+copyFallback:"Selecciona y copia los resultados manualmente.",hook:"IDEAS DE HOOKS",
+script:"GUION DE VÍDEO",scenes:"DIRECCIÓN CINEMATOGRÁFICA",audience:"PÚBLICO Y MENSAJE",
+cta:"LLAMADA A LA ACCIÓN",competitor:"LISTA DE ANÁLISIS DE COMPETIDORES",angle:"ENFOQUE DE CAMPAÑA",
+problem:"Problema → Solución",before:"Antes → Después",identity:"Campaña de identidad",showcase:"Presentación rápida",social:"Prueba social",
+toneBold:"Audaz y directo",tonePremium:"Premium y minimalista",toneFriendly:"Amigable y cercano",toneCinematic:"Cinematográfico y emocional",
+opening:"Escena inicial",middle:"Secuencia principal",ending:"Escena final",disclaimer:"Solo sugerencias creativas. Verifica las afirmaciones antes de publicar."
+}
+};
+
+let currentLang="en";
+function tr(key){return translations[currentLang][key] || translations.en[key] || key}
+
+function setLanguage(lang){
+  currentLang=translations[lang]?lang:"en";
+  const rtl=currentLang==="ar";
+  document.documentElement.lang=currentLang;
+  document.documentElement.dir=rtl?"rtl":"ltr";
+  document.querySelectorAll("[data-i]").forEach(el=>{
+    const key=el.getAttribute("data-i");
+    if(translations[currentLang][key]!==undefined) el.innerHTML=translations[currentLang][key];
+  });
+  document.querySelectorAll("[data-placeholder]").forEach(el=>{
+    const key=el.getAttribute("data-placeholder");
+    if(translations[currentLang][key]) el.placeholder=translations[currentLang][key];
+  });
+  document.querySelectorAll("#style option[data-i]").forEach(el=>{
+    const key=el.getAttribute("data-i");
+    if(translations[currentLang][key])el.textContent=translations[currentLang][key];
+  });
+}
+document.getElementById("language").addEventListener("change",e=>setLanguage(e.target.value));
+
+const angles={
+problem:{
+en:["What if [problem] didn't have to be part of your day?","Show the frustrating problem, introduce the product as a possible solution, then demonstrate the benefit."],
+fr:["Et si [problème] ne faisait plus partie de votre quotidien ?","Montrez le problème, présentez le produit comme solution possible, puis illustrez son avantage."],
+ar:["ماذا لو لم تعد [المشكلة] جزءًا من يومك؟","أظهر المشكلة، ثم قدّم المنتج كحل محتمل، واختتم بتوضيح فائدته."],
+de:["Was wäre, wenn [Problem] nicht mehr zu deinem Alltag gehören müsste?","Zeige das Problem, stelle das Produkt als mögliche Lösung vor und demonstriere den Vorteil."],
+es:["¿Y si [problema] dejara de formar parte de tu día?","Muestra el problema, presenta el producto como posible solución y demuestra su beneficio."]
+},
+before:{
+en:["The old way vs. a smarter way.","Contrast the situation before using the product with the improved experience it may offer. Avoid unsupported promises."],
+fr:["L'ancienne méthode face à une approche plus simple.","Comparez la situation avant l'utilisation du produit avec l'expérience qu'il peut offrir."],
+ar:["الطريقة القديمة مقابل طريقة أذكى.","قارن الحالة قبل استخدام المنتج بالتجربة الأفضل التي يمكن أن يوفرها، دون وعود غير مثبتة."],
+de:["Der alte Weg im Vergleich zu einer besseren Methode.","Vergleiche die Situation vor der Nutzung mit der möglichen verbesserten Erfahrung."],
+es:["La forma de antes frente a una manera más inteligente.","Compara la situación anterior con la experiencia que el producto puede ofrecer."]
+},
+identity:{
+en:["It's not just a product. It's what you stand for.","Lead with the audience's identity and values. Show the product naturally as part of that lifestyle."],
+fr:["Ce n'est pas qu'un produit. C'est ce que vous représentez.","Misez sur l'identité et les valeurs du public. Intégrez le produit naturellement."],
+ar:["ليس مجرد منتج؛ بل هو ما تعبّر عنه.","ابدأ بهوية الجمهور وقيمه، وأظهر المنتج كجزء طبيعي من أسلوب حياته."],
+de:["Es ist nicht nur ein Produkt. Es steht für deine Haltung.","Beginne mit Identität und Werten der Zielgruppe und integriere das Produkt natürlich."],
+es:["No es solo un producto. Representa lo que eres.","Empieza con la identidad y los valores del público e integra el producto naturalmente."]
+},
+showcase:{
+en:["Three details. One reason to look closer.","Open with the strongest visual, show three genuine product details and end with a clear next step."],
+fr:["Trois détails. Une bonne raison de regarder.","Montrez le visuel le plus fort, trois détails réels et terminez par une action claire."],
+ar:["ثلاثة تفاصيل، وسبب واحد لتشاهد أكثر.","ابدأ بأقوى لقطة، اعرض ثلاث ميزات حقيقية، ثم اختم بخطوة واضحة."],
+de:["Drei Details. Ein Grund, genauer hinzusehen.","Beginne mit dem stärksten Bild, zeige drei echte Produktdetails und ende mit einem klaren nächsten Schritt."],
+es:["Tres detalles. Una razón para mirar más.","Empieza con la imagen más potente, muestra tres detalles reales y termina con una acción clara."]
+},
+social:{
+en:["See how it fits into real life.","Use verified customer feedback, genuine demonstrations or real usage examples. Never invent testimonials."],
+fr:["Découvrez son utilité dans la vie réelle.","Utilisez des avis vérifiés et des démonstrations authentiques. N'inventez jamais de témoignages."],
+ar:["شاهد كيف يناسب الحياة اليومية.","استخدم آراء حقيقية موثّقة أو تجارب فعلية. لا تخترع شهادات عملاء."],
+de:["So passt es in den echten Alltag.","Nutze verifizierte Bewertungen und echte Demonstrationen. Erfinde keine Kundenstimmen."],
+es:["Descubre cómo encaja en la vida real.","Usa opiniones verificadas y demostraciones auténticas. Nunca inventes testimonios."]
+}
+};
+
+function escapeHTML(value){
+  return String(value).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+function getTone(){
+ const key=document.getElementById("tone").value;
+ const map={bold:"toneBold",premium:"tonePremium",friendly:"toneFriendly",cinematic:"toneCinematic"};
+ return tr(map[key]);
+}
+function makeItem(title,body,explain=""){
+ return `<div class="result-item"><h4>${escapeHTML(title)}</h4><p>${escapeHTML(body)}</p>${explain?`<p class="explain">${escapeHTML(explain)}</p>`:""}</div>`;
+}
+function generate(){
+ const product=document.getElementById("product").value.trim();
+ const benefit=document.getElementById("benefit").value.trim();
+ const audience=document.getElementById("audience").value.trim()||"the intended audience";
+ const platform=document.getElementById("platform").value;
+ const style=document.getElementById("style").value;
+ const duration=Number(document.getElementById("duration").value);
+ const tone=getTone();
+ const error=document.getElementById("error");
+ const result=document.getElementById("result");
+ error.textContent="";
+ if(!product){error.textContent=tr("errorProduct");document.getElementById("product").focus();return}
+ if(!benefit){error.textContent=tr("errorBenefit");document.getElementById("benefit").focus();return}
+
+ const lang=currentLang;
+ const angle=angles[style][lang]||angles[style].en;
+ const frameworkNames={problem:"problem",before:"before",identity:"identity",showcase:"showcase",social:"social"};
+ const angleName=tr(frameworkNames[style]);
+ const problem=benefit.replace(/[.!?]+$/,"");
+ const productSafe=product;
+ const hooks={
+ en:[
+  `Stop scrolling. Here's a closer look at ${productSafe}.`,
+  `Still dealing with ${problem}? Meet a different approach.`,
+  `${productSafe}: made for people who want more from the everyday.`
+ ],
+ fr:[
+  `Arrêtez-vous un instant : découvrez ${productSafe}.`,
+  `Vous rencontrez encore ce problème : ${problem} ? Découvrez une autre approche.`,
+  `${productSafe} : pensé pour améliorer le quotidien.`
+ ],
+ ar:[
+  `استنى لحظة! تعرّف على ${productSafe}.`,
+  `ما زلت تعاني من هذه المشكلة: ${problem}؟ شوف حلًا مختلفًا.`,
+  `${productSafe}، للناس اللي يحبّوا يطوّروا تفاصيل يومهم.`
+ ],
+ de:[
+  `Stopp kurz: Entdecke ${productSafe}.`,
+  `Kennst du das Problem: ${problem}? Entdecke einen anderen Ansatz.`,
+  `${productSafe} – für Menschen, die mehr vom Alltag erwarten.`
+ ],
+ es:[
+  `Espera un momento: descubre ${productSafe}.`,
+  `¿Sigues lidiando con ${problem}? Descubre otra opción.`,
+  `${productSafe}, pensado para mejorar tu día a día.`
+ ]
+ };
+ const h=hooks[lang]||hooks.en;
+ const durationLabel=duration+" seconds";
+ let script;
+ if(lang==="ar"){
+  script=`0–3 ثوانٍ: خطاف بصري ونص: «${h[0]}».\n3–${Math.round(duration*.35)} ثوانٍ: اعرض المشكلة أو الحاجة: ${problem}.\n${Math.round(duration*.35)}–${Math.round(duration*.75)} ثوانٍ: أظهر ${productSafe} وميزاته الحقيقية بطريقة واضحة.\nآخر المشهد: اختم بدعوة المشاهد إلى معرفة المزيد أو زيارة الصفحة.`;
+ }else if(lang==="fr"){
+  script=`0–3 s : accroche visuelle et texte « ${h[0]} ».\n3–${Math.round(duration*.35)} s : montrez le besoin ou le problème : ${problem}.\n${Math.round(duration*.35)}–${Math.round(duration*.75)} s : présentez ${productSafe} et ses caractéristiques réelles.\nFin : invitez le public à en savoir plus ou à visiter la page.`;
+ }else if(lang==="de"){
+  script=`0–3 Sek.: Starker visueller Einstieg mit „${h[0]}“.\n3–${Math.round(duration*.35)} Sek.: Zeige das Problem oder Bedürfnis: ${problem}.\n${Math.round(duration*.35)}–${Math.round(duration*.75)} Sek.: Präsentiere ${productSafe} und seine tatsächlichen Eigenschaften.\nEnde: Lade die Zuschauer ein, mehr zu erfahren oder die Seite zu besuchen.`;
+ }else if(lang==="es"){
+  script=`0–3 s: Gancho visual con el texto «${h[0]}».\n3–${Math.round(duration*.35)} s: Muestra el problema o necesidad: ${problem}.\n${Math.round(duration*.35)}–${Math.round(duration*.75)} s: Presenta ${productSafe} y sus características reales.\nFinal: Invita al público a saber más o visitar la página.`;
+ }else{
+  script=`0–3 sec: Strong visual opening with the text "${h[0]}".\n3–${Math.round(duration*.35)} sec: Show the problem or need: ${problem}.\n${Math.round(duration*.35)}–${Math.round(duration*.75)} sec: Present ${productSafe} and demonstrate its genuine features.\nEnding: Invite viewers to learn more or visit your page.`;
+ }
+
+ const scenes={
+ en:`${tr("opening")}: Close-up or unexpected visual related to ${productSafe}.\n${tr("middle")}: Demonstrate the product in a real setting. Use clean framing, purposeful cuts and readable captions.\n${tr("ending")}: Product hero shot, brand name and one clear call to action.`,
+ fr:`${tr("opening")} : Gros plan ou visuel inattendu autour de ${productSafe}.\n${tr("middle")} : Démonstration en situation réelle, cadrage soigné et sous-titres lisibles.\n${tr("ending")} : Plan produit, nom de la marque et appel à l'action clair.`,
+ ar:`${tr("opening")}: لقطة قريبة أو مشهد غير متوقع مرتبط بـ ${productSafe}.\n${tr("middle")}: عرض المنتج في استعمال حقيقي، مع لقطات واضحة ونص مقروء.\n${tr("ending")}: لقطة نهائية للمنتج واسم العلامة ودعوة واحدة لاتخاذ إجراء.`,
+ de:`${tr("opening")}: Nahaufnahme oder überraschendes Bild zu ${productSafe}.\n${tr("middle")}: Zeige das Produkt in einer realen Situation mit klaren Schnitten und lesbaren Untertiteln.\n${tr("ending")}: Produktaufnahme, Markenname und ein eindeutiger Handlungsaufruf.`,
+ es:`${tr("opening")}: Primer plano o imagen inesperada relacionada con ${productSafe}.\n${tr("middle")}: Demuestra el producto en una situación real, con planos claros y subtítulos legibles.\n${tr("ending")}: Plano final del producto, nombre de la marca y una llamada a la acción clara.`
+ };
+ const ctaText={
+ en:"Discover more about "+productSafe+" — visit our page.",
+ fr:"Découvrez "+productSafe+" — visitez notre page.",
+ ar:"اكتشف المزيد عن "+productSafe+" — زر صفحتنا.",
+ de:"Erfahre mehr über "+productSafe+" – besuche unsere Seite.",
+ es:"Descubre más sobre "+productSafe+" — visita nuestra página."
+ };
+ const competitorText={
+ en:`1. Record the competitor's opening hook.\n2. Identify the audience and main promise.\n3. Note the first three scenes and video length.\n4. Check the offer, proof and call to action.\n5. Identify a genuine gap your brand can address.\n\nReference to review: ${productSafe}. Add a public competitor URL separately; this demo cannot fetch or inspect external websites or videos.`,
+ fr:`1. Notez l'accroche d'ouverture du concurrent.\n2. Identifiez le public et la promesse principale.\n3. Notez les trois premières scènes et la durée.\n4. Examinez l'offre, les preuves et l'appel à l'action.\n5. Trouvez un angle distinct et authentique.\n\nRéférence : ${productSafe}. Cette démo ne peut pas consulter les sites ou vidéos externes.`,
+ ar:`1. سجّل الخطاف الافتتاحي للمنافس.\n2. حدّد الجمهور والوعد الأساسي.\n3. لاحظ أول ثلاثة مشاهد ومدة الفيديو.\n4. راجع العرض والأدلة والدعوة إلى الإجراء.\n5. ابحث عن نقطة اختلاف حقيقية لعلامتك.\n\nالمنتج محل الدراسة: ${productSafe}. هذه النسخة لا تستطيع فتح مواقع أو فيديوهات خارجية وتحليلها تلقائيًا.`,
+ de:`1. Notiere den Einstiegs-Hook des Wettbewerbers.\n2. Bestimme Zielgruppe und Hauptversprechen.\n3. Erfasse die ersten drei Szenen und die Videolänge.\n4. Prüfe Angebot, Belege und Handlungsaufruf.\n5. Finde eine echte Differenzierung.\n\nReferenz: ${productSafe}. Diese Demo kann externe Websites oder Videos nicht abrufen.`,
+ es:`1. Registra el hook inicial del competidor.\n2. Identifica el público y la promesa principal.\n3. Anota las tres primeras escenas y la duración.\n4. Revisa la oferta, las pruebas y la llamada a la acción.\n5. Busca una diferencia auténtica para tu marca.\n\nReferencia: ${productSafe}. Esta demo no puede consultar sitios o vídeos externos.`
+ };
+
+ let html="";
+ html+=makeItem(tr("hook"),h.join("\n\n"),`${tr("audience")}: ${audience}`);
+ html+=makeItem(tr("angle"),angleName+" — "+angle[0],angle[1]);
+ html+=makeItem(tr("script"),script,`${platform} · ${durationLabel} · ${tone}`);
+ html+=makeItem(tr("scenes"),scenes[lang]||scenes.en);
+ html+=makeItem(tr("cta"),ctaText[lang]||ctaText.en);
+ html+=makeItem(tr("competitor"),competitorText[lang]||competitorText.en);
+ html+=makeItem(tr("audience"),`${audience}\n${benefit}\n${platform} · ${durationLabel}`);
+ document.getElementById("resultContent").innerHTML=html;
+ result.classList.add("show");
+ result.scrollIntoView({behavior:"smooth",block:"start"});
+}
+document.getElementById("generate").addEventListener("click",generate);
+
+document.getElementById("copy").addEventListener("click",async()=>{
+ const text=document.getElementById("resultContent").innerText;
+ try{
+  if(navigator.clipboard && window.isSecureContext){
+   await navigator.clipboard.writeText(text);
+   document.getElementById("copy").textContent=tr("copySuccess");
+  }else{
+   const area=document.createElement("textarea");
+   area.value=text;document.body.appendChild(area);area.select();
+   const ok=document.execCommand("copy");area.remove();
+   document.getElementById("copy").textContent=ok?tr("copySuccess"):tr("copyFallback");
+  }
+ }catch(e){
+  document.getElementById("copy").textContent=tr("copyFallback");
+ }
+ setTimeout(()=>document.getElementById("copy").textContent=tr("copyButton"),1800);
+});
+</script>
+</body>
+</html>
